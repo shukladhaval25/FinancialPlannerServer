@@ -1,0 +1,287 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A709D5BE-E962-42BB-8626-FDBA7391F678}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FinancialPlannerServer</RootNamespace>
+    <AssemblyName>FinancialPlannerServer</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FinancialPlanner.Common">
+      <HintPath>..\..\FinancialPlanner.Common\obj\Debug\FinancialPlanner.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AuditTrail\AuditTrail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AuditTrail\AuditTrail.Designer.cs">
+      <DependentUpon>AuditTrail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmailJob\EmailScheduleInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmailJob\EmailScheduleInfo.Designer.cs">
+      <DependentUpon>EmailScheduleInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmailJob\EmailScheduleList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmailJob\EmailScheduleList.Designer.cs">
+      <DependentUpon>EmailScheduleList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmServerMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmServerMain.Designer.cs">
+      <DependentUpon>frmServerMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSystemSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSystemSetting.Designer.cs">
+      <DependentUpon>frmSystemSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserInfo\frmUseList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInfo\frmUseList.Designer.cs">
+      <DependentUpon>frmUseList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInfo\frmUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInfo\frmUser.Designer.cs">
+      <DependentUpon>frmUser.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AuditTrail\AuditTrail.resx">
+      <DependentUpon>AuditTrail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmailJob\EmailScheduleInfo.resx">
+      <DependentUpon>EmailScheduleInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmailJob\EmailScheduleList.resx">
+      <DependentUpon>EmailScheduleList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmServerMain.resx">
+      <DependentUpon>frmServerMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSystemSetting.resx">
+      <DependentUpon>frmSystemSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="UserInfo\frmUseList.resx">
+      <DependentUpon>frmUseList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInfo\frmUser.resx">
+      <DependentUpon>frmUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marguerite-daisy-beautiful-beauty.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\81RTZvc5q5L._SL1500_.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Email.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Users.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Roles.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Security.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AuditTrail-60.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SecurityAccess-60.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Reports-60.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shutdown-60.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AdministrativeTool_60_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\notification-60.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AdministrativeTool_60.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shutdown-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AdministrativeTool_30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AuditTrail-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Roles - 30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SecurityAccess-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-access-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-group-message-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-select-users-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-new-document-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-notification-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-double-right-16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-double-up-16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-double-down-16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Common\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-send-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_run_45545.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-calendar-plus-16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-week-view-16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-date-span-16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-cancel-16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-ok-16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-lock-16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-padlock-16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-group-message-16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-reception-16 - Copy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-customer-16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-select-users-16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-administrative-tools-16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-new-company-16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-new-company-30.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
