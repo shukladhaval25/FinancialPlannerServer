@@ -1,4 +1,5 @@
-﻿using FinancialPlanner.Common.Model;
+﻿using FinancialPlanner.Common;
+using FinancialPlanner.Common.Model;
 using System;
 using System.IO;
 using System.Net;
@@ -10,6 +11,7 @@ namespace FinancialPlannerServer
     public partial class frmLogin : Form
     {
         private const string AUTHENTICATIONAPI = "Authentication/Authenticate";
+        private const string GETADMINSTATUS = "User/GetAdminStatus";
         public frmLogin()
         {
             InitializeComponent();
@@ -56,6 +58,22 @@ namespace FinancialPlannerServer
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
+            FinancialPlanner.Common.JSONSerialization jsonSerialization = new FinancialPlanner.Common.JSONSerialization();
+            string apiurl = Program.WebServiceUrl +"/"+ GETADMINSTATUS;
+            RestAPIExecutor restApiExecutor = new RestAPIExecutor();
+            var restResult = restApiExecutor.Execute<User>(apiurl, null, "GET");
+            if (jsonSerialization.IsValidJson(restResult.ToString()))
+            {
+                var user = jsonSerialization.DeserializeFromString<User>(restResult.ToString());
+                if (string.IsNullOrEmpty(user.UserName))
+                {
+                    SetAdminAccount setadminac = new SetAdminAccount();
+                    if (setadminac.ShowDialog() != DialogResult.OK)
+                    {
+                        this.Close();
+                    }
+                }
+            }
 
         }
     }
