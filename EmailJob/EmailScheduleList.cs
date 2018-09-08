@@ -1,4 +1,5 @@
-﻿using FinancialPlanner.Common.DataConversion;
+﻿using FinancialPlanner.Common;
+using FinancialPlanner.Common.DataConversion;
 using FinancialPlanner.Common.Model;
 using System;
 using System.Collections.Generic;
@@ -13,10 +14,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace FinancialPlannerServer.EmailJob
-{    
+{
     public partial class EmailScheduleList : Form
     {
         private const string GET_EMAILSCHEDULER_API = "EmailScheduler/Get";
+        private const string DELETE_EMAILSCHEDULE_API = "EmailScheduler/Delete";
 
         private DataTable _dtEmailScheduler;
         public EmailScheduleList()
@@ -27,7 +29,7 @@ namespace FinancialPlannerServer.EmailJob
         private void EmailScheduleList_Load(object sender, EventArgs e)
         {
             _dtEmailScheduler = new DataTable();
-            loadEmailSchedulerData();            
+            loadEmailSchedulerData();
         }
 
         private void loadEmailSchedulerData()
@@ -83,7 +85,7 @@ namespace FinancialPlannerServer.EmailJob
             dataGridEmailScheduler.Columns["ScheduleDetail"].HeaderText = "Details";
             dataGridEmailScheduler.Columns["StartDateTime"].HeaderText = "Start Date";
             dataGridEmailScheduler.Columns["NextRunDateTime"].HeaderText = "Next Occurrence";
-            dataGridEmailScheduler.Columns["UpdatedByUserName"].HeaderText = "Updated By";        
+            dataGridEmailScheduler.Columns["UpdatedByUserName"].HeaderText = "Updated By";
         }
 
         private void hideGridColumns()
@@ -100,7 +102,7 @@ namespace FinancialPlannerServer.EmailJob
             dataGridEmailScheduler.Columns["CreatedBy"].Visible = false;
             dataGridEmailScheduler.Columns["UpdatedOn"].Visible = false;
             dataGridEmailScheduler.Columns["UpdatedBy"].Visible = false;
-            
+
             dataGridEmailScheduler.Columns["MachineName"].Visible = false;
         }
 
@@ -125,5 +127,98 @@ namespace FinancialPlannerServer.EmailJob
             emailScheduleInfo.Dock = DockStyle.Fill;
             emailScheduleInfo.Show();
         }
-    }
+
+        private void btnEditArticleInfo_Click(object sender, EventArgs e)
+        {
+            EmailScheduler emailScheduler = new EmailScheduler();
+            emailScheduler = convertSelectedRowDataToEmailScheduler();
+            EmailScheduleInfo emailScheduleInfo = new EmailScheduleInfo(emailScheduler);
+            emailScheduleInfo.TopLevel = false;
+            this.Parent.Controls.Add(emailScheduleInfo);
+            emailScheduleInfo.Dock = DockStyle.Fill;
+            emailScheduleInfo.Show();
+        }
+
+        private EmailScheduler convertSelectedRowDataToEmailScheduler()
+        {
+            EmailScheduler emailScheduler = new EmailScheduler();
+            if (dataGridEmailScheduler.SelectedRows.Count > 0)
+            {
+                DataRow dr = getSelectedDataRow();
+                emailScheduler.ID = int.Parse( dr.Field<string>("ID"));
+                emailScheduler.ArticleGroupId = int.Parse( dr.Field<string>("ArticleGroupId"));
+                emailScheduler.ArticleGroupName = dr.Field<string>("ArticleGroupName");
+                emailScheduler.EmailSenderGroupId = int.Parse( dr.Field<string>("EmailSenderGroupId"));
+                emailScheduler.ScheduleTitle = dr.Field<string>("ScheduleTitle");
+                emailScheduler.ScheduleType = (ScheduleOccurranceType) int.Parse(dr.Field<string>("ScheduleType"));
+                //emailScheduler.MonthDayInterval = (dr["MonthDayInterval"]  == Null) ? ;
+                emailScheduler.WeekDays = dr.Field<string>("WeekDays");
+                emailScheduler.StartDateTime = DateTime.Parse(dr.Field<string>("StartDateTime"));
+                emailScheduler.NextRunDateTime =DateTime.Parse(dr.Field<string>("NextRunDateTime"));
+                emailScheduler.AllowRepeat = bool.Parse( dr.Field<string>("AllowRepeat"));
+                emailScheduler.CreatedOn = DateTime.Parse( dr.Field<string>("CreatedOn"));
+                emailScheduler.CreatedBy = int.Parse( dr.Field<string>("CreatedBy"));
+                emailScheduler.UpdatedOn = DateTime.Parse(dr.Field<string>("UpdatedOn"));
+                emailScheduler.UpdatedBy = int.Parse(dr.Field<string>("UpdatedBy"));
+                emailScheduler.UpdatedByUserName = dr.Field<string>("UpdatedByUserName");
+            }
+            return emailScheduler;
+        }
+
+
+        private DataRow getSelectedDataRow()
+        {
+            int selectedRowIndex = dataGridEmailScheduler.SelectedRows[0].Index;
+            int selectedUserId = int.Parse(dataGridEmailScheduler.SelectedRows[0].Cells["ID"].Value.ToString());
+            DataRow[] rows = _dtEmailScheduler.Select("Id = " + selectedUserId);
+            foreach (DataRow dr in rows)
+            {
+                return dr;
+            }
+            return null;
+        }
+
+        private void btnDeleteArticleInfo_Click(object sender, EventArgs e)
+        {
+            if (dataGridEmailScheduler.SelectedRows.Count > 0)
+            {
+                if (MessageBox.Show(
+                    string.Format("Are you sure you want to remove {0}'s record? If you select 'Yes' then all associated conversation gets deleted.", dataGridEmailScheduler.SelectedRows[0].Cells[1].Value),
+                    "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    removeRecord();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select item to perform action.", "Invalid Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void removeRecord()
+        {
+            try
+            {
+                FinancialPlanner.Common.JSONSerialization jsonSerialization = new FinancialPlanner.Common.JSONSerialization();
+                EmailScheduler emailScheduler = convertSelectedRowDataToEmailScheduler();
+
+                string apiurl = Program.WebServiceUrl +"/"+ DELETE_EMAILSCHEDULE_API;
+
+                RestAPIExecutor restApiExecutor = new RestAPIExecutor();
+
+                var restResult = restApiExecutor.Execute<EmailScheduler>(apiurl, emailScheduler, "POST");
+
+                MessageBox.Show("Record deleted successfully.", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                DataRow[] dr = _dtEmailScheduler.Select("ID =" + emailScheduler.ID);
+                if (dr.Count() > 0)
+                    dr[0].Delete();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Unable to delete record.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+     }
 }

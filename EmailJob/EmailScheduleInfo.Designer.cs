@@ -33,7 +33,7 @@
             this.grpEmailSchedule = new System.Windows.Forms.GroupBox();
             this.grpEmailArticles = new System.Windows.Forms.GroupBox();
             this.lstArticles = new System.Windows.Forms.ListBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtStartTime = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.dtStarDate = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
@@ -69,7 +69,7 @@
             // grpEmailSchedule
             // 
             this.grpEmailSchedule.Controls.Add(this.grpEmailArticles);
-            this.grpEmailSchedule.Controls.Add(this.dateTimePicker1);
+            this.grpEmailSchedule.Controls.Add(this.dtStartTime);
             this.grpEmailSchedule.Controls.Add(this.label5);
             this.grpEmailSchedule.Controls.Add(this.dtStarDate);
             this.grpEmailSchedule.Controls.Add(this.label4);
@@ -112,13 +112,15 @@
             this.lstArticles.Size = new System.Drawing.Size(250, 199);
             this.lstArticles.TabIndex = 0;
             // 
-            // dateTimePicker1
+            // dtStartTime
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(131, 115);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(187, 20);
-            this.dateTimePicker1.TabIndex = 12;
-            this.dateTimePicker1.Value = new System.DateTime(2018, 7, 27, 10, 0, 0, 0);
+            this.dtStartTime.CustomFormat = "hh:mm:tt";
+            this.dtStartTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtStartTime.Location = new System.Drawing.Point(131, 115);
+            this.dtStartTime.Name = "dtStartTime";
+            this.dtStartTime.Size = new System.Drawing.Size(187, 20);
+            this.dtStartTime.TabIndex = 12;
+            this.dtStartTime.Value = new System.DateTime(2018, 7, 27, 10, 0, 0, 0);
             // 
             // label5
             // 
@@ -131,6 +133,8 @@
             // 
             // dtStarDate
             // 
+            this.dtStarDate.CustomFormat = "";
+            this.dtStarDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtStarDate.Location = new System.Drawing.Point(132, 89);
             this.dtStarDate.Name = "dtStarDate";
             this.dtStarDate.Size = new System.Drawing.Size(187, 20);
@@ -309,7 +313,7 @@
             // lnkArticles
             // 
             this.lnkArticles.AutoSize = true;
-            this.lnkArticles.Location = new System.Drawing.Point(325, 70);
+            this.lnkArticles.Location = new System.Drawing.Point(325, 65);
             this.lnkArticles.Name = "lnkArticles";
             this.lnkArticles.Size = new System.Drawing.Size(71, 13);
             this.lnkArticles.TabIndex = 4;
@@ -391,6 +395,7 @@
             this.btnSave.TabIndex = 3;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // EmailScheduleInfo
             // 
@@ -440,7 +445,7 @@
         private System.Windows.Forms.DateTimePicker dtStarDate;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtStartTime;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox grpEmailArticles;
         private System.Windows.Forms.ListBox lstArticles;

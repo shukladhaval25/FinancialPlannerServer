@@ -163,6 +163,7 @@
             this.btnDeleteArticleInfo.Size = new System.Drawing.Size(29, 24);
             this.btnDeleteArticleInfo.TabIndex = 4;
             this.btnDeleteArticleInfo.UseVisualStyleBackColor = true;
+            this.btnDeleteArticleInfo.Click += new System.EventHandler(this.btnDeleteArticleInfo_Click);
             // 
             // btnAddArticleInfo
             // 
@@ -184,6 +185,7 @@
             this.btnEditArticleInfo.Size = new System.Drawing.Size(29, 24);
             this.btnEditArticleInfo.TabIndex = 3;
             this.btnEditArticleInfo.UseVisualStyleBackColor = true;
+            this.btnEditArticleInfo.Click += new System.EventHandler(this.btnEditArticleInfo_Click);
             // 
             // EmailScheduleList
             // 
