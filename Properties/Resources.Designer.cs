@@ -153,6 +153,16 @@ namespace FinancialPlannerServer.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_condo_16 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_condo_16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_customer_16 {
             get {
                 object obj = ResourceManager.GetObject("icons8_customer_16", resourceCulture);
@@ -203,6 +213,16 @@ namespace FinancialPlannerServer.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_goal_16 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_goal_16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_group_message_16 {
             get {
                 object obj = ResourceManager.GetObject("icons8_group_message_16", resourceCulture);
@@ -226,6 +246,16 @@ namespace FinancialPlannerServer.Properties {
         internal static System.Drawing.Bitmap icons8_lock_16 {
             get {
                 object obj = ResourceManager.GetObject("icons8_lock_16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_museum_16 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_museum_16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -326,6 +356,26 @@ namespace FinancialPlannerServer.Properties {
         internal static System.Drawing.Bitmap icons8_week_view_16 {
             get {
                 object obj = ResourceManager.GetObject("icons8_week_view_16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap if_money_bag_45068__16x16 {
+            get {
+                object obj = ResourceManager.GetObject("if_money_bag_45068__16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap if_money_bag_45068__30x30 {
+            get {
+                object obj = ResourceManager.GetObject("if_money_bag_45068__30x30", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

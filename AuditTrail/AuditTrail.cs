@@ -99,6 +99,14 @@ namespace FinancialPlannerServer.AuditTrail
                     e.Value = Properties.Resources.icons8_select_users_16;
                 if (dtGridAuditTrail.Rows[e.RowIndex].Cells["ActivityTypeValue"].Value.ToString().Contains("System"))
                     e.Value = Properties.Resources.icons8_administrative_tools_16;
+                if (dtGridAuditTrail.Rows[e.RowIndex].Cells["ActivityTypeValue"].Value.ToString().Contains("Goal"))
+                    e.Value = Properties.Resources.icons8_goal_16;
+                if (dtGridAuditTrail.Rows[e.RowIndex].Cells["ActivityTypeValue"].Value.ToString().Contains("Income"))
+                    e.Value = Properties.Resources.if_money_bag_45068__16x16;
+                if (dtGridAuditTrail.Rows[e.RowIndex].Cells["ActivityTypeValue"].Value.ToString().Contains("Expense"))
+                    e.Value = Properties.Resources.icons8_condo_16;
+                if (dtGridAuditTrail.Rows[e.RowIndex].Cells["ActivityTypeValue"].Value.ToString().Contains("Bank"))
+                    e.Value = Properties.Resources.icons8_museum_16;
             }
            
             if (dtGridAuditTrail.Columns[e.ColumnIndex].Name == "StatusImg")
