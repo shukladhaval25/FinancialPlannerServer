@@ -221,6 +221,7 @@
             this.tbtnRoles.Text = "Roles";
             this.tbtnRoles.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.tbtnRoles.ToolTipText = "Roles";
+            this.tbtnRoles.Visible = false;
             // 
             // tbtnSecurity
             // 
@@ -232,6 +233,7 @@
             this.tbtnSecurity.Text = "Security";
             this.tbtnSecurity.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.tbtnSecurity.ToolTipText = "Security";
+            this.tbtnSecurity.Visible = false;
             this.tbtnSecurity.Click += new System.EventHandler(this.tbtnSecurity_Click);
             // 
             // tbtnEmail
@@ -267,6 +269,7 @@
             this.tbtnReports.Size = new System.Drawing.Size(64, 79);
             this.tbtnReports.Text = "Reports";
             this.tbtnReports.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tbtnReports.Visible = false;
             // 
             // tbtnNotification
             // 
@@ -278,6 +281,7 @@
             this.tbtnNotification.Text = "Notification";
             this.tbtnNotification.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.tbtnNotification.ToolTipText = "Notification";
+            this.tbtnNotification.Visible = false;
             // 
             // toolStripSystemSetting
             // 
@@ -307,6 +311,7 @@
             this.companyInformationToolStripMenuItem.Name = "companyInformationToolStripMenuItem";
             this.companyInformationToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.companyInformationToolStripMenuItem.Text = "Company Information";
+            this.companyInformationToolStripMenuItem.Click += new System.EventHandler(this.companyInformationToolStripMenuItem_Click);
             // 
             // tbtnLogout
             // 

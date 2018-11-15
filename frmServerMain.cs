@@ -21,6 +21,7 @@ namespace FinancialPlannerServer
         private AuditTrail.AuditTrail _auditTrail;
         private Security.RolesSecurity _rolesSecurity;
         private EmailJob.EmailScheduleList _emailScheduleList;
+        private frmCompany _company;
         public frmServerMain()
         {
             InitializeComponent();          
@@ -172,6 +173,25 @@ namespace FinancialPlannerServer
                 pnlContainer.Controls.Add(_rolesSecurity);
                 _rolesSecurity.Dock = DockStyle.Fill;
                 _rolesSecurity.Show();
+            }
+        }
+
+        private void companyInformationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (pnlContainer.Controls.Contains(_company))
+            {
+                pnlContainer.Controls[pnlContainer.Controls.GetChildIndex(_company)].Show();
+            }
+            else
+            {
+                if (_company == null || _company.IsDisposed)
+                    _company = new frmCompany();
+
+                _company.TopLevel = false;
+                _company.BringToFront();
+                pnlContainer.Controls.Add(_company);
+                _company.Dock = DockStyle.Fill;
+                _company.Show();
             }
         }
     }

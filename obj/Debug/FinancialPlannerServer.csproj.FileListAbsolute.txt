@@ -22,3 +22,4 @@ D:\Dhaval.Shukla\My Documents\Visual Studio 2015\Projects\FinancialPlannerServer
 D:\Dhaval.Shukla\My Documents\Visual Studio 2015\Projects\FinancialPlannerServer\FinancialPlannerServer\obj\Debug\FinancialPlannerServer.SetAdminAccount.resources
 D:\Dhaval.Shukla\My Documents\Visual Studio 2015\Projects\FinancialPlannerServer\FinancialPlannerServer\obj\Debug\FinancialPlannerServer.Security.RolesSecurity.resources
 D:\Dhaval.Shukla\My Documents\Visual Studio 2015\Projects\FinancialPlannerServer\FinancialPlannerServer\obj\Debug\FinancialPlannerServer.csprojResolveAssemblyReference.cache
+D:\Dhaval.Shukla\My Documents\Visual Studio 2015\Projects\FinancialPlannerServer\FinancialPlannerServer\obj\Debug\FinancialPlannerServer.frmCompany.resources
