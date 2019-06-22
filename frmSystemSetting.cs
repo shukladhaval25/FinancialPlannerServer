@@ -1,15 +1,14 @@
 ﻿using FinancialPlanner.Common.DataConversion;
 using FinancialPlanner.Common.Model;
+using FinancialPlanner.Common.EmailManager;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace FinancialPlannerServer
@@ -114,21 +113,25 @@ namespace FinancialPlannerServer
 
         private List<ApplicationConfiguration> getSMTPConfig()
         {
-            Email email = new Email();
-            email.FromEmail = txtFromEmail.Text;
-            email.SMTPPort = int.Parse(txtPort.Text);
-            email.SMTPServerHost = txtHost.Text;
-            email.UserName = txtUserName.Text;
-            email.Password = FinancialPlanner.Common.DataEncrypterDecrypter.CryptoEngine.Encrypt(txtPassword.Text);
-            email.IsSSL = chkIsSSL.Checked;
+
+            MailServer.FromEmail = txtFromEmail.Text;
+            MailServer.HostPort = int.Parse(txtPort.Text);
+            MailServer.HostName = txtHost.Text;
+            MailServer.UserName = txtUserName.Text;
+            MailServer.Password = FinancialPlanner.Common.DataEncrypterDecrypter.CryptoEngine.Encrypt(txtPassword.Text);
+            MailServer.IsSSL = chkIsSSL.Checked;
+            MailServer.POP3_IMPS_HostName = txtPOP3Host.Text;
+            MailServer.POP3_IMPS_HostPort = txtPOP3Port.Text;
 
             List<KeyValuePair<string, string>> lstSMTPsetting = new List<KeyValuePair<string, string>>();
-            lstSMTPsetting.Add(new KeyValuePair<string, string>("FromEmail", email.FromEmail));
-            lstSMTPsetting.Add(new KeyValuePair<string, string>("SMTPPort", email.SMTPPort.ToString()));
-            lstSMTPsetting.Add(new KeyValuePair<string, string>("SMTPHost", email.SMTPServerHost));
-            lstSMTPsetting.Add(new KeyValuePair<string, string>("UserName", email.UserName));
-            lstSMTPsetting.Add(new KeyValuePair<string, string>("Password", email.Password));
-            lstSMTPsetting.Add(new KeyValuePair<string, string>("IsSSL", email.IsSSL.ToString()));
+            lstSMTPsetting.Add(new KeyValuePair<string, string>("FromEmail", MailServer.FromEmail));
+            lstSMTPsetting.Add(new KeyValuePair<string, string>("SMTPPort", MailServer.HostPort.ToString()));
+            lstSMTPsetting.Add(new KeyValuePair<string, string>("SMTPHost", MailServer.HostName));
+            lstSMTPsetting.Add(new KeyValuePair<string, string>("UserName", MailServer.UserName));
+            lstSMTPsetting.Add(new KeyValuePair<string, string>("Password", MailServer.Password));
+            lstSMTPsetting.Add(new KeyValuePair<string, string>("IsSSL", MailServer.IsSSL.ToString()));
+            lstSMTPsetting.Add(new KeyValuePair<string, string>("POP3_IMPS_Host", MailServer.POP3_IMPS_HostName.ToString()));
+            lstSMTPsetting.Add(new KeyValuePair<string, string>("POP3_IMPS_Port", MailServer.POP3_IMPS_HostPort.ToString()));
 
             List<ApplicationConfiguration> lstConfig = new List<ApplicationConfiguration>();
 
@@ -136,7 +139,7 @@ namespace FinancialPlannerServer
             {
                 ApplicationConfiguration appConfig = new ApplicationConfiguration()
                 {
-                    Category ="SMTP Setting",
+                    Category ="Mail Server Setting",
                     SettingName = val.Key,
                     SettingValue = val.Value.Replace("'","''"),
                     CreatedOn = DateTime.Parse( DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss")),
@@ -168,7 +171,7 @@ namespace FinancialPlannerServer
         {
             if (_dtAppConfig != null)
             {
-                DataRow[] smtpSettingRows = _dtAppConfig.Select("CATEGORY = 'SMTP Setting'");
+                DataRow[] smtpSettingRows = _dtAppConfig.Select("CATEGORY = 'Mail Server Setting'");
                 foreach (DataRow dr in smtpSettingRows)
                 {
                     if (dr.Field<string>("SettingName") == "FromEmail")
@@ -195,7 +198,23 @@ namespace FinancialPlannerServer
                     {
                         chkIsSSL.Checked = Boolean.Parse(dr.Field<string>("SettingValue"));
                     }
-                }
+                    else if (dr.Field<string>("SettingName") == "SMTPPort")
+                    {
+                        txtPort.Text = dr.Field<string>("SettingValue");
+                    }
+                    else if (dr.Field<string>("SettingName") == "SMTPHost")
+                    {
+                        txtHost.Text = dr.Field<string>("SettingValue");
+                    }
+                    else if (dr.Field<string>("SettingName") == "POP3_IMPS_Port")
+                    {
+                        txtPOP3Port.Text = dr.Field<string>("SettingValue");
+                    }
+                    else if (dr.Field<string>("SettingName") == "POP3_IMPS_Host")
+                    {
+                        txtPOP3Host.Text = dr.Field<string>("SettingValue");
+                    }
+                }              
             }
         }
         private void displayApplicationConfig()

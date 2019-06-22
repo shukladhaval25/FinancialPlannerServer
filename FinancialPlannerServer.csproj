@@ -33,8 +33,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="FinancialPlanner.Common">
-      <HintPath>..\..\FinancialPlanner.Common\obj\Debug\FinancialPlanner.Common.dll</HintPath>
+    <Reference Include="FinancialPlanner.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\FinancialPlanner.Common\bin\Debug\FinancialPlanner.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\FinancialPlanner\bin\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

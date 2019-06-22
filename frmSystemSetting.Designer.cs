@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSystemSetting));
             this.grpEmailSetting = new System.Windows.Forms.GroupBox();
             this.tabEmailSetting = new System.Windows.Forms.TabControl();
@@ -36,7 +35,7 @@
             this.lblSMTPTitle = new System.Windows.Forms.Label();
             this.txtFromEmail = new System.Windows.Forms.TextBox();
             this.btnSaveSMTPSetting = new System.Windows.Forms.Button();
-            this.imgCollection16x16 = new System.Windows.Forms.ImageList(this.components);
+            this.imgCollection16x16 = new System.Windows.Forms.ImageList();
             this.chkIsSSL = new System.Windows.Forms.CheckBox();
             this.btnRestoreDefault = new System.Windows.Forms.Button();
             this.lblFromEmail = new System.Windows.Forms.Label();
@@ -69,7 +68,7 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearchEmailArticle = new System.Windows.Forms.TextBox();
             this.lblArticleTitle = new System.Windows.Forms.Label();
-            this.imglist30x30 = new System.Windows.Forms.ImageList(this.components);
+            this.imglist30x30 = new System.Windows.Forms.ImageList();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnFindfolder = new System.Windows.Forms.Button();
             this.btnAppPathSave = new System.Windows.Forms.Button();
@@ -77,6 +76,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.folderBrowserDiallog = new System.Windows.Forms.FolderBrowserDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.txtPOP3Host = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtPOP3Port = new System.Windows.Forms.TextBox();
             this.grpEmailSetting.SuspendLayout();
             this.tabEmailSetting.SuspendLayout();
             this.tabpageSMTPSetting.SuspendLayout();
@@ -115,6 +118,10 @@
             // 
             // tabpageSMTPSetting
             // 
+            this.tabpageSMTPSetting.Controls.Add(this.txtPOP3Host);
+            this.tabpageSMTPSetting.Controls.Add(this.label8);
+            this.tabpageSMTPSetting.Controls.Add(this.label9);
+            this.tabpageSMTPSetting.Controls.Add(this.txtPOP3Port);
             this.tabpageSMTPSetting.Controls.Add(this.lblSMTPTitle);
             this.tabpageSMTPSetting.Controls.Add(this.txtFromEmail);
             this.tabpageSMTPSetting.Controls.Add(this.btnSaveSMTPSetting);
@@ -135,7 +142,7 @@
             this.tabpageSMTPSetting.Padding = new System.Windows.Forms.Padding(3);
             this.tabpageSMTPSetting.Size = new System.Drawing.Size(848, 281);
             this.tabpageSMTPSetting.TabIndex = 0;
-            this.tabpageSMTPSetting.Text = "SMTP Setting";
+            this.tabpageSMTPSetting.Text = "Mail Server Setting";
             this.tabpageSMTPSetting.ToolTipText = "This is email setting for outgoing.";
             this.tabpageSMTPSetting.UseVisualStyleBackColor = true;
             // 
@@ -148,14 +155,14 @@
             this.lblSMTPTitle.Name = "lblSMTPTitle";
             this.lblSMTPTitle.Size = new System.Drawing.Size(197, 15);
             this.lblSMTPTitle.TabIndex = 13;
-            this.lblSMTPTitle.Text = "Set SMTP setting for sending ";
+            this.lblSMTPTitle.Text = "Set Mail Server Setting for sending ";
             // 
             // txtFromEmail
             // 
             this.txtFromEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFromEmail.Location = new System.Drawing.Point(99, 57);
             this.txtFromEmail.Name = "txtFromEmail";
-            this.txtFromEmail.Size = new System.Drawing.Size(467, 21);
+            this.txtFromEmail.Size = new System.Drawing.Size(489, 21);
             this.txtFromEmail.TabIndex = 1;
             // 
             // btnSaveSMTPSetting
@@ -613,6 +620,42 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // txtPOP3Host
+            // 
+            this.txtPOP3Host.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPOP3Host.Location = new System.Drawing.Point(407, 84);
+            this.txtPOP3Host.Name = "txtPOP3Host";
+            this.txtPOP3Host.Size = new System.Drawing.Size(181, 21);
+            this.txtPOP3Host.TabIndex = 7;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(298, 87);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(103, 15);
+            this.label8.TabIndex = 14;
+            this.label8.Text = "POP3/IMPS Host:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(298, 114);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(100, 15);
+            this.label9.TabIndex = 16;
+            this.label9.Text = "POP3/IPMS Port:";
+            // 
+            // txtPOP3Port
+            // 
+            this.txtPOP3Port.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPOP3Port.Location = new System.Drawing.Point(407, 111);
+            this.txtPOP3Port.Name = "txtPOP3Port";
+            this.txtPOP3Port.Size = new System.Drawing.Size(181, 21);
+            this.txtPOP3Port.TabIndex = 8;
+            // 
             // frmSystemSetting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -690,5 +733,9 @@
         private System.Windows.Forms.TreeView trvArticle;
         private System.Windows.Forms.ComboBox cmbGroup;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.TextBox txtPOP3Host;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtPOP3Port;
     }
 }
