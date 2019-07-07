@@ -33,6 +33,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.Data.v16.2, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v16.2.Core, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v16.2, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraDiagram.v16.2, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v16.2, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v16.2, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="FinancialPlanner.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\FinancialPlanner.Common\bin\Debug\FinancialPlanner.Common.dll</HintPath>
@@ -99,6 +105,26 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RiskProfile\DefaultReiskProfile.cs" />
+    <Compile Include="RiskProfile\frmRiskProfiledReturnList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RiskProfile\frmRiskProfiledReturnList.Designer.cs">
+      <DependentUpon>frmRiskProfiledReturnList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RiskProfile\frmRiskProfileReturn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RiskProfile\frmRiskProfileReturn.Designer.cs">
+      <DependentUpon>frmRiskProfileReturn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RiskProfile\InvestmentByfercationInfo.cs" />
+    <Compile Include="RiskProfile\RiskProfileReturn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RiskProfile\RiskProfileReturn.Designer.cs">
+      <DependentUpon>RiskProfileReturn.cs</DependentUpon>
+    </Compile>
     <Compile Include="Security\RolesSecurity.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +171,7 @@
     <EmbeddedResource Include="frmSystemSetting.resx">
       <DependentUpon>frmSystemSetting.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -155,6 +182,15 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="RiskProfile\frmRiskProfiledReturnList.resx">
+      <DependentUpon>frmRiskProfiledReturnList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RiskProfile\frmRiskProfileReturn.resx">
+      <DependentUpon>frmRiskProfileReturn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RiskProfile\RiskProfileReturn.resx">
+      <DependentUpon>RiskProfileReturn.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Security\RolesSecurity.resx">
       <DependentUpon>RolesSecurity.cs</DependentUpon>
     </EmbeddedResource>
@@ -323,6 +359,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-museum-16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-refresh-16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-sales-performance-60.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

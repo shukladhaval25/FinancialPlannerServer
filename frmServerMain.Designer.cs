@@ -47,6 +47,7 @@
             this.tbtnAuditTrail = new System.Windows.Forms.ToolStripButton();
             this.tbtnReports = new System.Windows.Forms.ToolStripButton();
             this.tbtnNotification = new System.Windows.Forms.ToolStripButton();
+            this.tbtnRiskProfile = new System.Windows.Forms.ToolStripButton();
             this.toolStripSystemSetting = new System.Windows.Forms.ToolStripSplitButton();
             this.SystemSetting = new System.Windows.Forms.ToolStripMenuItem();
             this.companyInformationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -159,6 +160,7 @@
             this.tbtnReports,
             this.tbtnNotification,
             this.toolStripSeparator3,
+            this.tbtnRiskProfile,
             this.toolStripSystemSetting,
             this.tbtnLogout});
             this.toolBarMain.Location = new System.Drawing.Point(0, 0);
@@ -254,7 +256,7 @@
             this.tbtnAuditTrail.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.tbtnAuditTrail.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tbtnAuditTrail.Name = "tbtnAuditTrail";
-            this.tbtnAuditTrail.Size = new System.Drawing.Size(66, 79);
+            this.tbtnAuditTrail.Size = new System.Drawing.Size(65, 79);
             this.tbtnAuditTrail.Text = "Audit Trail";
             this.tbtnAuditTrail.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.tbtnAuditTrail.ToolTipText = "Audit Trail";
@@ -282,6 +284,15 @@
             this.tbtnNotification.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.tbtnNotification.ToolTipText = "Notification";
             this.tbtnNotification.Visible = false;
+            // 
+            // tbtnRiskProfile
+            // 
+            this.tbtnRiskProfile.Image = global::FinancialPlannerServer.Properties.Resources.icons8_sales_performance_60;
+            this.tbtnRiskProfile.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tbtnRiskProfile.Name = "tbtnRiskProfile";
+            this.tbtnRiskProfile.Size = new System.Drawing.Size(85, 79);
+            this.tbtnRiskProfile.Text = "Risk Profile";
+            this.tbtnRiskProfile.Click += new System.EventHandler(this.tbtnRiskProfile_Click);
             // 
             // toolStripSystemSetting
             // 
@@ -514,5 +525,6 @@
         private System.Windows.Forms.ToolStripSplitButton toolStripSystemSetting;
         private System.Windows.Forms.ToolStripMenuItem SystemSetting;
         private System.Windows.Forms.ToolStripMenuItem companyInformationToolStripMenuItem;
+        private System.Windows.Forms.ToolStripButton tbtnRiskProfile;
     }
 }

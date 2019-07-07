@@ -21,6 +21,7 @@ namespace FinancialPlannerServer
         private AuditTrail.AuditTrail _auditTrail;
         private Security.RolesSecurity _rolesSecurity;
         private EmailJob.EmailScheduleList _emailScheduleList;
+        private RiskProfile.frmRiskProfiledReturnList _riskProfileList;
         private frmCompany _company;
         public frmServerMain()
         {
@@ -192,6 +193,25 @@ namespace FinancialPlannerServer
                 pnlContainer.Controls.Add(_company);
                 _company.Dock = DockStyle.Fill;
                 _company.Show();
+            }
+        }
+
+        private void tbtnRiskProfile_Click(object sender, EventArgs e)
+        {
+            if (pnlContainer.Controls.Contains(_riskProfileList))
+            {
+                pnlContainer.Controls[pnlContainer.Controls.GetChildIndex(_riskProfileList)].Show();
+            }
+            else
+            {
+                if (_riskProfileList == null || _riskProfileList.IsDisposed)
+                    _riskProfileList = new RiskProfile.frmRiskProfiledReturnList();
+
+                _riskProfileList.TopLevel = false;
+                _riskProfileList.BringToFront();
+                pnlContainer.Controls.Add(_riskProfileList);
+                _riskProfileList.Dock = DockStyle.Fill;
+                _riskProfileList.Show();
             }
         }
     }
