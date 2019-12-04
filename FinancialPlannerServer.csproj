@@ -39,6 +39,8 @@
     <Reference Include="DevExpress.XtraDiagram.v16.2, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v16.2, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGrid.v16.2, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v16.2, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeList.v16.2, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="FinancialPlanner.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\FinancialPlanner.Common\bin\Debug\FinancialPlanner.Common.dll</HintPath>
@@ -125,13 +127,20 @@
     <Compile Include="RiskProfile\RiskProfileReturn.Designer.cs">
       <DependentUpon>RiskProfileReturn.cs</DependentUpon>
     </Compile>
+    <Compile Include="Security\FormsInfo.cs" />
+    <Compile Include="Security\Permission.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Security\Permission.Designer.cs">
+      <DependentUpon>Permission.cs</DependentUpon>
+    </Compile>
     <Compile Include="Security\RolesSecurity.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Security\RolesSecurity.Designer.cs">
       <DependentUpon>RolesSecurity.cs</DependentUpon>
     </Compile>
-    <Compile Include="Security\RolesSecurityInfo.cs" />
+    <Compile Include="Security\RolesPermissionnfo.cs" />
     <Compile Include="SetAdminAccount.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -190,6 +199,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RiskProfile\RiskProfileReturn.resx">
       <DependentUpon>RiskProfileReturn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Security\Permission.resx">
+      <DependentUpon>Permission.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Security\RolesSecurity.resx">
       <DependentUpon>RolesSecurity.cs</DependentUpon>

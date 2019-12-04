@@ -1,5 +1,6 @@
 ﻿using FinancialPlanner.Common;
 using FinancialPlanner.Common.Model;
+using FinancialPlannerServer.Security;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,6 +23,7 @@ namespace FinancialPlannerServer
         private Security.RolesSecurity _rolesSecurity;
         private EmailJob.EmailScheduleList _emailScheduleList;
         private RiskProfile.frmRiskProfiledReturnList _riskProfileList;
+        private Permission permission;
         private frmCompany _company;
         public frmServerMain()
         {
@@ -212,6 +214,24 @@ namespace FinancialPlannerServer
                 pnlContainer.Controls.Add(_riskProfileList);
                 _riskProfileList.Dock = DockStyle.Fill;
                 _riskProfileList.Show();
+            }
+        }
+
+        private void tbtnRoles_Click(object sender, EventArgs e)
+        {
+            if (pnlContainer.Controls.Contains(permission))
+            {
+                pnlContainer.Controls[pnlContainer.Controls.GetChildIndex(permission)].Show();
+            }
+            else
+            {
+                if (permission == null || permission.IsDisposed)
+                    permission = new Permission();
+
+                permission.TopLevel = false;
+                pnlContainer.Controls.Add(permission);
+                permission.Dock = DockStyle.Fill;
+                permission.Show();
             }
         }
     }
