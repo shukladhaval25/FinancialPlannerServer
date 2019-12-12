@@ -50,7 +50,7 @@
             this.grpUserLogin.Controls.Add(this.txtUserName);
             this.grpUserLogin.Controls.Add(this.label2);
             this.grpUserLogin.Controls.Add(this.label1);
-            this.grpUserLogin.Location = new System.Drawing.Point(40, 18);
+            this.grpUserLogin.Location = new System.Drawing.Point(9, 8);
             this.grpUserLogin.Name = "grpUserLogin";
             this.grpUserLogin.Size = new System.Drawing.Size(354, 116);
             this.grpUserLogin.TabIndex = 0;
@@ -112,7 +112,7 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(139, 149);
+            this.btnLogin.Location = new System.Drawing.Point(108, 139);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(75, 23);
             this.btnLogin.TabIndex = 4;
@@ -122,7 +122,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(220, 149);
+            this.btnCancel.Location = new System.Drawing.Point(189, 139);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 5;
@@ -135,7 +135,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(434, 184);
+            this.ClientSize = new System.Drawing.Size(367, 166);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.grpUserLogin);

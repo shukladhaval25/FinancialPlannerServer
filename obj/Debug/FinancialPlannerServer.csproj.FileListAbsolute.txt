@@ -142,5 +142,4 @@ C:\Application Development\Financial Planner Project\FinancialPlannerServer\bin\
 C:\Application Development\Financial Planner Project\FinancialPlannerServer\bin\Debug\es\DevExpress.Office.v16.2.Core.resources.dll
 C:\Application Development\Financial Planner Project\FinancialPlannerServer\bin\Debug\ja\DevExpress.Office.v16.2.Core.resources.dll
 C:\Application Development\Financial Planner Project\FinancialPlannerServer\bin\Debug\ru\DevExpress.Office.v16.2.Core.resources.dll
-C:\Application Development\Financial Planner Project\FinancialPlannerServer\obj\Debug\FinancialPlannerServer.csprojAssemblyReference.cache
 C:\Application Development\Financial Planner Project\FinancialPlannerServer\obj\Debug\FinancialPlannerServer.Security.Permission.resources

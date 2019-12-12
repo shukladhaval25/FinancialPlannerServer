@@ -29,21 +29,21 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Permission));
-            DevExpress.Utils.SuperToolTip superToolTip6 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem6 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.ToolTipItem toolTipItem6 = new DevExpress.Utils.ToolTipItem();
-            DevExpress.Utils.SuperToolTip superToolTip7 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem7 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.ToolTipItem toolTipItem7 = new DevExpress.Utils.ToolTipItem();
-            DevExpress.Utils.SuperToolTip superToolTip8 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem8 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.ToolTipItem toolTipItem8 = new DevExpress.Utils.ToolTipItem();
-            DevExpress.Utils.SuperToolTip superToolTip9 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem9 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.ToolTipItem toolTipItem9 = new DevExpress.Utils.ToolTipItem();
-            DevExpress.Utils.SuperToolTip superToolTip10 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem10 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.ToolTipItem toolTipItem10 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem1 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.ToolTipItem toolTipItem1 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.SuperToolTip superToolTip2 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem2 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.ToolTipItem toolTipItem2 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.SuperToolTip superToolTip3 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem3 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.ToolTipItem toolTipItem3 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.SuperToolTip superToolTip4 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem4 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.ToolTipItem toolTipItem4 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.SuperToolTip superToolTip5 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem5 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.ToolTipItem toolTipItem5 = new DevExpress.Utils.ToolTipItem();
             this.gridPermission = new DevExpress.XtraGrid.GridControl();
             this.gridViewPermission = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumnFormId = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -70,7 +70,7 @@
             this.gridColumnName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumnIsCustomRole = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
-            this.btnSaveBankAccount = new DevExpress.XtraEditors.SimpleButton();
+            this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridPermission)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewPermission)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckView)).BeginInit();
@@ -117,6 +117,7 @@
             this.gridViewPermission.GridControl = this.gridPermission;
             this.gridViewPermission.GroupCount = 1;
             this.gridViewPermission.Name = "gridViewPermission";
+            this.gridViewPermission.OptionsView.ShowGroupPanel = false;
             this.gridViewPermission.OptionsView.ShowGroupPanelColumnsAsSingleRow = true;
             this.gridViewPermission.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumnGroup, DevExpress.Data.ColumnSortOrder.Ascending)});
@@ -133,6 +134,7 @@
             this.gridColumnFormName.Caption = "Form";
             this.gridColumnFormName.FieldName = "FormName";
             this.gridColumnFormName.Name = "gridColumnFormName";
+            this.gridColumnFormName.OptionsColumn.ReadOnly = true;
             this.gridColumnFormName.Visible = true;
             this.gridColumnFormName.VisibleIndex = 0;
             // 
@@ -252,17 +254,18 @@
             this.btnDelete.Location = new System.Drawing.Point(260, 427);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(25, 23);
-            toolTipTitleItem6.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            toolTipTitleItem6.Appearance.Options.UseImage = true;
-            toolTipTitleItem6.Image = ((System.Drawing.Image)(resources.GetObject("toolTipTitleItem6.Image")));
-            toolTipTitleItem6.Text = "Delete Client";
-            toolTipItem6.LeftIndent = 6;
-            toolTipItem6.Text = "To delete selected client record click here.";
-            superToolTip6.Items.Add(toolTipTitleItem6);
-            superToolTip6.Items.Add(toolTipItem6);
-            this.btnDelete.SuperTip = superToolTip6;
+            toolTipTitleItem1.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            toolTipTitleItem1.Appearance.Options.UseImage = true;
+            toolTipTitleItem1.Image = ((System.Drawing.Image)(resources.GetObject("toolTipTitleItem1.Image")));
+            toolTipTitleItem1.Text = "Delete Client";
+            toolTipItem1.LeftIndent = 6;
+            toolTipItem1.Text = "To delete selected client record click here.";
+            superToolTip1.Items.Add(toolTipTitleItem1);
+            superToolTip1.Items.Add(toolTipItem1);
+            this.btnDelete.SuperTip = superToolTip1;
             this.btnDelete.TabIndex = 9;
             this.btnDelete.ToolTip = "Delete Client";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnEdit
             // 
@@ -271,17 +274,18 @@
             this.btnEdit.Location = new System.Drawing.Point(229, 427);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(25, 23);
-            toolTipTitleItem7.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
-            toolTipTitleItem7.Appearance.Options.UseImage = true;
-            toolTipTitleItem7.Image = ((System.Drawing.Image)(resources.GetObject("toolTipTitleItem7.Image")));
-            toolTipTitleItem7.Text = "Edit Customer";
-            toolTipItem7.LeftIndent = 6;
-            toolTipItem7.Text = "To modify selected client information click here.";
-            superToolTip7.Items.Add(toolTipTitleItem7);
-            superToolTip7.Items.Add(toolTipItem7);
-            this.btnEdit.SuperTip = superToolTip7;
+            toolTipTitleItem2.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            toolTipTitleItem2.Appearance.Options.UseImage = true;
+            toolTipTitleItem2.Image = ((System.Drawing.Image)(resources.GetObject("toolTipTitleItem2.Image")));
+            toolTipTitleItem2.Text = "Edit Customer";
+            toolTipItem2.LeftIndent = 6;
+            toolTipItem2.Text = "To modify selected client information click here.";
+            superToolTip2.Items.Add(toolTipTitleItem2);
+            superToolTip2.Items.Add(toolTipItem2);
+            this.btnEdit.SuperTip = superToolTip2;
             this.btnEdit.TabIndex = 8;
             this.btnEdit.ToolTip = "Edit Client";
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnAdd
             // 
@@ -290,19 +294,20 @@
             this.btnAdd.Location = new System.Drawing.Point(198, 427);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(25, 23);
-            toolTipTitleItem8.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
-            toolTipTitleItem8.Appearance.Options.UseImage = true;
-            toolTipTitleItem8.Image = ((System.Drawing.Image)(resources.GetObject("toolTipTitleItem8.Image")));
-            toolTipTitleItem8.Text = "New Client";
-            toolTipItem8.LeftIndent = 6;
-            toolTipItem8.Text = "To add new client inforamtion click here.";
-            superToolTip8.Items.Add(toolTipTitleItem8);
-            superToolTip8.Items.Add(toolTipItem8);
-            this.btnAdd.SuperTip = superToolTip8;
+            toolTipTitleItem3.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
+            toolTipTitleItem3.Appearance.Options.UseImage = true;
+            toolTipTitleItem3.Image = ((System.Drawing.Image)(resources.GetObject("toolTipTitleItem3.Image")));
+            toolTipTitleItem3.Text = "New Client";
+            toolTipItem3.LeftIndent = 6;
+            toolTipItem3.Text = "To add new client inforamtion click here.";
+            superToolTip3.Items.Add(toolTipTitleItem3);
+            superToolTip3.Items.Add(toolTipItem3);
+            this.btnAdd.SuperTip = superToolTip3;
             this.btnAdd.TabIndex = 7;
             this.btnAdd.ToolTip = "Add new client";
             this.btnAdd.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Application;
             this.btnAdd.ToolTipTitle = "New Client";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // gridControlRole
             // 
@@ -325,6 +330,7 @@
             this.gridColumnIsCustomRole});
             this.gridViewRole.GridControl = this.gridControlRole;
             this.gridViewRole.Name = "gridViewRole";
+            this.gridViewRole.OptionsBehavior.ReadOnly = true;
             this.gridViewRole.OptionsFind.AlwaysVisible = true;
             this.gridViewRole.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.Never;
             this.gridViewRole.OptionsView.ShowGroupPanel = false;
@@ -354,42 +360,44 @@
             // btnCancel
             // 
             this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancel.Enabled = false;
             this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
             this.btnCancel.Location = new System.Drawing.Point(957, 439);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(62, 23);
-            toolTipTitleItem9.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
-            toolTipTitleItem9.Appearance.Options.UseImage = true;
-            toolTipTitleItem9.Image = ((System.Drawing.Image)(resources.GetObject("toolTipTitleItem9.Image")));
-            toolTipTitleItem9.Text = "Cancel";
-            toolTipItem9.LeftIndent = 6;
-            toolTipItem9.Text = "To cancel changes click here.";
-            superToolTip9.Items.Add(toolTipTitleItem9);
-            superToolTip9.Items.Add(toolTipItem9);
-            this.btnCancel.SuperTip = superToolTip9;
+            toolTipTitleItem4.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
+            toolTipTitleItem4.Appearance.Options.UseImage = true;
+            toolTipTitleItem4.Image = ((System.Drawing.Image)(resources.GetObject("toolTipTitleItem4.Image")));
+            toolTipTitleItem4.Text = "Cancel";
+            toolTipItem4.LeftIndent = 6;
+            toolTipItem4.Text = "To cancel changes click here.";
+            superToolTip4.Items.Add(toolTipTitleItem4);
+            superToolTip4.Items.Add(toolTipItem4);
+            this.btnCancel.SuperTip = superToolTip4;
             this.btnCancel.TabIndex = 43;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // btnSaveBankAccount
+            // btnSave
             // 
-            this.btnSaveBankAccount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSaveBankAccount.Image = ((System.Drawing.Image)(resources.GetObject("btnSaveBankAccount.Image")));
-            this.btnSaveBankAccount.Location = new System.Drawing.Point(894, 439);
-            this.btnSaveBankAccount.Name = "btnSaveBankAccount";
-            this.btnSaveBankAccount.Size = new System.Drawing.Size(57, 23);
-            toolTipTitleItem10.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
-            toolTipTitleItem10.Appearance.Options.UseImage = true;
-            toolTipTitleItem10.Image = ((System.Drawing.Image)(resources.GetObject("toolTipTitleItem10.Image")));
-            toolTipTitleItem10.Text = "Save";
-            toolTipItem10.LeftIndent = 6;
-            toolTipItem10.Text = "To save role && permission click here.";
-            superToolTip10.Items.Add(toolTipTitleItem10);
-            superToolTip10.Items.Add(toolTipItem10);
-            this.btnSaveBankAccount.SuperTip = superToolTip10;
-            this.btnSaveBankAccount.TabIndex = 42;
-            this.btnSaveBankAccount.Text = "Save";
-            this.btnSaveBankAccount.Click += new System.EventHandler(this.btnSave_Click);
+            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSave.Enabled = false;
+            this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
+            this.btnSave.Location = new System.Drawing.Point(894, 439);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(57, 23);
+            toolTipTitleItem5.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
+            toolTipTitleItem5.Appearance.Options.UseImage = true;
+            toolTipTitleItem5.Image = ((System.Drawing.Image)(resources.GetObject("toolTipTitleItem5.Image")));
+            toolTipTitleItem5.Text = "Save";
+            toolTipItem5.LeftIndent = 6;
+            toolTipItem5.Text = "To save role && permission click here.";
+            superToolTip5.Items.Add(toolTipTitleItem5);
+            superToolTip5.Items.Add(toolTipItem5);
+            this.btnSave.SuperTip = superToolTip5;
+            this.btnSave.TabIndex = 42;
+            this.btnSave.Text = "Save";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // Permission
             // 
@@ -397,7 +405,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1035, 473);
             this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnSaveBankAccount);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.groupControl2);
             this.Controls.Add(this.groupControl1);
             this.Name = "Permission";
@@ -445,7 +453,7 @@
         private DevExpress.XtraEditors.SimpleButton btnEdit;
         private DevExpress.XtraEditors.SimpleButton btnAdd;
         private DevExpress.XtraEditors.SimpleButton btnCancel;
-        private DevExpress.XtraEditors.SimpleButton btnSaveBankAccount;
+        private DevExpress.XtraEditors.SimpleButton btnSave;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumnId;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumnName;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumnIsCustomRole;
