@@ -1,5 +1,8 @@
-﻿using FinancialPlanner.Common.DataEncrypterDecrypter;
+﻿using FinancialPlanner.Common.DataConversion;
+using FinancialPlanner.Common.DataEncrypterDecrypter;
 using FinancialPlanner.Common.Model;
+using FinancialPlanner.Common.Permission;
+using FinancialPlannerServer.Security;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -33,8 +36,40 @@ namespace FinancialPlannerServer.UserInfo
 
         private void frmUser_Load(object sender, EventArgs e)
         {
+            fillRolesPermission();
             if (_user != null)
                 fillUserInfo();
+            
+        }
+
+        private void fillRolesPermission()
+        {
+            List<Role> roles = (List<Role>) new RolesPermissionnfo().GetAll();
+
+            lookUpRole.Properties.DataSource = roles;
+            lookUpRole.Properties.ValueMember = "Id";
+            lookUpRole.Properties.DisplayMember = "Name";
+
+            //DataTable dtRole = ListtoDataTable.ToDataTable(roles);
+            //foreach(DataColumn dataColumn in dtRole.Columns)
+            //{
+
+            //    if (dataColumn.ColumnName != "Name" &&
+            //        dataColumn.ColumnName != "Id")
+            //    {
+            //        dtRole.Columns.Remove(dataColumn);
+            //    }
+            //}
+
+            //lookUpRole.Properties.DataSource = dtRole;
+            //lookUpRole.Properties.ValueMember = "Id";
+            //lookUpRole.Properties.DisplayMember = "Name";
+            //lookUpRole.Properties.Columns["IsCustomRole"].Visible = false;
+            //lookUpRole.Properties.Columns["CreatedOn"].Visible = false;
+            //lookUpRole.Properties.Columns["CreatedBy"].Visible = false;
+            //lookUpRole.Properties.Columns["UpdatedOn"].Visible = false;
+            //lookUpRole.Properties.Columns["UpdatedBy"].Visible = false;
+
         }
 
         private void fillUserInfo()
@@ -45,6 +80,7 @@ namespace FinancialPlannerServer.UserInfo
             txtPassword.Text = CryptoEngine.Decrypt(_user.Password);
             lblConfirmPassword.Visible = false;
             txtConfirmPassword.Visible = false;
+            lookUpRole.EditValue = _user.RoleId;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -55,6 +91,11 @@ namespace FinancialPlannerServer.UserInfo
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(lookUpRole.Text))
+            {
+                MessageBox.Show("Please assign role to user.", "Role", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             if (_isEditModeOn)
             {
                 updateUserDate();
@@ -82,7 +123,8 @@ namespace FinancialPlannerServer.UserInfo
                     CreatedBy = Program.CurrentUser.Id,
                     UpdatedOn =  DateTime.Parse( DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss")),
                     UpdatedBy = Program.CurrentUser.Id,
-                    UpdatedByUserName = Program.CurrentUser.UserName
+                    UpdatedByUserName = Program.CurrentUser.UserName,
+                    RoleId = int.Parse(lookUpRole.EditValue.ToString())
                 };
                 string DATA =  jsonSerialization.SerializeToString<User>(user);
 
@@ -120,7 +162,8 @@ namespace FinancialPlannerServer.UserInfo
                 Password = FinancialPlanner.Common.DataEncrypterDecrypter.CryptoEngine.Encrypt(txtPassword.Text),
                 UpdatedOn = DateTime.Parse( DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss")),
                 UpdatedBy = Program.CurrentUser.Id,
-                UpdatedByUserName = Program.CurrentUser.UserName
+                UpdatedByUserName = Program.CurrentUser.UserName,
+                RoleId = int.Parse(lookUpRole.EditValue.ToString())
             };
 
             string DATA =  jsonSerialization.SerializeToString<User>(user);

@@ -44,6 +44,8 @@
             // 
             // grpUserLogin
             // 
+            this.grpUserLogin.Controls.Add(this.btnCancel);
+            this.grpUserLogin.Controls.Add(this.btnLogin);
             this.grpUserLogin.Controls.Add(this.pictureBox1);
             this.grpUserLogin.Controls.Add(this.lnkForgotPassword);
             this.grpUserLogin.Controls.Add(this.txtPassword);
@@ -52,7 +54,7 @@
             this.grpUserLogin.Controls.Add(this.label1);
             this.grpUserLogin.Location = new System.Drawing.Point(9, 8);
             this.grpUserLogin.Name = "grpUserLogin";
-            this.grpUserLogin.Size = new System.Drawing.Size(354, 116);
+            this.grpUserLogin.Size = new System.Drawing.Size(354, 122);
             this.grpUserLogin.TabIndex = 0;
             this.grpUserLogin.TabStop = false;
             // 
@@ -112,7 +114,7 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(108, 139);
+            this.btnLogin.Location = new System.Drawing.Point(177, 86);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(75, 23);
             this.btnLogin.TabIndex = 4;
@@ -122,7 +124,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(189, 139);
+            this.btnCancel.Location = new System.Drawing.Point(258, 86);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 5;
@@ -135,9 +137,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(367, 166);
-            this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnLogin);
+            this.ClientSize = new System.Drawing.Size(372, 136);
             this.Controls.Add(this.grpUserLogin);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

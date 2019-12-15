@@ -36,8 +36,7 @@ namespace FinancialPlannerServer.Security
             dtForms.Columns.Add("View", Type.GetType("System.Boolean"));
             dtForms.Columns.Add("Add", Type.GetType("System.Boolean"));
             dtForms.Columns.Add("Update", Type.GetType("System.Boolean"));
-            dtForms.Columns.Add("Delete", Type.GetType("System.Boolean"));
-            dtForms.Rows[0]["View"] = true;
+            dtForms.Columns.Add("Delete", Type.GetType("System.Boolean"));            
             gridPermission.DataSource = dtForms;
         }
 
@@ -67,6 +66,7 @@ namespace FinancialPlannerServer.Security
             List<RolePermission> rolePermissions = new List<RolePermission>();
             Role role = new Role();
             role.Name = txtRoleName.Text;
+            role.IsCustomRole = true;
             role.CreatedOn = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss"));
             role.CreatedBy = Program.CurrentUser.Id;
             role.UpdatedOn = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss"));
@@ -79,7 +79,7 @@ namespace FinancialPlannerServer.Security
             RolesPermissionnfo rolesPermissionnfo = new RolesPermissionnfo();
             if (txtRoleName.Tag.ToString() == "0")
             {
-                if (rolesPermissionnfo.Add(role) > 0)
+                if (rolesPermissionnfo.Add(role))
                 {
                     DevExpress.XtraEditors.XtraMessageBox.Show("Record Save Successfully");
                     loadRole();
@@ -105,10 +105,12 @@ namespace FinancialPlannerServer.Security
 
         private void getRolePermission(List<RolePermission> rolePermissions)
         {
-            for (int rowIndex = 0; rowIndex < gridViewPermission.RowCount; rowIndex++)
+            gridViewPermission.ExpandAllGroups();
+            int groupCount = gridViewPermission.GroupCount;
+            for (int rowIndex = 0; rowIndex < (gridViewPermission.DataRowCount); rowIndex++)
             {
                 bool isView, isAdd, isUpdate, isDelete = false;
-
+                string name = gridViewPermission.GetRowCellValue(rowIndex, "FormName").ToString();
                 isView = gridViewPermission.GetRowCellValue(rowIndex, "View") == DBNull.Value ? false :
                         (bool)gridViewPermission.GetRowCellValue(rowIndex, "View");
                 if (isView)

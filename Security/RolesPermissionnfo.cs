@@ -62,7 +62,7 @@ namespace FinancialPlannerServer.Security
             Logger.LogDebug(debuggerInfo);
         }
 
-        public int Add(Role role)
+        public bool Add(Role role)
         {
             try
             {
@@ -71,8 +71,8 @@ namespace FinancialPlannerServer.Security
                 RestAPIExecutor restApiExecutor = new RestAPIExecutor();
                 JSONSerialization jSON = new JSONSerialization();
                 string jsonStr = jSON.SerializeToString<Role>(role);
-                var restResult = restApiExecutor.Execute<Role>(apiurl, role, "POST");
-                return int.Parse(restResult.ToString());
+                restApiExecutor.Execute<Role>(apiurl, role, "POST");
+                return true;               
             }
             catch (Exception ex)
             {
@@ -80,7 +80,7 @@ namespace FinancialPlannerServer.Security
                 StackFrame sf = st.GetFrame(0);
                 MethodBase currentMethodName = sf.GetMethod();
                 LogDebug(currentMethodName.Name, ex);
-                return 0;
+                return false;
             }
         }
         public bool Update(Role role)

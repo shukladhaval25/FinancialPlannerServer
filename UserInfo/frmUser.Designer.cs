@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUser));
             this.grpUserInfo = new System.Windows.Forms.GroupBox();
+            this.lookUpRole = new DevExpress.XtraEditors.LookUpEdit();
+            this.label1 = new System.Windows.Forms.Label();
             this.txtConfirmPassword = new System.Windows.Forms.TextBox();
             this.lblConfirmPassword = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
@@ -42,13 +44,16 @@
             this.lblFirstName = new System.Windows.Forms.Label();
             this.lblUserName = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
             this.imgCollection16x16 = new System.Windows.Forms.ImageList(this.components);
+            this.btnCancel = new System.Windows.Forms.Button();
             this.grpUserInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpRole.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // grpUserInfo
             // 
+            this.grpUserInfo.Controls.Add(this.lookUpRole);
+            this.grpUserInfo.Controls.Add(this.label1);
             this.grpUserInfo.Controls.Add(this.txtConfirmPassword);
             this.grpUserInfo.Controls.Add(this.lblConfirmPassword);
             this.grpUserInfo.Controls.Add(this.txtPassword);
@@ -62,10 +67,36 @@
             this.grpUserInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpUserInfo.Location = new System.Drawing.Point(6, 6);
             this.grpUserInfo.Name = "grpUserInfo";
-            this.grpUserInfo.Size = new System.Drawing.Size(484, 209);
+            this.grpUserInfo.Size = new System.Drawing.Size(484, 243);
             this.grpUserInfo.TabIndex = 0;
             this.grpUserInfo.TabStop = false;
             this.grpUserInfo.Text = "User Information";
+            // 
+            // lookUpRole
+            // 
+            this.lookUpRole.Location = new System.Drawing.Point(154, 207);
+            this.lookUpRole.Name = "lookUpRole";
+            this.lookUpRole.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lookUpRole.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Id", "Id", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Name", "Name"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("IsCustomRole", "IsCustomRole", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("CreatedOn", "CreatedOn", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("CreatedBy", "CreatedBy", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("UpdatedBy", "UpdatedBy", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("UpdatedOn", "UpdatedOn", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default)});
+            this.lookUpRole.Size = new System.Drawing.Size(268, 20);
+            this.lookUpRole.TabIndex = 11;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(23, 210);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(122, 16);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Role && Permission:";
             // 
             // txtConfirmPassword
             // 
@@ -154,26 +185,13 @@
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSave.ImageKey = "icons8-save-close-16.png";
             this.btnSave.ImageList = this.imgCollection16x16;
-            this.btnSave.Location = new System.Drawing.Point(334, 225);
+            this.btnSave.Location = new System.Drawing.Point(334, 255);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 1;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCancel.ImageKey = "icons8-cancel-16.png";
-            this.btnCancel.ImageList = this.imgCollection16x16;
-            this.btnCancel.Location = new System.Drawing.Point(415, 225);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 2;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // imgCollection16x16
             // 
@@ -191,11 +209,24 @@
             this.imgCollection16x16.Images.SetKeyName(9, "icons8-automation-30.png");
             this.imgCollection16x16.Images.SetKeyName(10, "Run-1.png");
             // 
+            // btnCancel
+            // 
+            this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCancel.ImageKey = "icons8-cancel-16.png";
+            this.btnCancel.ImageList = this.imgCollection16x16;
+            this.btnCancel.Location = new System.Drawing.Point(415, 255);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.TabIndex = 2;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
             // frmUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(494, 260);
+            this.ClientSize = new System.Drawing.Size(494, 287);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.grpUserInfo);
@@ -207,6 +238,7 @@
             this.Load += new System.EventHandler(this.frmUser_Load);
             this.grpUserInfo.ResumeLayout(false);
             this.grpUserInfo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpRole.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -227,5 +259,7 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.ImageList imgCollection16x16;
+        private System.Windows.Forms.Label label1;
+        private DevExpress.XtraEditors.LookUpEdit lookUpRole;
     }
 }
