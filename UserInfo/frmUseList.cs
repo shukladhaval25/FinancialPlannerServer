@@ -141,7 +141,11 @@ namespace FinancialPlannerServer.UserInfo
         {
             DataRow dr = getSelectedDataRow();
             int selectedUserId = int.Parse(dtGridUser.SelectedRows[0].Cells["ID"].Value.ToString());
-
+            if (selectedUserId == 1)
+            {
+                MessageBox.Show("Admin user can not delete.", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             User user = convertSelectedRowDataToUser();
 
             FinancialPlanner.Common.JSONSerialization jsonSerialization = new FinancialPlanner.Common.JSONSerialization();
