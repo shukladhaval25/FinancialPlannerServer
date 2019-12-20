@@ -18,6 +18,43 @@ namespace FinancialPlannerServer.Security
         private readonly string ADD_ROLE = "RolePermission/Add";
         private readonly string UPDATE_ROLE = "RolePermission/Update";
         private readonly string DELETE_ROLE = "RolePermission/Delete";
+        private readonly string GETALL_ROLE_BY_ID = "RolePermission/Get?roleId={0}";
+
+        public Role Get(int roleId)
+        {
+            Role role = new Role();
+            try
+            {
+                FinancialPlanner.Common.JSONSerialization jsonSerialization = new FinancialPlanner.Common.JSONSerialization();
+                string apiurl = Program.WebServiceUrl + "/" + (string.Format(GETALL_ROLE_BY_ID, roleId));
+
+                RestAPIExecutor restApiExecutor = new RestAPIExecutor();
+
+                var restResult = restApiExecutor.Execute<Role>(apiurl, null, "GET");
+
+                if (jsonSerialization.IsValidJson(restResult.ToString()))
+                {
+                    role = jsonSerialization.DeserializeFromString<Role>(restResult.ToString());
+                }
+                return role;
+            }
+            catch (System.Net.WebException webException)
+            {
+                if (webException.Message.Equals("The remote server returned an error: (401) Unauthorized."))
+                {
+                    MessageBox.Show("You session has been expired. Please Login again.", "Session Expired", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                return null;
+            }
+            catch (Exception ex)
+            {
+                StackTrace st = new StackTrace();
+                StackFrame sf = st.GetFrame(0);
+                MethodBase currentMethodName = sf.GetMethod();
+                LogDebug(currentMethodName.Name, ex);
+                return null;
+            }
+        }
         public IList<Role> GetAll()
         {
             IList<Role> forms = new List<Role>();

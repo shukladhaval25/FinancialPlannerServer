@@ -139,35 +139,38 @@ namespace FinancialPlannerServer.UserInfo
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            DataRow dr = getSelectedDataRow();
-            int selectedUserId = int.Parse(dtGridUser.SelectedRows[0].Cells["ID"].Value.ToString());
-            if (selectedUserId == 1)
+            if (MessageBox.Show("Are you sure you want to delete this record?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                MessageBox.Show("Admin user can not delete.", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            User user = convertSelectedRowDataToUser();
-
-            FinancialPlanner.Common.JSONSerialization jsonSerialization = new FinancialPlanner.Common.JSONSerialization();
-            string apiurl = Program.WebServiceUrl +"/"+ USER_DELETE_API;
-                     
-            string DATA =  jsonSerialization.SerializeToString<User>(user);
-
-            WebClient client = new WebClient();
-            client.Headers["Content-type"] = "application/json";
-            client.Encoding = Encoding.UTF8;
-            string json = client.UploadString(apiurl,"POST", DATA);
-
-            if (json != null)
-            {
-                var resultObject = jsonSerialization.DeserializeFromString<Result>(json);
-                if (resultObject.IsSuccess)
+                DataRow dr = getSelectedDataRow();
+                int selectedUserId = int.Parse(dtGridUser.SelectedRows[0].Cells["ID"].Value.ToString());
+                if (selectedUserId == 1)
                 {
-                    MessageBox.Show("Record deleted successfully.", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Admin user can not delete.", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
                 }
-                else
+                User user = convertSelectedRowDataToUser();
+
+                FinancialPlanner.Common.JSONSerialization jsonSerialization = new FinancialPlanner.Common.JSONSerialization();
+                string apiurl = Program.WebServiceUrl + "/" + USER_DELETE_API;
+
+                string DATA = jsonSerialization.SerializeToString<User>(user);
+
+                WebClient client = new WebClient();
+                client.Headers["Content-type"] = "application/json";
+                client.Encoding = Encoding.UTF8;
+                string json = client.UploadString(apiurl, "POST", DATA);
+
+                if (json != null)
                 {
-                    MessageBox.Show("Error occurred while deleting record.", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    var resultObject = jsonSerialization.DeserializeFromString<Result>(json);
+                    if (resultObject.IsSuccess)
+                    {
+                        MessageBox.Show("Record deleted successfully.", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error occurred while deleting record.", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
         }

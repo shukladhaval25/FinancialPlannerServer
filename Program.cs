@@ -1,4 +1,5 @@
 ﻿using FinancialPlanner.Common.Model;
+using FinancialPlanner.Common.Permission;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,7 @@ namespace FinancialPlannerServer
     {
         private static string _webServiceUrl;
         public static User CurrentUser;
+        public static Role CurrentUserRolePermission;
         public static string WebServiceUrl
         {
             get { return _webServiceUrl; }

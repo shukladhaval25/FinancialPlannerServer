@@ -1,5 +1,7 @@
 ﻿using FinancialPlanner.Common;
 using FinancialPlanner.Common.Model;
+using FinancialPlanner.Common.Permission;
+using FinancialPlannerServer.Security;
 using System;
 using System.IO;
 using System.Net;
@@ -40,6 +42,13 @@ namespace FinancialPlannerServer
                 if (resultObject.IsSuccess && resultObject.Value != null)
                 {
                     Program.CurrentUser = resultObject.Value;
+                    Program.CurrentUserRolePermission = getCurrentUserRolePermission();
+                    if (Program.CurrentUserRolePermission.Name != "Admin")
+                    {
+                        MessageBox.Show("You don't have permission to access this application. Please contact to Administrator", "Permission", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                        return;
+                    }
+                    
                     frmServerMain frmserMain = new frmServerMain();
                     this.Visible = false;
                     frmserMain.ShowDialog();
@@ -50,7 +59,16 @@ namespace FinancialPlannerServer
 
             }
         }
-
+        private Role getCurrentUserRolePermission()
+        {
+            if (Program.CurrentUser != null)
+            {
+                RolesPermissionnfo permissionInfo = new RolesPermissionnfo();
+                Role role = permissionInfo.Get(Program.CurrentUser.RoleId);
+                return role;
+            }
+            return new Role();
+        }
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
