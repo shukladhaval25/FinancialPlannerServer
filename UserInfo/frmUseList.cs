@@ -112,7 +112,7 @@ namespace FinancialPlannerServer.UserInfo
         {
             int selectedRowIndex = dtGridUser.SelectedRows[0].Index;
             int selectedUserId = int.Parse(dtGridUser.SelectedRows[0].Cells["ID"].Value.ToString());
-            DataRow[] rows = _dtUser.Select("Id = " + selectedUserId);
+            DataRow[] rows = _dtUser.Select("Id = '" + selectedUserId + "'");
             foreach (DataRow dr in rows)
             {
                 return dr;
