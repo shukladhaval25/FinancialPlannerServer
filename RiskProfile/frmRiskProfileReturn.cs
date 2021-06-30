@@ -93,7 +93,7 @@ namespace FinancialPlannerServer.RiskProfile
             dtGridRiskProfileDetails.Columns[2].ReadOnly = true;
             dtGridRiskProfileDetails.Columns[9].ReadOnly = false;
             dtGridRiskProfileDetails.Columns[2].HeaderText = "Reaming Year";
-            dtGridRiskProfileDetails.Columns[3].HeaderText = "Foreign Investment (%)";
+            dtGridRiskProfileDetails.Columns[3].HeaderText = "Commodities Investment (%)";
             dtGridRiskProfileDetails.Columns[4].HeaderText = "Equity Investment (%)";
             dtGridRiskProfileDetails.Columns[5].HeaderText = "Debt Investment (%)";
             dtGridRiskProfileDetails.Columns[6].HeaderText = "Foreign Return (%)";

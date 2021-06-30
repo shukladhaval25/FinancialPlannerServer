@@ -143,3 +143,41 @@ C:\Application Development\Financial Planner Project\FinancialPlannerServer\bin\
 C:\Application Development\Financial Planner Project\FinancialPlannerServer\bin\Debug\ja\DevExpress.Office.v16.2.Core.resources.dll
 C:\Application Development\Financial Planner Project\FinancialPlannerServer\bin\Debug\ru\DevExpress.Office.v16.2.Core.resources.dll
 C:\Application Development\Financial Planner Project\FinancialPlannerServer\obj\Debug\FinancialPlannerServer.Security.Permission.resources
+C:\Application Softwares\FinancialPlannerServer\bin\Debug\FinancialPlannerServer.exe.config
+C:\Application Softwares\FinancialPlannerServer\bin\Debug\FinancialPlannerServer.exe
+C:\Application Softwares\FinancialPlannerServer\bin\Debug\FinancialPlannerServer.pdb
+C:\Application Softwares\FinancialPlannerServer\bin\Debug\FinancialPlanner.Common.dll
+C:\Application Softwares\FinancialPlannerServer\bin\Debug\Newtonsoft.Json.dll
+C:\Application Softwares\FinancialPlannerServer\bin\Debug\log4net.dll
+C:\Application Softwares\FinancialPlannerServer\bin\Debug\ChilkatDotNet4.dll
+C:\Application Softwares\FinancialPlannerServer\bin\Debug\FinancialPlanner.Common.pdb
+C:\Application Softwares\FinancialPlannerServer\bin\Debug\FinancialPlanner.Common.dll.config
+C:\Application Softwares\FinancialPlannerServer\obj\Debug\FinancialPlannerServer.AuditTrail.AuditTrail.resources
+C:\Application Softwares\FinancialPlannerServer\obj\Debug\FinancialPlannerServer.frmCompany.resources
+C:\Application Softwares\FinancialPlannerServer\obj\Debug\FinancialPlannerServer.EmailJob.EmailScheduleInfo.resources
+C:\Application Softwares\FinancialPlannerServer\obj\Debug\FinancialPlannerServer.EmailJob.EmailScheduleList.resources
+C:\Application Softwares\FinancialPlannerServer\obj\Debug\FinancialPlannerServer.frmLogin.resources
+C:\Application Softwares\FinancialPlannerServer\obj\Debug\FinancialPlannerServer.frmServerMain.resources
+C:\Application Softwares\FinancialPlannerServer\obj\Debug\FinancialPlannerServer.frmSystemSetting.resources
+C:\Application Softwares\FinancialPlannerServer\obj\Debug\FinancialPlannerServer.Properties.Resources.resources
+C:\Application Softwares\FinancialPlannerServer\obj\Debug\FinancialPlannerServer.RiskProfile.frmRiskProfiledReturnList.resources
+C:\Application Softwares\FinancialPlannerServer\obj\Debug\FinancialPlannerServer.RiskProfile.frmRiskProfileReturn.resources
+C:\Application Softwares\FinancialPlannerServer\obj\Debug\FinancialPlannerServer.RiskProfile.RiskProfileReturn.resources
+C:\Application Softwares\FinancialPlannerServer\obj\Debug\FinancialPlannerServer.Security.Permission.resources
+C:\Application Softwares\FinancialPlannerServer\obj\Debug\FinancialPlannerServer.Security.RolesSecurity.resources
+C:\Application Softwares\FinancialPlannerServer\obj\Debug\FinancialPlannerServer.SetAdminAccount.resources
+C:\Application Softwares\FinancialPlannerServer\obj\Debug\FinancialPlannerServer.UserInfo.frmUseList.resources
+C:\Application Softwares\FinancialPlannerServer\obj\Debug\FinancialPlannerServer.UserInfo.frmUser.resources
+C:\Application Softwares\FinancialPlannerServer\obj\Debug\FinancialPlannerServer.csproj.GenerateResource.cache
+C:\Application Softwares\FinancialPlannerServer\obj\Debug\FinancialPlannerServer.exe.licenses
+C:\Application Softwares\FinancialPlannerServer\obj\Debug\FinancialPlannerServer.csproj.CoreCompileInputs.cache
+C:\Application Softwares\FinancialPlannerServer\obj\Debug\FinancialPlannerServer.csproj.CopyComplete
+C:\Application Softwares\FinancialPlannerServer\obj\Debug\FinancialPlannerServer.exe
+C:\Application Softwares\FinancialPlannerServer\obj\Debug\FinancialPlannerServer.pdb
+C:\Application Softwares\FinancialPlannerServer\obj\Debug\FinancialPlannerServer.Testing.frmTesting.resources
+C:\Application Softwares\FinancialPlannerServer\obj\Debug\FinancialPlannerServer.QuarterlyReview.frmQuartelyReviewReportParams.resources
+C:\Application Softwares\FinancialPlannerServer\obj\Debug\FinancialPlannerServer.QuarterlyReview.frmAnnualReviewReportParams.resources
+C:\Application Softwares\FinancialPlannerServer\obj\Debug\FinancialPlannerServer.csprojAssemblyReference.cache
+C:\Application Softwares\FinancialPlannerServer\bin\Debug\DevExpress.XtraVerticalGrid.v16.2.dll
+C:\Application Softwares\FinancialPlannerServer\obj\Debug\FinancialPlannerServer.ScoreCalcuation.ScoreMaster.resources
+C:\Application Softwares\FinancialPlannerServer\obj\Debug\FinancialPlannerServer.ScoreCalcuation.ScoresEntry.resources

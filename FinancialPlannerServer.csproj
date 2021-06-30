@@ -41,13 +41,21 @@
     <Reference Include="DevExpress.XtraGrid.v16.2, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v16.2, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraTreeList.v16.2, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraVerticalGrid.v16.2, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\DevExpress.XtraVerticalGrid.v16.2\v4.0_16.2.3.0__b88d1754d700e49a\DevExpress.XtraVerticalGrid.v16.2.dll</HintPath>
+    </Reference>
     <Reference Include="FinancialPlanner.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\FinancialPlanner.Common\bin\Debug\FinancialPlanner.Common.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\FinancialPlannerClient\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\FinancialPlanner\bin\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\FinancialPlanner.Common\bin\Debug\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -69,6 +77,7 @@
     <Compile Include="AuditTrail\AuditTrail.Designer.cs">
       <DependentUpon>AuditTrail.cs</DependentUpon>
     </Compile>
+    <Compile Include="Common\LoanInfo.cs" />
     <Compile Include="frmCompany.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,8 +114,21 @@
     <Compile Include="frmSystemSetting.Designer.cs">
       <DependentUpon>frmSystemSetting.cs</DependentUpon>
     </Compile>
+    <Compile Include="MailManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuarterlyReview\frmAnnualReviewReportParams.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuarterlyReview\frmAnnualReviewReportParams.Designer.cs">
+      <DependentUpon>frmAnnualReviewReportParams.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuarterlyReview\frmQuartelyReviewReportParams.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuarterlyReview\frmQuartelyReviewReportParams.Designer.cs">
+      <DependentUpon>frmQuartelyReviewReportParams.cs</DependentUpon>
+    </Compile>
     <Compile Include="RiskProfile\DefaultReiskProfile.cs" />
     <Compile Include="RiskProfile\frmRiskProfiledReturnList.cs">
       <SubType>Form</SubType>
@@ -127,6 +149,20 @@
     <Compile Include="RiskProfile\RiskProfileReturn.Designer.cs">
       <DependentUpon>RiskProfileReturn.cs</DependentUpon>
     </Compile>
+    <Compile Include="ScoreCalcuation\ScoreEntryInfo.cs" />
+    <Compile Include="ScoreCalcuation\ScoreInfo.cs" />
+    <Compile Include="ScoreCalcuation\ScoreMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ScoreCalcuation\ScoreMaster.Designer.cs">
+      <DependentUpon>ScoreMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ScoreCalcuation\ScoresEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ScoreCalcuation\ScoresEntry.Designer.cs">
+      <DependentUpon>ScoresEntry.cs</DependentUpon>
+    </Compile>
     <Compile Include="Security\FormsInfo.cs" />
     <Compile Include="Security\Permission.cs">
       <SubType>Form</SubType>
@@ -146,6 +182,12 @@
     </Compile>
     <Compile Include="SetAdminAccount.Designer.cs">
       <DependentUpon>SetAdminAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Testing\frmTesting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Testing\frmTesting.Designer.cs">
+      <DependentUpon>frmTesting.cs</DependentUpon>
     </Compile>
     <Compile Include="UserInfo\frmUseList.cs">
       <SubType>Form</SubType>
@@ -191,6 +233,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="QuarterlyReview\frmAnnualReviewReportParams.resx">
+      <DependentUpon>frmAnnualReviewReportParams.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuarterlyReview\frmQuartelyReviewReportParams.resx">
+      <DependentUpon>frmQuartelyReviewReportParams.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RiskProfile\frmRiskProfiledReturnList.resx">
       <DependentUpon>frmRiskProfiledReturnList.cs</DependentUpon>
     </EmbeddedResource>
@@ -199,6 +247,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RiskProfile\RiskProfileReturn.resx">
       <DependentUpon>RiskProfileReturn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScoreCalcuation\ScoreMaster.resx">
+      <DependentUpon>ScoreMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScoreCalcuation\ScoresEntry.resx">
+      <DependentUpon>ScoresEntry.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Security\Permission.resx">
       <DependentUpon>Permission.cs</DependentUpon>
@@ -209,12 +263,16 @@
     <EmbeddedResource Include="SetAdminAccount.resx">
       <DependentUpon>SetAdminAccount.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Testing\frmTesting.resx">
+      <DependentUpon>frmTesting.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserInfo\frmUseList.resx">
       <DependentUpon>frmUseList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserInfo\frmUser.resx">
       <DependentUpon>frmUser.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -229,6 +287,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\AnnualReviewTemplate.xlsx" />
     <None Include="Resources\marguerite-daisy-beautiful-beauty.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -238,6 +297,7 @@
     <None Include="Resources\Email.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Review data required Template Format.xlsx" />
     <None Include="Resources\Users.png" />
   </ItemGroup>
   <ItemGroup>
@@ -306,9 +366,7 @@
   <ItemGroup>
     <None Include="Resources\icons8-double-down-16.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Common\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\icons8-send-30.png" />
   </ItemGroup>

@@ -1,5 +1,7 @@
 ﻿using FinancialPlanner.Common;
 using FinancialPlanner.Common.Model;
+using FinancialPlannerServer.QuarterlyReview;
+using FinancialPlannerServer.ScoreCalcuation;
 using FinancialPlannerServer.Security;
 using System;
 using System.Collections.Generic;
@@ -23,6 +25,7 @@ namespace FinancialPlannerServer
         private Security.RolesSecurity _rolesSecurity;
         private EmailJob.EmailScheduleList _emailScheduleList;
         private RiskProfile.frmRiskProfiledReturnList _riskProfileList;
+        private ScoresEntry ScoresEntry;
         private Permission permission;
         private frmCompany _company;
         public frmServerMain()
@@ -232,6 +235,66 @@ namespace FinancialPlannerServer
                 pnlContainer.Controls.Add(permission);
                 permission.Dock = DockStyle.Fill;
                 permission.Show();
+            }
+        }
+
+        private void quaterlyReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void QuarterlyReviewSheetMenuItem_Click(object sender, EventArgs e)
+        {
+            frmQuartelyReviewReportParams frmQuartelyReview = new frmQuartelyReviewReportParams();
+            frmQuartelyReview.Show();
+        }
+
+        private void frmServerMain_Load(object sender, EventArgs e)
+        {
+            setMailServerSettingFromConfiguration();
+        }
+        private void setMailServerSettingFromConfiguration()
+        {
+            MailManager mailManager = new MailManager();
+            string host = FinancialPlanner.Common.EmailManager.MailServer.HostName;
+            //if (!FinancialPlanner.Common.EmailManager.MailServer.HostName)
+        }
+
+        private void AnnualReviewSheetMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAnnualReviewReportParams frmAnnualReviewReport = new frmAnnualReviewReportParams();
+            frmAnnualReviewReport.Show();
+        }
+
+        private void tbtbScopeSetting_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void scoreMasterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ScoreCalcuation.ScoreMaster scoreMaster = new ScoreCalcuation.ScoreMaster();
+            scoreMaster.Show();
+        }
+
+        private void scoreEntryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //ScoresEntry scoresEntry = new ScoresEntry();
+            //scoresEntry.Show();
+
+            if(pnlContainer.Controls.Contains(ScoresEntry ))
+            {
+                pnlContainer.Controls[pnlContainer.Controls.GetChildIndex(ScoresEntry)].Show();
+            }
+            else
+            {
+                if (ScoresEntry == null || ScoresEntry.IsDisposed)
+                    ScoresEntry = new ScoresEntry();
+
+                ScoresEntry.TopLevel = false;
+                pnlContainer.Controls.Add(ScoresEntry);
+                ScoresEntry.Dock = DockStyle.Fill;
+                ScoresEntry.Show();
             }
         }
     }

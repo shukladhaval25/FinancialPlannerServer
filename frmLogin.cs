@@ -2,6 +2,7 @@
 using FinancialPlanner.Common.Model;
 using FinancialPlanner.Common.Permission;
 using FinancialPlannerServer.Security;
+using FinancialPlannerServer.Testing;
 using System;
 using System.IO;
 using System.Net;
@@ -48,10 +49,13 @@ namespace FinancialPlannerServer
                         MessageBox.Show("You don't have permission to access this application. Please contact to Administrator", "Permission", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                         return;
                     }
-                    
+
                     frmServerMain frmserMain = new frmServerMain();
                     this.Visible = false;
                     frmserMain.ShowDialog();
+                    //frmTesting frmTestingObj = new frmTesting();
+                    //this.Visible = false;
+                    //frmTestingObj.ShowDialog();
                     this.Close();
                 }
                 else
