@@ -26,6 +26,7 @@ namespace FinancialPlannerServer
         private EmailJob.EmailScheduleList _emailScheduleList;
         private RiskProfile.frmRiskProfiledReturnList _riskProfileList;
         private ScoresEntry ScoresEntry;
+        private ScoreMaster scoreMaster;
         private Permission permission;
         private frmCompany _company;
         public frmServerMain()
@@ -275,13 +276,25 @@ namespace FinancialPlannerServer
         {
             ScoreCalcuation.ScoreMaster scoreMaster = new ScoreCalcuation.ScoreMaster();
             scoreMaster.Show();
+
+            if (pnlContainer.Controls.Contains(scoreMaster))
+            {
+                pnlContainer.Controls[pnlContainer.Controls.GetChildIndex(scoreMaster)].Show();
+            }
+            else
+            {
+                if (scoreMaster == null || scoreMaster.IsDisposed)
+                    scoreMaster = new ScoreMaster();
+
+                scoreMaster.TopLevel = false;
+                pnlContainer.Controls.Add(scoreMaster);
+                scoreMaster.Dock = DockStyle.Fill;
+                scoreMaster.Show();
+            }
         }
 
         private void scoreEntryToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //ScoresEntry scoresEntry = new ScoresEntry();
-            //scoresEntry.Show();
-
             if(pnlContainer.Controls.Contains(ScoresEntry ))
             {
                 pnlContainer.Controls[pnlContainer.Controls.GetChildIndex(ScoresEntry)].Show();

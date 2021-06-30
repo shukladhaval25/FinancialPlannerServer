@@ -46,7 +46,12 @@ namespace FinancialPlannerServer.ScoreCalcuation
                 scores.Add(score);
             }
             ScoreInfo scoreInfo = new ScoreInfo();
-            scoreInfo.Add(scores);
+            bool blnSave = scoreInfo.Add(scores);
+            if (blnSave)
+            {
+                MessageBox.Show("Record save successfully.", "Record Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                displayScores();
+            }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -61,11 +66,16 @@ namespace FinancialPlannerServer.ScoreCalcuation
                     score.Id = Id;
                     ScoreInfo scoreInfo = new ScoreInfo();
                     scoreInfo.Delete(score);
-                    dtScore = new ScoreInfo().GetScore();
-                    vGridScope.DataSource = dtScore;
+                    displayScores();
                 }
             }
 
+        }
+
+        private void displayScores()
+        {
+            dtScore = new ScoreInfo().GetScore();
+            vGridScope.DataSource = dtScore;
         }
     }
 }
