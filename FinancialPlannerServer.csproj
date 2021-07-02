@@ -157,6 +157,7 @@
     <Compile Include="ScoreCalcuation\ScoreMaster.Designer.cs">
       <DependentUpon>ScoreMaster.cs</DependentUpon>
     </Compile>
+    <Compile Include="ScoreCalcuation\ScoreRangeInfo.cs" />
     <Compile Include="ScoreCalcuation\ScoresEntry.cs">
       <SubType>Form</SubType>
     </Compile>

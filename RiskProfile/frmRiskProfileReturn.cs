@@ -1,6 +1,9 @@
-﻿using FinancialPlanner.Common;
+﻿using DevExpress.XtraEditors;
+using FinancialPlanner.Common;
 using FinancialPlanner.Common.Model;
 using FinancialPlanner.Common.Model.RiskProfile;
+using FinancialPlanner.Common.Model.ScoreCalculation;
+using FinancialPlannerServer.ScoreRangeCalcuation;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,6 +30,7 @@ namespace FinancialPlannerServer.RiskProfile
         RiskProfileInfo _defaultRiskProfile = new RiskProfileInfo();
         DataTable _dtRiskProfileReturn;
         DataTable _dtRecommendedScheme;
+        DataTable _dtScoreRange;
         InvestmentByfercationInfo invBifurcationIno = new InvestmentByfercationInfo();
         public frmRiskProfileReturn()
         {
@@ -38,6 +42,18 @@ namespace FinancialPlannerServer.RiskProfile
             _riskProfiledReturnMaster = riskProfiledReturnMaster;
             loadRiskProfileMasterData();
             loadRislProfileReturnDetails();
+            loadScoreRangeDetails();
+        }
+
+        private void loadScoreRangeDetails()
+        {
+            _dtScoreRange = new ScoreRangeInfo().GetScoreRange(_riskProfiledReturnMaster.Id);
+            vGridScoreRange.DataSource = _dtScoreRange;
+            if (_dtScoreRange == null)
+            {
+                _dtScoreRange = new DataTable();
+
+            }
         }
 
         private void loadRislProfileReturnDetails()
@@ -697,6 +713,62 @@ namespace FinancialPlannerServer.RiskProfile
                     RecommendedSchemes recommendedSchemes = getRecommendedSchemesData();
                     invBifurcationIno.Delete(recommendedSchemes);
                     fillupSchemes();
+                }
+            }
+        }
+
+        private void txtRiskProfileName_TextChanged(object sender, EventArgs e)
+        {
+            lblRiskProfileName.Text = txtRiskProfileName.Text;
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (_riskProfileId == 0)
+            {
+                XtraMessageBox.Show("You can not save score range without saving risk profile first. Please save risk profile and try again.", "Not Save", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            List<ScoreRange> scores = new List<ScoreRange>();
+            foreach (DataRow dataRow in _dtScoreRange.Rows)
+            {
+                ScoreRange score = new ScoreRange();
+                score.Id = (dataRow["Id"] != DBNull.Value) ? int.Parse(dataRow["Id"].ToString()) : 0;
+                score.RiskProfileId = int.Parse(txtRiskProfileName.Tag.ToString());
+                score.FromRange  = (dataRow["FromRange"]== DBNull.Value? 0 : float.Parse(dataRow["FromRange"].ToString()));
+                score.ToRange = dataRow["ToRange"] != DBNull.Value ? float.Parse(dataRow["ToRange"].ToString()): 0;
+                score.Equity = dataRow["Equity"] != DBNull.Value ? float.Parse(dataRow["Equity"].ToString()) : 0;
+                score.Debt = dataRow["Debt"] != DBNull.Value ? float.Parse(dataRow["Debt"].ToString()) : 0;
+                score.Gold = dataRow["Gold"] != DBNull.Value ? float.Parse(dataRow["Gold"].ToString()) : 0;
+                scores.Add(score);
+            }
+            ScoreRangeInfo scoreInfo = new ScoreRangeInfo();
+            bool blnSave = scoreInfo.Add(scores);
+            if (blnSave)
+            {
+                MessageBox.Show("Record save successfully.", "Record Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                loadScoreRangeDetails();
+            }
+        }
+
+        private void btnAdd_Click_1(object sender, EventArgs e)
+        {
+            vGridScoreRange.AddNewRecord();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            int rowIndex = vGridScoreRange.FocusedRecord;
+            if (XtraMessageBox.Show("Are you sure, you want to delete this record?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (vGridScoreRange.GetCellValue(vGridScoreRange.GetRowByFieldName("Id"), rowIndex) != null)
+                {
+                    int Id = int.Parse(vGridScoreRange.GetCellValue(vGridScoreRange.GetRowByFieldName("Id"), rowIndex).ToString());
+                    ScoreRange score = new ScoreRange();
+                    score.Id = Id;
+                    ScoreRangeInfo  scoreInfo = new ScoreRangeInfo();
+                    scoreInfo.Delete(score);
+                    loadScoreRangeDetails();
                 }
             }
         }

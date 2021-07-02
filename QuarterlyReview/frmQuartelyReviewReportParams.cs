@@ -123,8 +123,15 @@ namespace FinancialPlannerServer.QuarterlyReview
 
         private void deleteReviewFilesFolder()
         {
-            //if (System.IO.Directory.Exists(Path.Combine(Path.GetTempPath(), "ReviewSheet")))
-            //    System.IO.Directory.Delete(Path.Combine(Path.GetTempPath(), "ReviewSheet"),true);
+            try
+            {
+                if (System.IO.Directory.Exists(Path.Combine(Path.GetTempPath(), "ReviewSheet")))
+                    System.IO.Directory.Delete(Path.Combine(Path.GetTempPath(), "ReviewSheet"), true);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Unable to delete folder '" + Path.Combine(Path.GetTempPath(), "ReviewSheet") + "'. Please delete it manually.");
+            }
         }
 
         private void sendEmail(string primaryEmail,string reviewSheetPath,string clientName,int index)
@@ -150,7 +157,7 @@ namespace FinancialPlannerServer.QuarterlyReview
                    "As your Quarterly Review is due, You are kindly requested to provide your financial data." + Environment.NewLine + Environment.NewLine +
 
                    "Please find herewith attached Template for the same." + Environment.NewLine +
-                   "Kindly send data before 15th April' 2021." + Environment.NewLine + Environment.NewLine +
+                   "Kindly send data before "+ DateTime.Now.AddDays(15).ToString("dd-MMM-yyyy") + "." + Environment.NewLine + Environment.NewLine +
 
                    "We value your relationship with us and are committed to provide excellent Financial Solutions and services." + Environment.NewLine + Environment.NewLine +
                    "Regards," + Environment.NewLine +
@@ -167,17 +174,19 @@ namespace FinancialPlannerServer.QuarterlyReview
                 {
                     // MessageBox.Show("Quarterly Review Template report send to client on '" + primaryEmail + "'.", "Email", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     gridViewClient.SetRowCellValue(index, "Status", "Email send successfully");
+                    mailMessage.Attachments.Clear();
                 }
                 else
                 {
                     gridViewClient.SetRowCellValue(index, "Status", "Unable to send email to:" +  primaryEmail);
+                    mailMessage.Attachments.Clear();
                     //MessageBox.Show("Unable to send email to '" + primaryEmail + "'. Check your email configuration setting.", "Email", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
             {
                 Logger.LogDebug(ex);
-                MessageBox.Show(ex.ToString());
+                throw ex;
             }
         }
 

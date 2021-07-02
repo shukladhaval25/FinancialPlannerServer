@@ -30,12 +30,18 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRiskProfileReturn));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            DevExpress.Utils.SuperToolTip superToolTip3 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem3 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.ToolTipItem toolTipItem3 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.SuperToolTip superToolTip4 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem4 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.ToolTipItem toolTipItem4 = new DevExpress.Utils.ToolTipItem();
             this.grpRiskProfileReturnDeteails = new System.Windows.Forms.GroupBox();
             this.btnCancel = new System.Windows.Forms.Button();
             this.imageList16x16 = new System.Windows.Forms.ImageList(this.components);
@@ -98,6 +104,21 @@
             this.rdoDebt = new System.Windows.Forms.RadioButton();
             this.rdoEquity = new System.Windows.Forms.RadioButton();
             this.rdoGold = new System.Windows.Forms.RadioButton();
+            this.tabPageRange = new System.Windows.Forms.TabPage();
+            this.vGridScoreRange = new DevExpress.XtraVerticalGrid.VGridControl();
+            this.repositoryItemComboBox1 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
+            this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
+            this.repositoryItemDateEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
+            this.rowFromRange = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.rowToRange = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.rowEquity = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.rowDebt = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.rowGold = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.rowId = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
+            this.btnSave = new DevExpress.XtraEditors.SimpleButton();
+            this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
+            this.lblRiskProfileName = new System.Windows.Forms.Label();
             this.grpRiskProfileReturnDeteails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridRiskProfileDetails)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numThresholdYear)).BeginInit();
@@ -112,6 +133,12 @@
             this.grpSegment.SuspendLayout();
             this.grpActionControls.SuspendLayout();
             this.grpInvestmentType.SuspendLayout();
+            this.tabPageRange.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.vGridScoreRange)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).BeginInit();
             this.SuspendLayout();
             // 
             // grpRiskProfileReturnDeteails
@@ -122,7 +149,7 @@
             this.grpRiskProfileReturnDeteails.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grpRiskProfileReturnDeteails.Location = new System.Drawing.Point(3, 3);
             this.grpRiskProfileReturnDeteails.Name = "grpRiskProfileReturnDeteails";
-            this.grpRiskProfileReturnDeteails.Size = new System.Drawing.Size(910, 318);
+            this.grpRiskProfileReturnDeteails.Size = new System.Drawing.Size(910, 317);
             this.grpRiskProfileReturnDeteails.TabIndex = 16;
             this.grpRiskProfileReturnDeteails.TabStop = false;
             // 
@@ -132,7 +159,7 @@
             this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancel.ImageKey = "icons8-cancel-16.png";
             this.btnCancel.ImageList = this.imageList16x16;
-            this.btnCancel.Location = new System.Drawing.Point(814, 286);
+            this.btnCancel.Location = new System.Drawing.Point(814, 285);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(86, 26);
             this.btnCancel.TabIndex = 59;
@@ -156,7 +183,7 @@
             this.btnRiskProfileSaved.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRiskProfileSaved.ImageKey = "icons8-save-close-16.png";
             this.btnRiskProfileSaved.ImageList = this.imageList16x16;
-            this.btnRiskProfileSaved.Location = new System.Drawing.Point(726, 286);
+            this.btnRiskProfileSaved.Location = new System.Drawing.Point(726, 285);
             this.btnRiskProfileSaved.Name = "btnRiskProfileSaved";
             this.btnRiskProfileSaved.Size = new System.Drawing.Size(86, 26);
             this.btnRiskProfileSaved.TabIndex = 58;
@@ -172,34 +199,34 @@
             this.dtGridRiskProfileDetails.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtGridRiskProfileDetails.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtGridRiskProfileDetails.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dtGridRiskProfileDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtGridRiskProfileDetails.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtGridRiskProfileDetails.DefaultCellStyle = dataGridViewCellStyle8;
             this.dtGridRiskProfileDetails.Location = new System.Drawing.Point(3, 10);
             this.dtGridRiskProfileDetails.Name = "dtGridRiskProfileDetails";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtGridRiskProfileDetails.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dtGridRiskProfileDetails.Size = new System.Drawing.Size(897, 270);
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtGridRiskProfileDetails.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.dtGridRiskProfileDetails.Size = new System.Drawing.Size(897, 269);
             this.dtGridRiskProfileDetails.TabIndex = 0;
             this.dtGridRiskProfileDetails.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtGridRiskProfileDetails_CellEndEdit);
             this.dtGridRiskProfileDetails.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dtGridRiskProfileDetails_CellFormatting);
@@ -237,6 +264,7 @@
             this.txtRiskProfileName.Name = "txtRiskProfileName";
             this.txtRiskProfileName.Size = new System.Drawing.Size(207, 20);
             this.txtRiskProfileName.TabIndex = 1;
+            this.txtRiskProfileName.TextChanged += new System.EventHandler(this.txtRiskProfileName_TextChanged);
             // 
             // label2
             // 
@@ -275,7 +303,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 61.57407F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 38.42593F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 93F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 105F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 107F));
             this.tableLayoutPanel1.Controls.Add(this.label6, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label7, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.label8, 3, 0);
@@ -307,9 +335,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(157, 0);
+            this.label6.Location = new System.Drawing.Point(156, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(90, 33);
+            this.label6.Size = new System.Drawing.Size(89, 33);
             this.label6.TabIndex = 70;
             this.label6.Text = "Commodities Investment (%)";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -320,7 +348,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(253, 0);
+            this.label7.Location = new System.Drawing.Point(251, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(87, 33);
             this.label7.TabIndex = 71;
@@ -333,9 +361,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(346, 0);
+            this.label8.Location = new System.Drawing.Point(344, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(100, 33);
+            this.label8.Size = new System.Drawing.Size(102, 33);
             this.label8.TabIndex = 72;
             this.label8.Text = "Debt Investment (%)";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -345,7 +373,7 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(3, 33);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(148, 22);
+            this.label5.Size = new System.Drawing.Size(147, 22);
             this.label5.TabIndex = 69;
             this.label5.Text = "Value under threshold years:";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -355,24 +383,24 @@
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(3, 59);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(148, 23);
+            this.label10.Size = new System.Drawing.Size(147, 23);
             this.label10.TabIndex = 74;
             this.label10.Text = "Value above threshold years:";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtPreForeignInvRation
             // 
-            this.txtPreForeignInvRation.Location = new System.Drawing.Point(157, 36);
+            this.txtPreForeignInvRation.Location = new System.Drawing.Point(156, 36);
             this.txtPreForeignInvRation.MaxLength = 4;
             this.txtPreForeignInvRation.Name = "txtPreForeignInvRation";
-            this.txtPreForeignInvRation.Size = new System.Drawing.Size(90, 20);
+            this.txtPreForeignInvRation.Size = new System.Drawing.Size(89, 20);
             this.txtPreForeignInvRation.TabIndex = 6;
             this.txtPreForeignInvRation.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPreForeignInvRation_KeyPress);
             this.txtPreForeignInvRation.Leave += new System.EventHandler(this.txtPreForeignInvRation_Leave);
             // 
             // txtPreEquityInvRatio
             // 
-            this.txtPreEquityInvRatio.Location = new System.Drawing.Point(253, 36);
+            this.txtPreEquityInvRatio.Location = new System.Drawing.Point(251, 36);
             this.txtPreEquityInvRatio.MaxLength = 4;
             this.txtPreEquityInvRatio.Name = "txtPreEquityInvRatio";
             this.txtPreEquityInvRatio.Size = new System.Drawing.Size(87, 20);
@@ -382,7 +410,7 @@
             // 
             // txtPreDebtInvRatio
             // 
-            this.txtPreDebtInvRatio.Location = new System.Drawing.Point(346, 36);
+            this.txtPreDebtInvRatio.Location = new System.Drawing.Point(344, 36);
             this.txtPreDebtInvRatio.MaxLength = 4;
             this.txtPreDebtInvRatio.Name = "txtPreDebtInvRatio";
             this.txtPreDebtInvRatio.Size = new System.Drawing.Size(88, 20);
@@ -392,17 +420,17 @@
             // 
             // txtPostForeingInvRatio
             // 
-            this.txtPostForeingInvRatio.Location = new System.Drawing.Point(157, 62);
+            this.txtPostForeingInvRatio.Location = new System.Drawing.Point(156, 62);
             this.txtPostForeingInvRatio.MaxLength = 4;
             this.txtPostForeingInvRatio.Name = "txtPostForeingInvRatio";
-            this.txtPostForeingInvRatio.Size = new System.Drawing.Size(90, 20);
+            this.txtPostForeingInvRatio.Size = new System.Drawing.Size(89, 20);
             this.txtPostForeingInvRatio.TabIndex = 9;
             this.txtPostForeingInvRatio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPreForeignInvRation_KeyPress);
             this.txtPostForeingInvRatio.Leave += new System.EventHandler(this.txtPostForeingInvRatio_Leave);
             // 
             // txtPostEquityInvRatio
             // 
-            this.txtPostEquityInvRatio.Location = new System.Drawing.Point(253, 62);
+            this.txtPostEquityInvRatio.Location = new System.Drawing.Point(251, 62);
             this.txtPostEquityInvRatio.MaxLength = 4;
             this.txtPostEquityInvRatio.Name = "txtPostEquityInvRatio";
             this.txtPostEquityInvRatio.Size = new System.Drawing.Size(87, 20);
@@ -412,7 +440,7 @@
             // 
             // txtPostDebtInvRatio
             // 
-            this.txtPostDebtInvRatio.Location = new System.Drawing.Point(346, 62);
+            this.txtPostDebtInvRatio.Location = new System.Drawing.Point(344, 62);
             this.txtPostDebtInvRatio.MaxLength = 4;
             this.txtPostDebtInvRatio.Name = "txtPostDebtInvRatio";
             this.txtPostDebtInvRatio.Size = new System.Drawing.Size(88, 20);
@@ -422,17 +450,17 @@
             // 
             // txtForeingReturn
             // 
-            this.txtForeingReturn.Location = new System.Drawing.Point(157, 88);
+            this.txtForeingReturn.Location = new System.Drawing.Point(156, 88);
             this.txtForeingReturn.MaxLength = 4;
             this.txtForeingReturn.Name = "txtForeingReturn";
-            this.txtForeingReturn.Size = new System.Drawing.Size(90, 20);
+            this.txtForeingReturn.Size = new System.Drawing.Size(89, 20);
             this.txtForeingReturn.TabIndex = 12;
             this.txtForeingReturn.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPreForeignInvRation_KeyPress);
             this.txtForeingReturn.Leave += new System.EventHandler(this.txtForeingReturn_Leave);
             // 
             // txtEquityInvReturn
             // 
-            this.txtEquityInvReturn.Location = new System.Drawing.Point(253, 88);
+            this.txtEquityInvReturn.Location = new System.Drawing.Point(251, 88);
             this.txtEquityInvReturn.MaxLength = 4;
             this.txtEquityInvReturn.Name = "txtEquityInvReturn";
             this.txtEquityInvReturn.Size = new System.Drawing.Size(87, 20);
@@ -442,7 +470,7 @@
             // 
             // txtDebtInvReturn
             // 
-            this.txtDebtInvReturn.Location = new System.Drawing.Point(346, 88);
+            this.txtDebtInvReturn.Location = new System.Drawing.Point(344, 88);
             this.txtDebtInvReturn.MaxLength = 4;
             this.txtDebtInvReturn.Name = "txtDebtInvReturn";
             this.txtDebtInvReturn.Size = new System.Drawing.Size(88, 20);
@@ -456,7 +484,7 @@
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(3, 85);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(148, 23);
+            this.label9.Size = new System.Drawing.Size(147, 23);
             this.label9.TabIndex = 73;
             this.label9.Text = "Investment Return (%)";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -485,6 +513,8 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControlRiskProfile.Controls.Add(this.tpageCalculation);
             this.tabControlRiskProfile.Controls.Add(this.tpageInvBifercation);
+            this.tabControlRiskProfile.Controls.Add(this.tabPageRange);
+            this.tabControlRiskProfile.ImageList = this.imgCollection;
             this.tabControlRiskProfile.Location = new System.Drawing.Point(12, 153);
             this.tabControlRiskProfile.Name = "tabControlRiskProfile";
             this.tabControlRiskProfile.SelectedIndex = 0;
@@ -495,10 +525,10 @@
             // tpageCalculation
             // 
             this.tpageCalculation.Controls.Add(this.grpRiskProfileReturnDeteails);
-            this.tpageCalculation.Location = new System.Drawing.Point(4, 22);
+            this.tpageCalculation.Location = new System.Drawing.Point(4, 23);
             this.tpageCalculation.Name = "tpageCalculation";
             this.tpageCalculation.Padding = new System.Windows.Forms.Padding(3);
-            this.tpageCalculation.Size = new System.Drawing.Size(916, 324);
+            this.tpageCalculation.Size = new System.Drawing.Size(916, 323);
             this.tpageCalculation.TabIndex = 0;
             this.tpageCalculation.Text = "Risk Profile Calculation";
             this.tpageCalculation.UseVisualStyleBackColor = true;
@@ -514,10 +544,10 @@
             this.tpageInvBifercation.Controls.Add(this.label11);
             this.tpageInvBifercation.Controls.Add(this.label3);
             this.tpageInvBifercation.Controls.Add(this.grpInvestmentType);
-            this.tpageInvBifercation.Location = new System.Drawing.Point(4, 22);
+            this.tpageInvBifercation.Location = new System.Drawing.Point(4, 23);
             this.tpageInvBifercation.Name = "tpageInvBifercation";
             this.tpageInvBifercation.Padding = new System.Windows.Forms.Padding(3);
-            this.tpageInvBifercation.Size = new System.Drawing.Size(916, 324);
+            this.tpageInvBifercation.Size = new System.Drawing.Size(916, 323);
             this.tpageInvBifercation.TabIndex = 1;
             this.tpageInvBifercation.Text = "Investment Bifurcation";
             this.tpageInvBifercation.UseVisualStyleBackColor = true;
@@ -581,33 +611,33 @@
             // 
             // dtGridSegment
             // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtGridSegment.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtGridSegment.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.dtGridSegment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtGridSegment.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtGridSegment.DefaultCellStyle = dataGridViewCellStyle11;
             this.dtGridSegment.Location = new System.Drawing.Point(10, 77);
             this.dtGridSegment.Name = "dtGridSegment";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtGridSegment.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtGridSegment.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.dtGridSegment.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtGridSegment.Size = new System.Drawing.Size(285, 134);
             this.dtGridSegment.TabIndex = 1;
@@ -876,6 +906,247 @@
             this.rdoGold.UseVisualStyleBackColor = true;
             this.rdoGold.CheckedChanged += new System.EventHandler(this.rdoGold_CheckedChanged);
             // 
+            // tabPageRange
+            // 
+            this.tabPageRange.Controls.Add(this.lblRiskProfileName);
+            this.tabPageRange.Controls.Add(this.btnDelete);
+            this.tabPageRange.Controls.Add(this.btnSave);
+            this.tabPageRange.Controls.Add(this.btnAdd);
+            this.tabPageRange.Controls.Add(this.vGridScoreRange);
+            this.tabPageRange.Location = new System.Drawing.Point(4, 23);
+            this.tabPageRange.Name = "tabPageRange";
+            this.tabPageRange.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageRange.Size = new System.Drawing.Size(916, 323);
+            this.tabPageRange.TabIndex = 2;
+            this.tabPageRange.Text = "Range For Score";
+            this.tabPageRange.UseVisualStyleBackColor = true;
+            // 
+            // vGridScoreRange
+            // 
+            this.vGridScoreRange.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.vGridScoreRange.Appearance.Category.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(153)))), ((int)(((byte)(177)))));
+            this.vGridScoreRange.Appearance.Category.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(153)))), ((int)(((byte)(177)))));
+            this.vGridScoreRange.Appearance.Category.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            this.vGridScoreRange.Appearance.Category.ForeColor = System.Drawing.Color.Black;
+            this.vGridScoreRange.Appearance.Category.Options.UseBackColor = true;
+            this.vGridScoreRange.Appearance.Category.Options.UseBorderColor = true;
+            this.vGridScoreRange.Appearance.Category.Options.UseFont = true;
+            this.vGridScoreRange.Appearance.Category.Options.UseForeColor = true;
+            this.vGridScoreRange.Appearance.CategoryExpandButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.vGridScoreRange.Appearance.CategoryExpandButton.Options.UseBackColor = true;
+            this.vGridScoreRange.Appearance.DisabledRecordValue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(179)))), ((int)(((byte)(197)))));
+            this.vGridScoreRange.Appearance.DisabledRecordValue.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(179)))), ((int)(((byte)(197)))));
+            this.vGridScoreRange.Appearance.DisabledRecordValue.ForeColor = System.Drawing.Color.Black;
+            this.vGridScoreRange.Appearance.DisabledRecordValue.Options.UseBackColor = true;
+            this.vGridScoreRange.Appearance.DisabledRecordValue.Options.UseBorderColor = true;
+            this.vGridScoreRange.Appearance.DisabledRecordValue.Options.UseForeColor = true;
+            this.vGridScoreRange.Appearance.DisabledRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(153)))), ((int)(((byte)(177)))));
+            this.vGridScoreRange.Appearance.DisabledRow.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(153)))), ((int)(((byte)(177)))));
+            this.vGridScoreRange.Appearance.DisabledRow.ForeColor = System.Drawing.Color.Black;
+            this.vGridScoreRange.Appearance.DisabledRow.Options.UseBackColor = true;
+            this.vGridScoreRange.Appearance.DisabledRow.Options.UseBorderColor = true;
+            this.vGridScoreRange.Appearance.DisabledRow.Options.UseForeColor = true;
+            this.vGridScoreRange.Appearance.ExpandButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(151)))), ((int)(((byte)(175)))));
+            this.vGridScoreRange.Appearance.ExpandButton.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(101)))), ((int)(((byte)(125)))));
+            this.vGridScoreRange.Appearance.ExpandButton.ForeColor = System.Drawing.Color.White;
+            this.vGridScoreRange.Appearance.ExpandButton.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
+            this.vGridScoreRange.Appearance.ExpandButton.Options.UseBackColor = true;
+            this.vGridScoreRange.Appearance.ExpandButton.Options.UseForeColor = true;
+            this.vGridScoreRange.Appearance.HideSelectionRow.BackColor = System.Drawing.Color.Gray;
+            this.vGridScoreRange.Appearance.HideSelectionRow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(208)))), ((int)(((byte)(200)))));
+            this.vGridScoreRange.Appearance.HideSelectionRow.Options.UseBackColor = true;
+            this.vGridScoreRange.Appearance.HideSelectionRow.Options.UseForeColor = true;
+            this.vGridScoreRange.Appearance.HorzLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(153)))), ((int)(((byte)(177)))));
+            this.vGridScoreRange.Appearance.HorzLine.Options.UseBackColor = true;
+            this.vGridScoreRange.Appearance.ReadOnlyRecordValue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(173)))), ((int)(((byte)(197)))));
+            this.vGridScoreRange.Appearance.ReadOnlyRecordValue.Options.UseBackColor = true;
+            this.vGridScoreRange.Appearance.RecordValue.BackColor = System.Drawing.Color.White;
+            this.vGridScoreRange.Appearance.RecordValue.ForeColor = System.Drawing.Color.Black;
+            this.vGridScoreRange.Appearance.RecordValue.Options.UseBackColor = true;
+            this.vGridScoreRange.Appearance.RecordValue.Options.UseForeColor = true;
+            this.vGridScoreRange.Appearance.RowHeaderPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(101)))), ((int)(((byte)(125)))));
+            this.vGridScoreRange.Appearance.RowHeaderPanel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(204)))), ((int)(((byte)(217)))));
+            this.vGridScoreRange.Appearance.RowHeaderPanel.Options.UseBackColor = true;
+            this.vGridScoreRange.Appearance.RowHeaderPanel.Options.UseForeColor = true;
+            this.vGridScoreRange.Appearance.VertLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(153)))), ((int)(((byte)(177)))));
+            this.vGridScoreRange.Appearance.VertLine.Options.UseBackColor = true;
+            this.vGridScoreRange.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vGridScoreRange.Location = new System.Drawing.Point(41, 58);
+            this.vGridScoreRange.Name = "vGridScoreRange";
+            this.vGridScoreRange.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemComboBox1,
+            this.repositoryItemTextEdit1,
+            this.repositoryItemDateEdit1});
+            this.vGridScoreRange.RowHeaderWidth = 114;
+            this.vGridScoreRange.Rows.AddRange(new DevExpress.XtraVerticalGrid.Rows.BaseRow[] {
+            this.rowId,
+            this.rowFromRange,
+            this.rowToRange,
+            this.rowEquity,
+            this.rowDebt,
+            this.rowGold});
+            this.vGridScoreRange.Size = new System.Drawing.Size(840, 137);
+            this.vGridScoreRange.TabIndex = 30;
+            // 
+            // repositoryItemComboBox1
+            // 
+            this.repositoryItemComboBox1.AutoHeight = false;
+            this.repositoryItemComboBox1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemComboBox1.Items.AddRange(new object[] {
+            "Apple",
+            "Orange",
+            "Mango"});
+            this.repositoryItemComboBox1.Name = "repositoryItemComboBox1";
+            // 
+            // repositoryItemTextEdit1
+            // 
+            this.repositoryItemTextEdit1.AutoHeight = false;
+            this.repositoryItemTextEdit1.Name = "repositoryItemTextEdit1";
+            // 
+            // repositoryItemDateEdit1
+            // 
+            this.repositoryItemDateEdit1.AutoHeight = false;
+            this.repositoryItemDateEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEdit1.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEdit1.Name = "repositoryItemDateEdit1";
+            // 
+            // rowFromRange
+            // 
+            this.rowFromRange.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rowFromRange.Appearance.Options.UseFont = true;
+            this.rowFromRange.Name = "rowFromRange";
+            this.rowFromRange.Properties.Caption = "From";
+            this.rowFromRange.Properties.FieldName = "FromRange";
+            this.rowFromRange.Properties.Value = new decimal(new int[] {
+            0,
+            0,
+            0,
+            131072});
+            // 
+            // rowToRange
+            // 
+            this.rowToRange.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rowToRange.Appearance.Options.UseFont = true;
+            this.rowToRange.Name = "rowToRange";
+            this.rowToRange.Properties.Caption = "To";
+            this.rowToRange.Properties.FieldName = "ToRange";
+            this.rowToRange.Properties.Value = new decimal(new int[] {
+            0,
+            0,
+            0,
+            131072});
+            // 
+            // rowEquity
+            // 
+            this.rowEquity.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rowEquity.Appearance.Options.UseFont = true;
+            this.rowEquity.Name = "rowEquity";
+            this.rowEquity.Properties.Caption = "Equity";
+            this.rowEquity.Properties.FieldName = "Equity";
+            this.rowEquity.Properties.Value = new decimal(new int[] {
+            0,
+            0,
+            0,
+            131072});
+            // 
+            // rowDebt
+            // 
+            this.rowDebt.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rowDebt.Appearance.Options.UseFont = true;
+            this.rowDebt.Name = "rowDebt";
+            this.rowDebt.Properties.Caption = "Debt";
+            this.rowDebt.Properties.FieldName = "Debt";
+            this.rowDebt.Properties.Value = new decimal(new int[] {
+            0,
+            0,
+            0,
+            131072});
+            // 
+            // rowGold
+            // 
+            this.rowGold.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rowGold.Appearance.Options.UseFont = true;
+            this.rowGold.Name = "rowGold";
+            this.rowGold.Properties.Caption = "Gold";
+            this.rowGold.Properties.FieldName = "Gold";
+            this.rowGold.Properties.Value = new decimal(new int[] {
+            0,
+            0,
+            0,
+            131072});
+            // 
+            // rowId
+            // 
+            this.rowId.Name = "rowId";
+            this.rowId.Properties.AllowEdit = false;
+            this.rowId.Properties.Caption = "Id";
+            this.rowId.Properties.FieldName = "Id";
+            this.rowId.Properties.ReadOnly = true;
+            this.rowId.Visible = false;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
+            this.btnDelete.Location = new System.Drawing.Point(108, 201);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(25, 23);
+            toolTipTitleItem3.Text = "Delete Score";
+            toolTipItem3.LeftIndent = 6;
+            toolTipItem3.Text = "To delete selected score record click here.";
+            superToolTip3.Items.Add(toolTipTitleItem3);
+            superToolTip3.Items.Add(toolTipItem3);
+            this.btnDelete.SuperTip = superToolTip3;
+            this.btnDelete.TabIndex = 35;
+            this.btnDelete.ToolTip = "Delete Client";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
+            this.btnSave.Location = new System.Drawing.Point(824, 201);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(57, 23);
+            toolTipTitleItem4.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            toolTipTitleItem4.Appearance.Options.UseImage = true;
+            toolTipTitleItem4.Image = ((System.Drawing.Image)(resources.GetObject("toolTipTitleItem4.Image")));
+            toolTipTitleItem4.Text = "Save";
+            toolTipItem4.LeftIndent = 6;
+            toolTipItem4.Text = "To save score click here.";
+            superToolTip4.Items.Add(toolTipTitleItem4);
+            superToolTip4.Items.Add(toolTipItem4);
+            this.btnSave.SuperTip = superToolTip4;
+            this.btnSave.TabIndex = 34;
+            this.btnSave.Text = "Save";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnAdd.ImageUri.Uri = "Apply;Size16x16";
+            this.btnAdd.Location = new System.Drawing.Point(41, 201);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(61, 23);
+            this.btnAdd.TabIndex = 33;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click_1);
+            // 
+            // lblRiskProfileName
+            // 
+            this.lblRiskProfileName.AutoSize = true;
+            this.lblRiskProfileName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRiskProfileName.ForeColor = System.Drawing.Color.DarkViolet;
+            this.lblRiskProfileName.Location = new System.Drawing.Point(46, 22);
+            this.lblRiskProfileName.Name = "lblRiskProfileName";
+            this.lblRiskProfileName.Size = new System.Drawing.Size(0, 20);
+            this.lblRiskProfileName.TabIndex = 64;
+            // 
             // frmRiskProfileReturn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -914,6 +1185,13 @@
             this.grpActionControls.ResumeLayout(false);
             this.grpInvestmentType.ResumeLayout(false);
             this.grpInvestmentType.PerformLayout();
+            this.tabPageRange.ResumeLayout(false);
+            this.tabPageRange.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.vGridScoreRange)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -982,5 +1260,20 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtSegmentRatio;
+        private System.Windows.Forms.TabPage tabPageRange;
+        private DevExpress.XtraVerticalGrid.VGridControl vGridScoreRange;
+        private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemComboBox1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEdit1;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowId;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowFromRange;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowToRange;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowEquity;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowDebt;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowGold;
+        private System.Windows.Forms.Label lblRiskProfileName;
+        public DevExpress.XtraEditors.SimpleButton btnDelete;
+        private DevExpress.XtraEditors.SimpleButton btnSave;
+        private DevExpress.XtraEditors.SimpleButton btnAdd;
     }
 }
