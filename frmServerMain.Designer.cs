@@ -28,11 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmServerMain));
             this.pnlServerMenu = new System.Windows.Forms.Panel();
             this.btnLogout = new System.Windows.Forms.Button();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.imageList1 = new System.Windows.Forms.ImageList();
             this.btnSystemSetting = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
@@ -62,11 +61,11 @@
             this.quaterlyReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tbtnNotification = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.tbtnLogout = new System.Windows.Forms.ToolStripButton();
-            this.tbtnRiskProfile = new System.Windows.Forms.ToolStripButton();
             this.tbtbScopeSetting = new System.Windows.Forms.ToolStripDropDownButton();
             this.scoreMasterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.scoreEntryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tbtnRiskProfile = new System.Windows.Forms.ToolStripButton();
+            this.tbtnLogout = new System.Windows.Forms.ToolStripButton();
             this.pnlServerMenu.SuspendLayout();
             this.pnlContainer.SuspendLayout();
             this.grpCompanyDetails.SuspendLayout();
@@ -459,7 +458,7 @@
             // quaterlyReportToolStripMenuItem
             // 
             this.quaterlyReportToolStripMenuItem.Name = "quaterlyReportToolStripMenuItem";
-            this.quaterlyReportToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.quaterlyReportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.quaterlyReportToolStripMenuItem.Text = "Quaterly Report";
             this.quaterlyReportToolStripMenuItem.Click += new System.EventHandler(this.quaterlyReportToolStripMenuItem_Click);
             // 
@@ -479,26 +478,6 @@
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 82);
-            // 
-            // tbtnLogout
-            // 
-            this.tbtnLogout.Image = ((System.Drawing.Image)(resources.GetObject("tbtnLogout.Image")));
-            this.tbtnLogout.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tbtnLogout.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tbtnLogout.Name = "tbtnLogout";
-            this.tbtnLogout.Size = new System.Drawing.Size(64, 79);
-            this.tbtnLogout.Text = "Logout";
-            this.tbtnLogout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.tbtnLogout.Click += new System.EventHandler(this.btnLogout_Click);
-            // 
-            // tbtnRiskProfile
-            // 
-            this.tbtnRiskProfile.Image = global::FinancialPlannerServer.Properties.Resources.icons8_sales_performance_60;
-            this.tbtnRiskProfile.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tbtnRiskProfile.Name = "tbtnRiskProfile";
-            this.tbtnRiskProfile.Size = new System.Drawing.Size(85, 79);
-            this.tbtnRiskProfile.Text = "Risk Profile";
-            this.tbtnRiskProfile.Click += new System.EventHandler(this.tbtnRiskProfile_Click);
             // 
             // tbtbScopeSetting
             // 
@@ -525,6 +504,26 @@
             this.scoreEntryToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.scoreEntryToolStripMenuItem.Text = "Score Entry";
             this.scoreEntryToolStripMenuItem.Click += new System.EventHandler(this.scoreEntryToolStripMenuItem_Click);
+            // 
+            // tbtnRiskProfile
+            // 
+            this.tbtnRiskProfile.Image = global::FinancialPlannerServer.Properties.Resources.icons8_sales_performance_60;
+            this.tbtnRiskProfile.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tbtnRiskProfile.Name = "tbtnRiskProfile";
+            this.tbtnRiskProfile.Size = new System.Drawing.Size(85, 79);
+            this.tbtnRiskProfile.Text = "Risk Profile";
+            this.tbtnRiskProfile.Click += new System.EventHandler(this.tbtnRiskProfile_Click);
+            // 
+            // tbtnLogout
+            // 
+            this.tbtnLogout.Image = ((System.Drawing.Image)(resources.GetObject("tbtnLogout.Image")));
+            this.tbtnLogout.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tbtnLogout.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tbtnLogout.Name = "tbtnLogout";
+            this.tbtnLogout.Size = new System.Drawing.Size(64, 79);
+            this.tbtnLogout.Text = "Logout";
+            this.tbtnLogout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tbtnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // frmServerMain
             // 

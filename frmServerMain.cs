@@ -309,6 +309,6 @@ namespace FinancialPlannerServer
                 ScoresEntry.Dock = DockStyle.Fill;
                 ScoresEntry.Show();
             }
-        }
+        }        
     }
 }

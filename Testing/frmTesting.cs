@@ -62,5 +62,71 @@ namespace FinancialPlannerServer.Testing
             //if (stmp.Contains("-"))
             //xlSheet.Cells[2, 1].Value = stmp.Remove(ind, ind);
         }
+
+        private void sendMail()
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+        //    Chilkat.MailMan mailman = new Chilkat.MailMan();
+
+        //    // Set the SMTP server.
+        //    mailman.SmtpHost = "smtp.my-tls-mail-server.com";
+
+        //    // Set the SMTP login/password (if required)
+        //    mailman.SmtpUsername = "MY_SMTP_USERNAME";
+        //    mailman.SmtpPassword = "MY_SMTP_PASSWORD";
+
+        //    // Connect to SMTP port 465 using TLS.
+        //    mailman.SmtpSsl = true;
+        //    mailman.SmtpPort = 465;
+
+        //    // Create a new email object
+        //    Chilkat.Email email = new Chilkat.Email();
+
+        //    email.Subject = "This is a test";
+        //    email.Body = "This is a test";
+        //    email.From = "Chilkat Support <support@chilkatsoft.com>";
+        //    bool success = email.AddTo("Chilkat Admin", "admin@chilkatsoft.com");
+        //    // To add more recipients, call AddTo, AddCC, or AddBcc once per recipient.
+
+        //    // Add some attachments.
+        //    // The AddFileAttachment method returns the value of the content-type it chose for the attachment.
+        //    string contentType = email.AddFileAttachment("qa_data/jpg/starfish.jpg");
+        //    if (email.LastMethodSuccess != true)
+        //    {
+        //        Debug.WriteLine(email.LastErrorText);
+        //        return;
+        //    }
+
+        //    contentType = email.AddFileAttachment("qa_data/pdf/fishing.pdf");
+        //    if (email.LastMethodSuccess != true)
+        //    {
+        //        Debug.WriteLine(email.LastErrorText);
+        //        return;
+        //    }
+
+        //    // Call SendEmail to connect to the SMTP server and send.
+        //    // The connection (i.e. session) to the SMTP server remains
+        //    // open so that subsequent SendEmail calls may use the
+        //    // same connection.  
+        //    success = mailman.SendEmail(email);
+        //    if (success != true)
+        //    {
+        //        Debug.WriteLine(mailman.LastErrorText);
+        //        return;
+        //    }
+
+        //    success = mailman.CloseSmtpConnection();
+        //    if (success != true)
+        //    {
+        //        Debug.WriteLine("Connection to SMTP server not closed cleanly.");
+        //    }
+
+        //    Debug.WriteLine("Mail with attachments sent!");
+
+        }
     }
 }

@@ -9,9 +9,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>FinancialPlannerServer</RootNamespace>
     <AssemblyName>FinancialPlannerServer</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -117,16 +118,16 @@
     <Compile Include="MailManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QuarterlyReview\frmAnnualReviewReportParams.cs">
+    <Compile Include="EmailJob\QuarterlyReview\frmAnnualReviewReportParams.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QuarterlyReview\frmAnnualReviewReportParams.Designer.cs">
+    <Compile Include="EmailJob\QuarterlyReview\frmAnnualReviewReportParams.Designer.cs">
       <DependentUpon>frmAnnualReviewReportParams.cs</DependentUpon>
     </Compile>
-    <Compile Include="QuarterlyReview\frmQuartelyReviewReportParams.cs">
+    <Compile Include="EmailJob\QuarterlyReview\frmQuartelyReviewReportParams.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QuarterlyReview\frmQuartelyReviewReportParams.Designer.cs">
+    <Compile Include="EmailJob\QuarterlyReview\frmQuartelyReviewReportParams.Designer.cs">
       <DependentUpon>frmQuartelyReviewReportParams.cs</DependentUpon>
     </Compile>
     <Compile Include="RiskProfile\DefaultReiskProfile.cs" />
@@ -234,10 +235,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="QuarterlyReview\frmAnnualReviewReportParams.resx">
+    <EmbeddedResource Include="EmailJob\QuarterlyReview\frmAnnualReviewReportParams.resx">
       <DependentUpon>frmAnnualReviewReportParams.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QuarterlyReview\frmQuartelyReviewReportParams.resx">
+    <EmbeddedResource Include="EmailJob\QuarterlyReview\frmQuartelyReviewReportParams.resx">
       <DependentUpon>frmQuartelyReviewReportParams.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RiskProfile\frmRiskProfiledReturnList.resx">
