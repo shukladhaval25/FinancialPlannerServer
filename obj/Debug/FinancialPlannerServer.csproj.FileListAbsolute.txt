@@ -180,3 +180,4 @@ C:\Application Softwares\FinancialPlannerServer\obj\Debug\FinancialPlannerServer
 C:\Application Softwares\FinancialPlannerServer\obj\Debug\FinancialPlannerServer.exe
 C:\Application Softwares\FinancialPlannerServer\obj\Debug\FinancialPlannerServer.pdb
 C:\Application Softwares\FinancialPlannerServer\bin\Debug\FinancialPlanner.Common.dll
+C:\Application Softwares\FinancialPlannerServer\obj\Debug\FinancialPlannerServer.csprojAssemblyReference.cache

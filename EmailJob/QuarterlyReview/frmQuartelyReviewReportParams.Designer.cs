@@ -43,12 +43,16 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnSearch = new DevExpress.XtraEditors.SimpleButton();
             this.label2 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtCC = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlClients)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewClient)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtQuaterlyReview.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtQuaterlyReview.Properties)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -175,11 +179,38 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Quarterly Review :";
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.txtCC);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Location = new System.Drawing.Point(713, 0);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(444, 36);
+            this.groupBox2.TabIndex = 11;
+            this.groupBox2.TabStop = false;
+            // 
+            // txtCC
+            // 
+            this.txtCC.Location = new System.Drawing.Point(37, 11);
+            this.txtCC.Name = "txtCC";
+            this.txtCC.Size = new System.Drawing.Size(401, 20);
+            this.txtCC.TabIndex = 1;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(7, 15);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(24, 13);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "CC:";
+            // 
             // frmQuartelyReviewReportParams
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1169, 450);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnDeSelectAll);
             this.Controls.Add(this.btnSelectAll);
@@ -196,6 +227,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtQuaterlyReview.Properties)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -214,5 +247,8 @@
         private System.Windows.Forms.GroupBox groupBox1;
         public DevExpress.XtraEditors.SimpleButton btnSearch;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.TextBox txtCC;
+        private System.Windows.Forms.Label label3;
     }
 }

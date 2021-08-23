@@ -91,6 +91,7 @@ namespace FinancialPlannerServer.QuarterlyReview
            foreach(int index in selectedRowsIndex)
            {
                 string emailId = gridViewClient.GetRowCellValue(index, "PrimaryEmail").ToString();
+                string cc = txtCC.Text;
                 if (!string.IsNullOrEmpty(emailId))
                 {
                     try
@@ -119,7 +120,7 @@ namespace FinancialPlannerServer.QuarterlyReview
                         string reviewSheetFilePath = generateReviewSheet(members,loans);
 
                         //Send email to that member.
-                        await Task.Run(() => sendEmail(emailId, reviewSheetFilePath, clientName,index));
+                        await Task.Run(() => sendEmail(emailId,cc, reviewSheetFilePath, clientName,index));
 
                        
 
@@ -177,7 +178,7 @@ namespace FinancialPlannerServer.QuarterlyReview
             //    System.IO.Directory.Delete(Path.Combine(Path.GetTempPath(), "ReviewSheet"),true);
         }
 
-        private void sendEmail(string primaryEmail,string reviewSheetPath,string clientName,int index)
+        private void sendEmail(string primaryEmail,string cc,string reviewSheetPath,string clientName,int index)
         {
             try
             {
@@ -185,6 +186,10 @@ namespace FinancialPlannerServer.QuarterlyReview
                 MailMessage mailMessage = new MailMessage();
                 mailMessage.From = new MailAddress(MailServer.FromEmail);
                 mailMessage.To.Add(new MailAddress(primaryEmail));
+                if (!string.IsNullOrEmpty(cc))
+                {
+                    mailMessage.CC.Add(new MailAddress(cc));
+                }
                 mailMessage.Subject = "Data require for annual review";
                 mailMessage.IsBodyHtml = false;
                 mailMessage.Attachments.Add(attachment);
@@ -194,15 +199,15 @@ namespace FinancialPlannerServer.QuarterlyReview
 
                    "As your Annual Review is due, You are kindly requested to provide your financial data." + Environment.NewLine + Environment.NewLine +
 
-                   "Please find herewith attached Template for the same." + Environment.NewLine +
-                   "Kindly send data before 15th April' 2021." + Environment.NewLine + Environment.NewLine +
+                   "Please find herewith attached Template for the same." + Environment.NewLine + Environment.NewLine +
+                  //"Kindly send data before "+ DateTime.Now.AddDays(15).ToString("dd-MMM-yyyy") + "." + Environment.NewLine + Environment.NewLine +
 
-                   "We value your relationship with us and are committed to provide excellent Financial Solutions and services." + Environment.NewLine + Environment.NewLine +
+                  "We value your relationship with us and are committed to provide excellent Financial Solutions and services." + Environment.NewLine + Environment.NewLine +
                    "Regards," + Environment.NewLine +
 
                    "Financial Planning Team" + Environment.NewLine +
                    "ASCENT FINANCIAL SOLUTIONS" + Environment.NewLine +
-                   "314,315,316 Notus IT park," + Environment.NewLine +
+                   "315,316 Notus IT park," + Environment.NewLine +
                    "Sarabhai Campus," + Environment.NewLine +
                    "Genda Circle, Vadodara, Gujarat 390023" + Environment.NewLine +
                    "http://www.ascentsolutions.in";
