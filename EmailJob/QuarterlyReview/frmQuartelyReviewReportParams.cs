@@ -91,7 +91,7 @@ namespace FinancialPlannerServer.QuarterlyReview
                     try
                     {
                         int clientId = int.Parse(gridViewClient.GetRowCellValue(index, "Id").ToString());
-                        string clientName = gridViewClient.GetRowCellValue(index, "Name").ToString();
+                        string clientName = gridViewClient.GetRowCellValue(index, "Name").ToString().Trim();
                         ClientSpouse clientSpouse = getSpousePersonalInfo(clientId);
                         List<string> members = new List<string>();
                         members.Add(clientName);
@@ -295,7 +295,7 @@ namespace FinancialPlannerServer.QuarterlyReview
                 System.IO.Directory.CreateDirectory(tempPath);
 
             string sNewFileName = Path.Combine(tempPath ,
-    string.Concat(members[0].ToString(), "_QuarterlyReview", ".xlsx"));
+    string.Concat(members[0].ToString().Trim(), "_QuarterlyReview", ".xlsx"));
             xlBook.SaveAs(sNewFileName);
             xlBook.Close();
             return sNewFileName; 

@@ -97,7 +97,7 @@ namespace FinancialPlannerServer.QuarterlyReview
                     try
                     {
                         int clientId = int.Parse(gridViewClient.GetRowCellValue(index, "Id").ToString());
-                        string clientName = gridViewClient.GetRowCellValue(index, "Name").ToString();
+                        string clientName = gridViewClient.GetRowCellValue(index, "Name").ToString().Trim();
                         ClientSpouse clientSpouse = getSpousePersonalInfo(clientId);
                         List<string> members = new List<string>();
                         List<Loan> loans = new List<Loan>();

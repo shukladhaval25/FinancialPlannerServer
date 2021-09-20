@@ -195,6 +195,7 @@
             this.txtCC.Name = "txtCC";
             this.txtCC.Size = new System.Drawing.Size(401, 20);
             this.txtCC.TabIndex = 1;
+            this.txtCC.Text = "financialsolutionsascent@gmail.com";
             // 
             // label3
             // 

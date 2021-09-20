@@ -121,7 +121,7 @@ namespace FinancialPlannerServer
             MailServer.Password = FinancialPlanner.Common.DataEncrypterDecrypter.CryptoEngine.Encrypt(txtPassword.Text);
             MailServer.IsSSL = chkIsSSL.Checked;
             MailServer.POP3_IMPS_HostName = txtPOP3Host.Text;
-            MailServer.POP3_IMPS_HostPort = txtPOP3Port.Text;
+            MailServer.POP3_IMPS_HostPort = int.Parse(txtPOP3Port.Text);
 
             List<KeyValuePair<string, string>> lstSMTPsetting = new List<KeyValuePair<string, string>>();
             lstSMTPsetting.Add(new KeyValuePair<string, string>("FromEmail", MailServer.FromEmail));

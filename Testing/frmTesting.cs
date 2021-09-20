@@ -2,11 +2,18 @@
 using System.IO;
 using System.Windows.Forms;
 using Excel = Microsoft.Office.Interop.Excel;
+using System.Data;
+using System.Data.OleDb;
+using System.Linq;
+using FinancialPlanner.Common.Model;
+using FinancialPlannerClient.Clients;
+using System.Collections.Generic;
 
 namespace FinancialPlannerServer.Testing
 {
     public partial class frmTesting : Form
     {
+        DataTable dt = new DataTable();
         public frmTesting()
         {
             InitializeComponent();
@@ -127,6 +134,80 @@ namespace FinancialPlannerServer.Testing
 
         //    Debug.WriteLine("Mail with attachments sent!");
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog op = new OpenFileDialog();
+            op.Filter = "Excel 97 - 2003|*.xls|Excel 2007|*.xlsx";
+            if (op.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                if (File.Exists(op.FileName))
+                {
+                    string[] Arr = null;
+                    Arr = op.FileName.Split('.');
+                    if (Arr.Length > 0)
+                    {
+                        if (Arr[Arr.Length - 1] == "xls")
+                        {
+                            sConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" +
+                            op.FileName + ";Extended Properties='Excel 8.0;HDR=Yes;IMEX=1'";
+                        }
+                        else if (Arr[Arr.Length - 1] == "xlsx")
+                        {
+                            sConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + op.FileName + ";Extended Properties='Excel 12.0 Xml;HDR=YES';";
+                        }
+                        FillData();
+                    }
+                }
+            }
+        }
+
+        public string sConnectionString;
+        private void FillData()
+        {
+            if (sConnectionString.Length > 0)
+            {
+                OleDbConnection cn = new OleDbConnection(sConnectionString);
+                {
+                    cn.Open();
+                    
+                    OleDbDataAdapter Adpt = new OleDbDataAdapter("select * from [sheet1$]", cn);
+                    Adpt.Fill(dt);
+                    dataGridView1.DataSource = dt;
+                }
+            }
+        }
+
+        private void btnImport_Click(object sender, EventArgs e)
+        {
+            getRocordsByPANCard();
+            foreach(DataRow dr in dt.Rows)
+            {
+
+            }
+        }
+
+        private void getRocordsByPANCard()
+        {
+            var result = from rows in dt.AsEnumerable()
+                         group rows by new { PAN = rows["PAN"] } into grp
+                         select grp;
+            IList<Client> clients;
+            ClientService clientService = new ClientService();
+            clients = clientService.GetAll();
+            
+            foreach (var  pancard in result)
+            {
+                DataTable dtTemp  = pancard.CopyToDataTable();
+                string panno = dtTemp.Rows[0]["PAN"].ToString();
+                int clientId, spouceId, familyMemberId;
+                Client clientByPANCard = clients.FirstOrDefault(i => i.PAN == panno);
+                if (clientByPANCard != null)
+                {
+
+                }
+            }
         }
     }
 }

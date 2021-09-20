@@ -136,6 +136,14 @@ namespace FinancialPlannerServer
                     {
                         MailServer.IsSSL = Boolean.Parse(dr.Field<string>("SettingValue"));
                     }
+                    else if (dr.Field<string>("SettingName") == "POP3_IMPS_Host")
+                    {
+                        MailServer.POP3_IMPS_HostName = dr.Field<string>("SettingValue");
+                    }
+                    else if (dr.Field<string>("SettingName") == "POP3_IMPS_Port")
+                    {
+                        MailServer.POP3_IMPS_HostPort = int.Parse(dr.Field<string>("SettingValue"));
+                    }
                 }
             }
         }

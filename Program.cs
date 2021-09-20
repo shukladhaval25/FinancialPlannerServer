@@ -1,5 +1,6 @@
 ﻿using FinancialPlanner.Common.Model;
 using FinancialPlanner.Common.Permission;
+using FinancialPlannerServer.Testing;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +27,7 @@ namespace FinancialPlannerServer
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             _webServiceUrl = getWebServiceUrl();
+            //Application.Run(new frmTesting());
             Application.Run(new frmLogin());
         }
 
