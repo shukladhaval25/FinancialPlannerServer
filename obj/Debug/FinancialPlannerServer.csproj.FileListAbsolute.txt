@@ -180,5 +180,7 @@ C:\Application Softwares\FinancialPlannerServer\obj\Debug\FinancialPlannerServer
 C:\Application Softwares\FinancialPlannerServer\obj\Debug\FinancialPlannerServer.exe
 C:\Application Softwares\FinancialPlannerServer\obj\Debug\FinancialPlannerServer.pdb
 C:\Application Softwares\FinancialPlannerServer\bin\Debug\FinancialPlanner.Common.dll
-C:\Application Softwares\FinancialPlannerServer\obj\Debug\FinancialPlannerServer.csprojAssemblyReference.cache
 C:\Application Softwares\FinancialPlannerServer\bin\Debug\Newtonsoft.Json.xml
+C:\Application Softwares\FinancialPlannerServer\obj\Debug\FinancialPlannerServer.csprojAssemblyReference.cache
+C:\Application Softwares\FinancialPlannerServer\obj\Debug\FinancialPlannerServer.Processes.ProcessView.resources
+C:\Application Softwares\FinancialPlannerServer\obj\Debug\FinancialPlannerServer.Processes.ProcessInformation.resources

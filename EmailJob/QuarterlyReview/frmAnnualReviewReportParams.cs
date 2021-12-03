@@ -9,11 +9,13 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -200,7 +202,7 @@ namespace FinancialPlannerServer.QuarterlyReview
                    "As your Annual Review is due, You are kindly requested to provide your financial data." + Environment.NewLine + Environment.NewLine +
 
                    "Please find herewith attached Template for the same." + Environment.NewLine + Environment.NewLine +
-                  //"Kindly send data before "+ DateTime.Now.AddDays(15).ToString("dd-MMM-yyyy") + "." + Environment.NewLine + Environment.NewLine +
+                  "Kindly send data before " + DateTime.Now.AddDays(15).ToString("dd-MMM-yyyy") + "." + Environment.NewLine + Environment.NewLine +
 
                   "We value your relationship with us and are committed to provide excellent Financial Solutions and services." + Environment.NewLine + Environment.NewLine +
                    "Regards," + Environment.NewLine +
@@ -402,6 +404,33 @@ namespace FinancialPlannerServer.QuarterlyReview
                 return;
             }
             fillClients();
+        }
+
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string filePath = System.IO.Path.GetTempPath() + "/" + "AnnualReview" + DateTime.Now.Ticks.ToString() + ".xls";
+                gridControlClients.ExportToXls(filePath);
+                System.Diagnostics.Process.Start(filePath);
+            }
+            catch (Exception ex)
+            {
+                DevExpress.XtraEditors.XtraMessageBox.Show(ex.StackTrace.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                StackTrace st = new StackTrace();
+                StackFrame sf = st.GetFrame(0);
+                MethodBase currentMethodName = sf.GetMethod();
+                LogDebug(currentMethodName.Name, ex);
+                System.Windows.Forms.MessageBox.Show("Exception:" + ex.ToString());
+            }
+        }
+        private void LogDebug(string methodName, Exception ex)
+        {
+            DebuggerLogInfo debuggerInfo = new DebuggerLogInfo();
+            debuggerInfo.ClassName = this.GetType().Name;
+            debuggerInfo.Method = methodName;
+            debuggerInfo.ExceptionInfo = ex;
+            Logger.LogDebug(debuggerInfo);
         }
     }
 }

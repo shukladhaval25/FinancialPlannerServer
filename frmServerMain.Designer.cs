@@ -52,14 +52,15 @@
             this.tbtnEmail = new System.Windows.Forms.ToolStripButton();
             this.tbtnAuditTrail = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.tbtnReports = new System.Windows.Forms.ToolStripSplitButton();
+            this.quaterlyReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSystemSetting = new System.Windows.Forms.ToolStripSplitButton();
             this.SystemSetting = new System.Windows.Forms.ToolStripMenuItem();
             this.companyInformationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.QuarterlyReviewSheetMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AnnualReviewSheetMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tbtnReports = new System.Windows.Forms.ToolStripSplitButton();
-            this.quaterlyReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tbtnNotification = new System.Windows.Forms.ToolStripButton();
+            this.tbtnProcesses = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.tbtbScopeSetting = new System.Windows.Forms.ToolStripDropDownButton();
             this.scoreMasterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -313,9 +314,10 @@
             this.tbtnEmail,
             this.tbtnAuditTrail,
             this.toolStripSeparator2,
-            this.toolStripSystemSetting,
             this.tbtnReports,
+            this.toolStripSystemSetting,
             this.tbtnNotification,
+            this.tbtnProcesses,
             this.toolStripSeparator3,
             this.tbtbScopeSetting,
             this.tbtnRiskProfile,
@@ -397,6 +399,25 @@
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 82);
             // 
+            // tbtnReports
+            // 
+            this.tbtnReports.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.quaterlyReportToolStripMenuItem});
+            this.tbtnReports.Image = ((System.Drawing.Image)(resources.GetObject("tbtnReports.Image")));
+            this.tbtnReports.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tbtnReports.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tbtnReports.Name = "tbtnReports";
+            this.tbtnReports.Size = new System.Drawing.Size(76, 79);
+            this.tbtnReports.Text = "Reports";
+            this.tbtnReports.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // quaterlyReportToolStripMenuItem
+            // 
+            this.quaterlyReportToolStripMenuItem.Name = "quaterlyReportToolStripMenuItem";
+            this.quaterlyReportToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.quaterlyReportToolStripMenuItem.Text = "Quaterly Report";
+            this.quaterlyReportToolStripMenuItem.Click += new System.EventHandler(this.quaterlyReportToolStripMenuItem_Click);
+            // 
             // toolStripSystemSetting
             // 
             this.toolStripSystemSetting.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -443,25 +464,6 @@
             this.AnnualReviewSheetMenuItem.Text = "Annual Review Sheet";
             this.AnnualReviewSheetMenuItem.Click += new System.EventHandler(this.AnnualReviewSheetMenuItem_Click);
             // 
-            // tbtnReports
-            // 
-            this.tbtnReports.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.quaterlyReportToolStripMenuItem});
-            this.tbtnReports.Image = ((System.Drawing.Image)(resources.GetObject("tbtnReports.Image")));
-            this.tbtnReports.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tbtnReports.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tbtnReports.Name = "tbtnReports";
-            this.tbtnReports.Size = new System.Drawing.Size(76, 79);
-            this.tbtnReports.Text = "Reports";
-            this.tbtnReports.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            // 
-            // quaterlyReportToolStripMenuItem
-            // 
-            this.quaterlyReportToolStripMenuItem.Name = "quaterlyReportToolStripMenuItem";
-            this.quaterlyReportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.quaterlyReportToolStripMenuItem.Text = "Quaterly Report";
-            this.quaterlyReportToolStripMenuItem.Click += new System.EventHandler(this.quaterlyReportToolStripMenuItem_Click);
-            // 
             // tbtnNotification
             // 
             this.tbtnNotification.Image = ((System.Drawing.Image)(resources.GetObject("tbtnNotification.Image")));
@@ -473,6 +475,18 @@
             this.tbtnNotification.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.tbtnNotification.ToolTipText = "Notification";
             this.tbtnNotification.Visible = false;
+            // 
+            // tbtnProcesses
+            // 
+            this.tbtnProcesses.Image = global::FinancialPlannerServer.Properties.Resources.work_process;
+            this.tbtnProcesses.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tbtnProcesses.ImageTransparentColor = System.Drawing.Color.White;
+            this.tbtnProcesses.Name = "tbtnProcesses";
+            this.tbtnProcesses.Size = new System.Drawing.Size(64, 79);
+            this.tbtnProcesses.Text = "Processes";
+            this.tbtnProcesses.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
+            this.tbtnProcesses.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tbtnProcesses.Click += new System.EventHandler(this.tbtnProcesses_Click);
             // 
             // toolStripSeparator3
             // 
@@ -494,21 +508,21 @@
             // scoreMasterToolStripMenuItem
             // 
             this.scoreMasterToolStripMenuItem.Name = "scoreMasterToolStripMenuItem";
-            this.scoreMasterToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.scoreMasterToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.scoreMasterToolStripMenuItem.Text = "Score Master";
             this.scoreMasterToolStripMenuItem.Click += new System.EventHandler(this.scoreMasterToolStripMenuItem_Click);
             // 
             // scoreEntryToolStripMenuItem
             // 
             this.scoreEntryToolStripMenuItem.Name = "scoreEntryToolStripMenuItem";
-            this.scoreEntryToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.scoreEntryToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.scoreEntryToolStripMenuItem.Text = "Score Entry";
             this.scoreEntryToolStripMenuItem.Click += new System.EventHandler(this.scoreEntryToolStripMenuItem_Click);
             // 
             // tbtnRiskProfile
             // 
             this.tbtnRiskProfile.Image = global::FinancialPlannerServer.Properties.Resources.icons8_sales_performance_60;
-            this.tbtnRiskProfile.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tbtnRiskProfile.ImageTransparentColor = System.Drawing.Color.White;
             this.tbtnRiskProfile.Name = "tbtnRiskProfile";
             this.tbtnRiskProfile.Size = new System.Drawing.Size(85, 79);
             this.tbtnRiskProfile.Text = "Risk Profile";
@@ -589,5 +603,6 @@
         private System.Windows.Forms.ToolStripMenuItem scoreMasterToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem scoreEntryToolStripMenuItem;
         private System.Windows.Forms.ToolStripButton tbtnRiskProfile;
+        private System.Windows.Forms.ToolStripButton tbtnProcesses;
     }
 }

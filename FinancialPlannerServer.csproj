@@ -115,6 +115,19 @@
       <DependentUpon>frmSystemSetting.cs</DependentUpon>
     </Compile>
     <Compile Include="MailManager.cs" />
+    <Compile Include="Processes\ProcessesInfo.cs" />
+    <Compile Include="Processes\ProcessInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Processes\ProcessInformation.Designer.cs">
+      <DependentUpon>ProcessInformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Processes\ProcessView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Processes\ProcessView.Designer.cs">
+      <DependentUpon>ProcessView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="EmailJob\QuarterlyReview\frmAnnualReviewReportParams.cs">
@@ -223,6 +236,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmSystemSetting.resx">
       <DependentUpon>frmSystemSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Processes\ProcessInformation.resx">
+      <DependentUpon>ProcessInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Processes\ProcessView.resx">
+      <DependentUpon>ProcessView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -370,7 +389,9 @@
   <ItemGroup>
     <None Include="Resources\icons8-double-down-16.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\work-process.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-send-30.png" />
   </ItemGroup>
@@ -439,6 +460,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-sales-performance-60.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\process.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -443,6 +443,16 @@ namespace FinancialPlannerServer.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap process {
+            get {
+                object obj = ResourceManager.GetObject("process", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Reports_60 {
             get {
                 object obj = ResourceManager.GetObject("Reports-60", resourceCulture);
@@ -516,6 +526,16 @@ namespace FinancialPlannerServer.Properties {
         internal static System.Drawing.Bitmap Users_60 {
             get {
                 object obj = ResourceManager.GetObject("Users-60", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap work_process {
+            get {
+                object obj = ResourceManager.GetObject("work-process", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

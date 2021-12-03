@@ -1,5 +1,6 @@
 ﻿using FinancialPlanner.Common;
 using FinancialPlanner.Common.Model;
+using FinancialPlannerServer.Processes;
 using FinancialPlannerServer.QuarterlyReview;
 using FinancialPlannerServer.ScoreCalcuation;
 using FinancialPlannerServer.Security;
@@ -28,6 +29,7 @@ namespace FinancialPlannerServer
         private ScoresEntry ScoresEntry;
         private ScoreMaster scoreMaster;
         private Permission permission;
+        private ProcessView processView;
         private frmCompany _company;
         public frmServerMain()
         {
@@ -309,6 +311,24 @@ namespace FinancialPlannerServer
                 ScoresEntry.Dock = DockStyle.Fill;
                 ScoresEntry.Show();
             }
-        }        
+        }
+
+        private void tbtnProcesses_Click(object sender, EventArgs e)
+        {
+            if (pnlContainer.Controls.Contains(processView))
+            {
+                pnlContainer.Controls[pnlContainer.Controls.GetChildIndex(processView)].Show();
+            }
+            else
+            {
+                if (processView == null || processView.IsDisposed)
+                    processView = new ProcessView();
+
+                processView.TopLevel = false;
+                pnlContainer.Controls.Add(processView);
+                processView.Dock = DockStyle.Fill;
+                processView.Show();
+            }
+        }
     }
 }
