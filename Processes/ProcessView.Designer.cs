@@ -53,18 +53,22 @@
             this.tileViewColumnPrimaryResponsibility = new DevExpress.XtraGrid.Columns.TileViewColumn();
             this.tileViewColumnOwner = new DevExpress.XtraGrid.Columns.TileViewColumn();
             this.tileViewColumnChecker = new DevExpress.XtraGrid.Columns.TileViewColumn();
-            this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.cardView1 = new DevExpress.XtraGrid.Views.Card.CardView();
             this.grpProcesses = new DevExpress.XtraEditors.GroupControl();
+            this.grpProcessGroup = new System.Windows.Forms.GroupBox();
+            this.btnSearch = new DevExpress.XtraEditors.SimpleButton();
+            this.label2 = new System.Windows.Forms.Label();
             this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
             this.btnEdit = new DevExpress.XtraEditors.SimpleButton();
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
+            this.cmbProcessGroup = new DevExpress.XtraEditors.ComboBoxEdit();
             ((System.ComponentModel.ISupportInitialize)(this.grdProcessStep)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileViewProcesStep)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cardView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grpProcesses)).BeginInit();
             this.grpProcesses.SuspendLayout();
+            this.grpProcessGroup.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbProcessGroup.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // tileViewColumnStepNo
@@ -110,12 +114,10 @@
             this.grdProcessStep.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.grdProcessStep.Location = new System.Drawing.Point(5, 23);
+            this.grdProcessStep.Location = new System.Drawing.Point(5, 83);
             this.grdProcessStep.MainView = this.tileViewProcesStep;
             this.grdProcessStep.Name = "grdProcessStep";
-            this.grdProcessStep.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemCheckEdit1});
-            this.grdProcessStep.Size = new System.Drawing.Size(826, 388);
+            this.grdProcessStep.Size = new System.Drawing.Size(826, 328);
             this.grdProcessStep.TabIndex = 4;
             this.grdProcessStep.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.tileViewProcesStep,
@@ -217,11 +219,6 @@
             this.tileViewColumnChecker.Visible = true;
             this.tileViewColumnChecker.VisibleIndex = 8;
             // 
-            // repositoryItemCheckEdit1
-            // 
-            this.repositoryItemCheckEdit1.AutoHeight = false;
-            this.repositoryItemCheckEdit1.Name = "repositoryItemCheckEdit1";
-            // 
             // cardView1
             // 
             this.cardView1.FocusedCardTopFieldIndex = 0;
@@ -230,6 +227,7 @@
             // 
             // grpProcesses
             // 
+            this.grpProcesses.Controls.Add(this.grpProcessGroup);
             this.grpProcesses.Controls.Add(this.btnDelete);
             this.grpProcesses.Controls.Add(this.grdProcessStep);
             this.grpProcesses.Controls.Add(this.btnEdit);
@@ -239,13 +237,43 @@
             this.grpProcesses.Name = "grpProcesses";
             this.grpProcesses.Size = new System.Drawing.Size(837, 450);
             this.grpProcesses.TabIndex = 5;
-            this.grpProcesses.Text = "Process for Financial Planning";
+            this.grpProcesses.Text = "Process Information";
+            // 
+            // grpProcessGroup
+            // 
+            this.grpProcessGroup.Controls.Add(this.btnSearch);
+            this.grpProcessGroup.Controls.Add(this.label2);
+            this.grpProcessGroup.Controls.Add(this.cmbProcessGroup);
+            this.grpProcessGroup.Location = new System.Drawing.Point(5, 23);
+            this.grpProcessGroup.Name = "grpProcessGroup";
+            this.grpProcessGroup.Size = new System.Drawing.Size(421, 54);
+            this.grpProcessGroup.TabIndex = 10;
+            this.grpProcessGroup.TabStop = false;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnSearch.Location = new System.Drawing.Point(332, 21);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(83, 19);
+            this.btnSearch.TabIndex = 8;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Application;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 23);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(136, 13);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Select your process group:";
             // 
             // btnDelete
             // 
             this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
-            this.btnDelete.Location = new System.Drawing.Point(69, 422);
+            this.btnDelete.Location = new System.Drawing.Point(70, 417);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(25, 23);
             toolTipTitleItem1.Text = "Delete Process";
@@ -262,7 +290,7 @@
             // 
             this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Image")));
-            this.btnEdit.Location = new System.Drawing.Point(38, 422);
+            this.btnEdit.Location = new System.Drawing.Point(39, 417);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(25, 23);
             toolTipTitleItem2.Text = "Edit Process\r\n";
@@ -279,7 +307,7 @@
             // 
             this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
-            this.btnAdd.Location = new System.Drawing.Point(7, 422);
+            this.btnAdd.Location = new System.Drawing.Point(8, 417);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(25, 23);
             toolTipTitleItem3.Text = "New Process";
@@ -294,6 +322,19 @@
             this.btnAdd.ToolTipTitle = "New Client";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
+            // cmbProcessGroup
+            // 
+            this.cmbProcessGroup.Location = new System.Drawing.Point(148, 21);
+            this.cmbProcessGroup.Name = "cmbProcessGroup";
+            this.cmbProcessGroup.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbProcessGroup.Properties.DisplayFormat.FormatString = "d";
+            this.cmbProcessGroup.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.cmbProcessGroup.Properties.EditFormat.FormatString = "d";
+            this.cmbProcessGroup.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.cmbProcessGroup.Size = new System.Drawing.Size(178, 20);
+            this.cmbProcessGroup.TabIndex = 7;
+            // 
             // ProcessView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -305,10 +346,12 @@
             this.Load += new System.EventHandler(this.ProcessView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grdProcessStep)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileViewProcesStep)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cardView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grpProcesses)).EndInit();
             this.grpProcesses.ResumeLayout(false);
+            this.grpProcessGroup.ResumeLayout(false);
+            this.grpProcessGroup.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbProcessGroup.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -317,7 +360,6 @@
 
         private DevExpress.XtraGrid.GridControl grdProcessStep;
         private DevExpress.XtraGrid.Views.Card.CardView cardView1;
-        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
         private DevExpress.XtraGrid.Views.Tile.TileView tileViewProcesStep;
         private DevExpress.XtraGrid.Columns.TileViewColumn tileViewColumnId;
         private DevExpress.XtraGrid.Columns.TileViewColumn tileViewColumnStepNo;
@@ -333,5 +375,9 @@
         public DevExpress.XtraEditors.SimpleButton btnDelete;
         public DevExpress.XtraEditors.SimpleButton btnEdit;
         public DevExpress.XtraEditors.SimpleButton btnAdd;
+        private System.Windows.Forms.GroupBox grpProcessGroup;
+        public DevExpress.XtraEditors.SimpleButton btnSearch;
+        private System.Windows.Forms.Label label2;
+        private DevExpress.XtraEditors.ComboBoxEdit cmbProcessGroup;
     }
 }

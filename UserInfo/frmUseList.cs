@@ -51,6 +51,8 @@ namespace FinancialPlannerServer.UserInfo
             }
         }
 
+        
+
         private void gridDisplaySetting()
         {
             hideGridColumns();
@@ -130,9 +132,14 @@ namespace FinancialPlannerServer.UserInfo
                 user.FirstName = dr.Field<string>("FirstName");
                 user.LastName = dr.Field<string>("LastName");
                 user.Password = dr.Field<string>("Password");
+               
+               user.UpdatedByUserName = Program.CurrentUser.UserName;
                 if (dr["RoleId"] != DBNull.Value)
                     user.RoleId = int.Parse(dr["RoleId"].ToString());
-               user.UpdatedByUserName = Program.CurrentUser.UserName;
+                if (dr["DesignationId"] != DBNull.Value)
+                    user.DesignationId = int.Parse(dr["DesignationId"].ToString());
+                if (dr["ReportToId"] != DBNull.Value)
+                    user.ReportToId = int.Parse(dr["ReportToId"].ToString());
             }
             return user;
         }

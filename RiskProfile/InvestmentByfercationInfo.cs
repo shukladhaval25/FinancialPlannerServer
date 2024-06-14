@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace FinancialPlannerServer.RiskProfile
 {
-    internal class InvestmentByfercationInfo
+    public class InvestmentByfercationInfo
     {
         DataTable _dtInvestmentSegment;
         private readonly string GET_ALL = "RiskProfileInvestmentSegment/GetAll?riskProfileId={0}";
@@ -25,6 +25,8 @@ namespace FinancialPlannerServer.RiskProfile
         private readonly string ADD_RECOMMENDEDSCHEME = "RecommendedSchemes/Add";
         private readonly string UPDATE_RECOMMENDEDSCHEME = "RecommendedSchemes/Update";
         private readonly string DELETE_RECOMMENDEDSCHEME = "RecommendedSchemes/Delete";
+
+        private readonly string GET_MODEL_PORTFILIO = "RiskProfileInvestmentSegment/ModelPortfolio?riskProfileId={0}";
 
         public void FillInvestmentBifurcationData(int riskProfileId, string investmentType, DataGridView dataGrid)
         {
@@ -268,6 +270,44 @@ namespace FinancialPlannerServer.RiskProfile
                 MethodBase  currentMethodName = sf.GetMethod();
                 LogDebug(currentMethodName.Name, ex);
                 return false;
+            }
+        }
+
+        public IList<ModelPortfolio> GetModelPortfolio(int riskProfileId)
+        {
+            if (_dtInvestmentSegment != null)
+                _dtInvestmentSegment.Clear();
+            IList<ModelPortfolio> modelPortfolios = new List<ModelPortfolio>();
+            try
+            {
+                FinancialPlanner.Common.JSONSerialization jsonSerialization = new FinancialPlanner.Common.JSONSerialization();
+                string apiurl = Program.WebServiceUrl + "/" + string.Format(GET_MODEL_PORTFILIO, riskProfileId);
+
+                RestAPIExecutor restApiExecutor = new RestAPIExecutor();
+
+                var restResult = restApiExecutor.Execute<IList<ModelPortfolio>>(apiurl, null, "GET");
+
+                if (jsonSerialization.IsValidJson(restResult.ToString()))
+                {
+                    modelPortfolios = jsonSerialization.DeserializeFromString<IList<ModelPortfolio>>(restResult.ToString());
+                }
+                return modelPortfolios;
+            }
+            catch (System.Net.WebException webException)
+            {
+                if (webException.Message.Equals("The remote server returned an error: (401) Unauthorized."))
+                {
+                    MessageBox.Show("You session has been expired. Please Login again.", "Session Expired", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                return modelPortfolios;
+            }
+            catch (Exception ex)
+            {
+                StackTrace st = new StackTrace();
+                StackFrame sf = st.GetFrame(0);
+                MethodBase currentMethodName = sf.GetMethod();
+                LogDebug(currentMethodName.Name, ex);
+                return modelPortfolios;
             }
         }
     }

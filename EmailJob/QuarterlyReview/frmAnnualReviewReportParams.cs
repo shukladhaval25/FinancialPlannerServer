@@ -93,7 +93,7 @@ namespace FinancialPlannerServer.QuarterlyReview
            foreach(int index in selectedRowsIndex)
            {
                 string emailId = gridViewClient.GetRowCellValue(index, "PrimaryEmail").ToString();
-                string cc = txtCC.Text;
+                string bcc = txtCC.Text;
                 if (!string.IsNullOrEmpty(emailId))
                 {
                     try
@@ -122,7 +122,7 @@ namespace FinancialPlannerServer.QuarterlyReview
                         string reviewSheetFilePath = generateReviewSheet(members,loans);
 
                         //Send email to that member.
-                        await Task.Run(() => sendEmail(emailId,cc, reviewSheetFilePath, clientName,index));
+                        await Task.Run(() => sendEmail(emailId,bcc, reviewSheetFilePath, clientName,index));
 
                        
 
@@ -180,7 +180,7 @@ namespace FinancialPlannerServer.QuarterlyReview
             //    System.IO.Directory.Delete(Path.Combine(Path.GetTempPath(), "ReviewSheet"),true);
         }
 
-        private void sendEmail(string primaryEmail,string cc,string reviewSheetPath,string clientName,int index)
+        private void sendEmail(string primaryEmail,string bcc,string reviewSheetPath,string clientName,int index)
         {
             try
             {
@@ -188,9 +188,9 @@ namespace FinancialPlannerServer.QuarterlyReview
                 MailMessage mailMessage = new MailMessage();
                 mailMessage.From = new MailAddress(MailServer.FromEmail);
                 mailMessage.To.Add(new MailAddress(primaryEmail));
-                if (!string.IsNullOrEmpty(cc))
+                if (!string.IsNullOrEmpty(bcc))
                 {
-                    mailMessage.CC.Add(new MailAddress(cc));
+                    mailMessage.Bcc.Add(new MailAddress(bcc));
                 }
                 mailMessage.Subject = "Data require for annual review";
                 mailMessage.IsBodyHtml = false;

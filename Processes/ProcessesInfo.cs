@@ -15,6 +15,8 @@ namespace FinancialPlannerServer.Processes
     {
         const string GET_PRIMARY_STEPS = "ProcessAction/GetPrimarySteps";
         const string GET_LINKSUB_STEPS = "ProcessAction/GetLinkSubSteps?primaryStepId={0}";
+        const string GET_LINKSUB_STEPS_REFTASKID = "ProcessAction/GetLinkSubStepsByRefTaskId?refTaskId={0}";
+
 
         const string UPDATE_PRIMARY_STEPS = "ProcessAction/UpdatePrimaryStep";
         const string UPDATE_LINKSUB_STEPS = "ProcessAction/UpdateLinkSubStep";
@@ -65,6 +67,42 @@ namespace FinancialPlannerServer.Processes
             {
                 FinancialPlanner.Common.JSONSerialization jsonSerialization = new FinancialPlanner.Common.JSONSerialization();
                 string apiurl = Program.WebServiceUrl + "/" + string.Format(GET_LINKSUB_STEPS,primaryStepId);
+
+                RestAPIExecutor restApiExecutor = new RestAPIExecutor();
+
+                var restResult = restApiExecutor.Execute<IList<PrimaryStep>>(apiurl, null, "GET");
+
+                if (jsonSerialization.IsValidJson(restResult.ToString()))
+                {
+                    linkSubSteps = jsonSerialization.DeserializeFromString<IList<LinkSubStep>>(restResult.ToString());
+                }
+                return linkSubSteps;
+            }
+            catch (System.Net.WebException webException)
+            {
+                if (webException.Message.Equals("The remote server returned an error: (401) Unauthorized."))
+                {
+                    MessageBox.Show("You session has been expired. Please Login again.", "Session Expired", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                return null;
+            }
+            catch (Exception ex)
+            {
+                StackTrace st = new StackTrace();
+                StackFrame sf = st.GetFrame(0);
+                MethodBase currentMethodName = sf.GetMethod();
+                LogDebug(currentMethodName.Name, ex);
+                return null;
+            }
+        }
+
+        internal IList<LinkSubStep> GetLinkSubStepsByRefTaskId(string  refTaskId)
+        {
+            IList<LinkSubStep> linkSubSteps = new List<LinkSubStep>();
+            try
+            {
+                FinancialPlanner.Common.JSONSerialization jsonSerialization = new FinancialPlanner.Common.JSONSerialization();
+                string apiurl = Program.WebServiceUrl + "/" + string.Format(GET_LINKSUB_STEPS_REFTASKID, refTaskId);
 
                 RestAPIExecutor restApiExecutor = new RestAPIExecutor();
 

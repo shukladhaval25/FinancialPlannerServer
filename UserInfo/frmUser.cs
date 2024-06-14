@@ -2,6 +2,8 @@
 using FinancialPlanner.Common.DataEncrypterDecrypter;
 using FinancialPlanner.Common.Model;
 using FinancialPlanner.Common.Permission;
+using FinancialPlanner.Common.Planning;
+using FinancialPlannerServer.Processes;
 using FinancialPlannerServer.Security;
 using System;
 using System.Collections.Generic;
@@ -23,6 +25,8 @@ namespace FinancialPlannerServer.UserInfo
         private const string USER_ADD_API = "User/Add";
         private User _user;
         private bool _isEditModeOn = false;
+        IList<DesignationHierarchy> designationHierarchies;
+        IList<User> users;
         public frmUser()
         {
             InitializeComponent();
@@ -37,9 +41,39 @@ namespace FinancialPlannerServer.UserInfo
         private void frmUser_Load(object sender, EventArgs e)
         {
             fillRolesPermission();
+            fillDesignation();
+            fillReportTo();
             if (_user != null)
                 fillUserInfo();
             
+        }
+
+        private void fillReportTo()
+        {
+            users = new UserServiceInfo().GetUsers();
+           
+        }
+        private void fillReportToUserCombo(int? ReportingToId)
+        {
+            IList<User> reportToUser = new List<User>();
+            foreach (User user in users)
+            {
+                if (user.DesignationId == ReportingToId)
+                {
+                    reportToUser.Add(user);
+                }
+            }
+            lookupReportTo.Properties.DataSource = reportToUser;
+            lookupReportTo.Properties.ValueMember = "Id";
+            lookupReportTo.Properties.DisplayMember = "FirstName";
+        }
+        
+        private void fillDesignation()
+        {
+            designationHierarchies = new DesignationHierarchyInfo().GetAll();
+            lookupDesignation.Properties.DataSource = designationHierarchies;
+            lookupDesignation.Properties.ValueMember = "Id";
+            lookupDesignation.Properties.DisplayMember = "Designation";
         }
 
         private void fillRolesPermission()
@@ -81,6 +115,8 @@ namespace FinancialPlannerServer.UserInfo
             lblConfirmPassword.Visible = false;
             txtConfirmPassword.Visible = false;
             lookUpRole.EditValue = _user.RoleId;
+            lookupDesignation.EditValue = _user.DesignationId;
+            lookupReportTo.EditValue = _user.ReportToId;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -112,7 +148,11 @@ namespace FinancialPlannerServer.UserInfo
             {
                 FinancialPlanner.Common.JSONSerialization jsonSerialization = new FinancialPlanner.Common.JSONSerialization();
                 string apiurl = Program.WebServiceUrl +"/"+ USER_ADD_API;
-
+                int? value = 0;
+                if (value == 0)
+                {
+                    value = null;
+                }
                 User user = new User()
                 {
                     UserName = txtUserName.Text,
@@ -124,7 +164,9 @@ namespace FinancialPlannerServer.UserInfo
                     UpdatedOn =  DateTime.Parse( DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss")),
                     UpdatedBy = Program.CurrentUser.Id,
                     UpdatedByUserName = Program.CurrentUser.UserName,
-                    RoleId = int.Parse(lookUpRole.EditValue.ToString())
+                    RoleId = int.Parse(lookUpRole.EditValue.ToString()),
+                    DesignationId = (lookupDesignation.EditValue == null) ? value : int.Parse(lookupDesignation.EditValue.ToString()),
+                    ReportToId = (lookupReportTo.EditValue == null) ? value : int.Parse(lookupReportTo.EditValue.ToString())
                 };
                 string DATA =  jsonSerialization.SerializeToString<User>(user);
 
@@ -152,7 +194,11 @@ namespace FinancialPlannerServer.UserInfo
         {
             FinancialPlanner.Common.JSONSerialization jsonSerialization = new FinancialPlanner.Common.JSONSerialization();
             string apiurl = Program.WebServiceUrl +"/"+ USER_UPDATE_RAPI;
-
+            int? value = 0;
+            if (value == 0)
+            {
+                value = null;
+            }
             User user = new User()
             {
                 Id = _user.Id,
@@ -163,7 +209,9 @@ namespace FinancialPlannerServer.UserInfo
                 UpdatedOn = DateTime.Parse( DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss")),
                 UpdatedBy = Program.CurrentUser.Id,
                 UpdatedByUserName = Program.CurrentUser.UserName,
-                RoleId = int.Parse(lookUpRole.EditValue.ToString())
+                RoleId = int.Parse(lookUpRole.EditValue.ToString()),
+                DesignationId = (lookupDesignation.EditValue == null) ? value : int.Parse(lookupDesignation.EditValue.ToString()),
+                ReportToId = (lookupReportTo.EditValue == null) ? value : int.Parse(lookupReportTo.EditValue.ToString())
             };
 
             string DATA =  jsonSerialization.SerializeToString<User>(user);
@@ -180,6 +228,12 @@ namespace FinancialPlannerServer.UserInfo
                     MessageBox.Show("Record save successfully.");
                 }
             }
+        }
+
+        private void lookupDesignation_EditValueChanged(object sender, EventArgs e)
+        {
+            DesignationHierarchy designationHierarchy = designationHierarchies.First(i => i.Id == int.Parse(lookupDesignation.EditValue.ToString()));
+            fillReportToUserCombo(designationHierarchy.ReportingToDesignationId);
         }
     }
 }

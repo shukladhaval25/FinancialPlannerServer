@@ -31,6 +31,10 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUser));
             this.grpUserInfo = new System.Windows.Forms.GroupBox();
+            this.lookupReportTo = new DevExpress.XtraEditors.LookUpEdit();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lookupDesignation = new DevExpress.XtraEditors.LookUpEdit();
+            this.label2 = new System.Windows.Forms.Label();
             this.lookUpRole = new DevExpress.XtraEditors.LookUpEdit();
             this.label1 = new System.Windows.Forms.Label();
             this.txtConfirmPassword = new System.Windows.Forms.TextBox();
@@ -47,11 +51,17 @@
             this.imgCollection16x16 = new System.Windows.Forms.ImageList(this.components);
             this.btnCancel = new System.Windows.Forms.Button();
             this.grpUserInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lookupReportTo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookupDesignation.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpRole.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // grpUserInfo
             // 
+            this.grpUserInfo.Controls.Add(this.lookupReportTo);
+            this.grpUserInfo.Controls.Add(this.label3);
+            this.grpUserInfo.Controls.Add(this.lookupDesignation);
+            this.grpUserInfo.Controls.Add(this.label2);
             this.grpUserInfo.Controls.Add(this.lookUpRole);
             this.grpUserInfo.Controls.Add(this.label1);
             this.grpUserInfo.Controls.Add(this.txtConfirmPassword);
@@ -67,10 +77,53 @@
             this.grpUserInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpUserInfo.Location = new System.Drawing.Point(6, 6);
             this.grpUserInfo.Name = "grpUserInfo";
-            this.grpUserInfo.Size = new System.Drawing.Size(484, 243);
+            this.grpUserInfo.Size = new System.Drawing.Size(484, 313);
             this.grpUserInfo.TabIndex = 0;
             this.grpUserInfo.TabStop = false;
             this.grpUserInfo.Text = "User Information";
+            // 
+            // lookupReportTo
+            // 
+            this.lookupReportTo.Location = new System.Drawing.Point(154, 277);
+            this.lookupReportTo.Name = "lookupReportTo";
+            this.lookupReportTo.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lookupReportTo.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Id", "Id", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("FirstName", "Name")});
+            this.lookupReportTo.Size = new System.Drawing.Size(268, 20);
+            this.lookupReportTo.TabIndex = 15;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(23, 280);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(72, 16);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "Report To:";
+            // 
+            // lookupDesignation
+            // 
+            this.lookupDesignation.Location = new System.Drawing.Point(154, 242);
+            this.lookupDesignation.Name = "lookupDesignation";
+            this.lookupDesignation.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lookupDesignation.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Id", "Id", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Designation", "Designation")});
+            this.lookupDesignation.Size = new System.Drawing.Size(268, 20);
+            this.lookupDesignation.TabIndex = 13;
+            this.lookupDesignation.EditValueChanged += new System.EventHandler(this.lookupDesignation_EditValueChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(23, 245);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(83, 16);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Designation:";
             // 
             // lookUpRole
             // 
@@ -185,7 +238,7 @@
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSave.ImageKey = "icons8-save-close-16.png";
             this.btnSave.ImageList = this.imgCollection16x16;
-            this.btnSave.Location = new System.Drawing.Point(334, 255);
+            this.btnSave.Location = new System.Drawing.Point(334, 325);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 1;
@@ -214,7 +267,7 @@
             this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancel.ImageKey = "icons8-cancel-16.png";
             this.btnCancel.ImageList = this.imgCollection16x16;
-            this.btnCancel.Location = new System.Drawing.Point(415, 255);
+            this.btnCancel.Location = new System.Drawing.Point(415, 325);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 2;
@@ -226,7 +279,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(494, 287);
+            this.ClientSize = new System.Drawing.Size(494, 355);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.grpUserInfo);
@@ -238,6 +291,8 @@
             this.Load += new System.EventHandler(this.frmUser_Load);
             this.grpUserInfo.ResumeLayout(false);
             this.grpUserInfo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lookupReportTo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookupDesignation.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpRole.Properties)).EndInit();
             this.ResumeLayout(false);
 
@@ -261,5 +316,9 @@
         private System.Windows.Forms.ImageList imgCollection16x16;
         private System.Windows.Forms.Label label1;
         private DevExpress.XtraEditors.LookUpEdit lookUpRole;
+        private DevExpress.XtraEditors.LookUpEdit lookupReportTo;
+        private System.Windows.Forms.Label label3;
+        private DevExpress.XtraEditors.LookUpEdit lookupDesignation;
+        private System.Windows.Forms.Label label2;
     }
 }

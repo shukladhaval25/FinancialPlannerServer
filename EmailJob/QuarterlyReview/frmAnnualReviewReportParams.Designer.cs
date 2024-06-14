@@ -196,16 +196,16 @@
             this.txtCC.Name = "txtCC";
             this.txtCC.Size = new System.Drawing.Size(401, 20);
             this.txtCC.TabIndex = 1;
-            this.txtCC.Text = "financialsolutionsascent@gmail.com";
+            this.txtCC.Text = "clientascentsolutions@gmail.com";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(7, 15);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(24, 13);
+            this.label3.Size = new System.Drawing.Size(29, 13);
             this.label3.TabIndex = 0;
-            this.label3.Text = "CC:";
+            this.label3.Text = "Bcc:";
             // 
             // btnExport
             // 

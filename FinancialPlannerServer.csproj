@@ -35,8 +35,14 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.Data.v16.2, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DataAccess.v16.2, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Diagram.v16.2.Core, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\DevExpress.Diagram.v16.2.Core\v4.0_16.2.3.0__b88d1754d700e49a\DevExpress.Diagram.v16.2.Core.dll</HintPath>
+    </Reference>
     <Reference Include="DevExpress.Printing.v16.2.Core, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Utils.v16.2, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpo.v16.2, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraDiagram.v16.2, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v16.2, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGrid.v16.2, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -115,6 +121,13 @@
       <DependentUpon>frmSystemSetting.cs</DependentUpon>
     </Compile>
     <Compile Include="MailManager.cs" />
+    <Compile Include="Processes\DesignationHierarchyInfo.cs" />
+    <Compile Include="Processes\DesignationHierarchyView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Processes\DesignationHierarchyView.Designer.cs">
+      <DependentUpon>DesignationHierarchyView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Processes\ProcessesInfo.cs" />
     <Compile Include="Processes\ProcessInformation.cs">
       <SubType>Form</SubType>
@@ -216,6 +229,7 @@
     <Compile Include="UserInfo\frmUser.Designer.cs">
       <DependentUpon>frmUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserInfo\UserServiceInfo.cs" />
     <EmbeddedResource Include="AuditTrail\AuditTrail.resx">
       <DependentUpon>AuditTrail.cs</DependentUpon>
     </EmbeddedResource>
@@ -236,6 +250,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmSystemSetting.resx">
       <DependentUpon>frmSystemSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Processes\DesignationHierarchyView.resx">
+      <DependentUpon>DesignationHierarchyView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Processes\ProcessInformation.resx">
       <DependentUpon>ProcessInformation.cs</DependentUpon>
@@ -463,6 +480,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\process.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\risk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\risk1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pie-chart.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

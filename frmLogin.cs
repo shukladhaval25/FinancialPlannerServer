@@ -22,6 +22,16 @@ namespace FinancialPlannerServer
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(txtUserName.Text))
+            {
+                MessageBox.Show("Please enter user name.", "User Name");
+                return;
+            }
+            if (!txtUserName.Text.Equals("Admin"))
+            {
+                MessageBox.Show("Only admin can connect with this application.", "Contact to your administrator");
+                return;
+            }
             FinancialPlanner.Common.JSONSerialization jsonSerialization = new FinancialPlanner.Common.JSONSerialization();
             User user = new User()
             {

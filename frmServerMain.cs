@@ -4,6 +4,7 @@ using FinancialPlannerServer.Processes;
 using FinancialPlannerServer.QuarterlyReview;
 using FinancialPlannerServer.ScoreCalcuation;
 using FinancialPlannerServer.Security;
+using FinancialPlannerServer.UserInfo;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,7 +31,9 @@ namespace FinancialPlannerServer
         private ScoreMaster scoreMaster;
         private Permission permission;
         private ProcessView processView;
+        private DesignationHierarchyView designationHierarchyView;
         private frmCompany _company;
+        private IList<User> users;
         public frmServerMain()
         {
             InitializeComponent();          
@@ -255,6 +258,9 @@ namespace FinancialPlannerServer
         private void frmServerMain_Load(object sender, EventArgs e)
         {
             setMailServerSettingFromConfiguration();
+            users = new UserServiceInfo().GetUsers();
+            diagramOrgChartController1.DataSource = users;
+
         }
         private void setMailServerSettingFromConfiguration()
         {
@@ -329,6 +335,29 @@ namespace FinancialPlannerServer
                 processView.Dock = DockStyle.Fill;
                 processView.Show();
             }
+        }
+
+        private void tbtnDepartmentHierarchy_Click(object sender, EventArgs e)
+        {
+            if (pnlContainer.Controls.Contains(designationHierarchyView))
+            {
+                pnlContainer.Controls[pnlContainer.Controls.GetChildIndex(designationHierarchyView)].Show();
+            }
+            else
+            {
+                if (designationHierarchyView == null || designationHierarchyView.IsDisposed)
+                    designationHierarchyView = new DesignationHierarchyView();
+
+                designationHierarchyView.TopLevel = false;
+                pnlContainer.Controls.Add(designationHierarchyView);
+                designationHierarchyView.Dock = DockStyle.Fill;
+                designationHierarchyView.Show();
+            }
+        }
+
+        private void diagramControl_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

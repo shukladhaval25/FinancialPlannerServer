@@ -47,6 +47,12 @@
             DevExpress.Utils.SuperToolTip superToolTip6 = new DevExpress.Utils.SuperToolTip();
             DevExpress.Utils.ToolTipTitleItem toolTipTitleItem6 = new DevExpress.Utils.ToolTipTitleItem();
             DevExpress.Utils.ToolTipItem toolTipItem6 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.SuperToolTip superToolTip7 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem7 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.ToolTipItem toolTipItem7 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.SuperToolTip superToolTip8 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem8 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.ToolTipItem toolTipItem8 = new DevExpress.Utils.ToolTipItem();
             this.grpProcesses = new DevExpress.XtraEditors.GroupControl();
             this.grpLinkSubStep = new DevExpress.XtraEditors.GroupControl();
             this.grdLinkSubProcessStep = new DevExpress.XtraGrid.GridControl();
@@ -79,6 +85,13 @@
             this.labelControl27 = new DevExpress.XtraEditors.LabelControl();
             this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
             this.grpLinkSubStepInfo = new DevExpress.XtraEditors.GroupControl();
+            this.grpDesignation = new DevExpress.XtraEditors.GroupControl();
+            this.btnDeletePoint = new DevExpress.XtraEditors.SimpleButton();
+            this.btnAddPoint = new DevExpress.XtraEditors.SimpleButton();
+            this.gridPoints = new DevExpress.XtraGrid.GridControl();
+            this.gridViewPoints = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumnPoint = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.chkAllowByPassProcess = new DevExpress.XtraEditors.CheckEdit();
             this.txtLinkSubStepId = new DevExpress.XtraEditors.TextEdit();
             this.btnClose = new DevExpress.XtraEditors.SimpleButton();
             this.btnSaveLinkSubSteps = new DevExpress.XtraEditors.SimpleButton();
@@ -153,6 +166,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.cardView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grpLinkSubStepInfo)).BeginInit();
             this.grpLinkSubStepInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grpDesignation)).BeginInit();
+            this.grpDesignation.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridPoints)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewPoints)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkAllowByPassProcess.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLinkSubStepId.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbLinkSubStepChecker.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbLinkSubStepOwner.Properties)).BeginInit();
@@ -185,7 +203,7 @@
             this.grpProcesses.Location = new System.Drawing.Point(0, 0);
             this.grpProcesses.Name = "grpProcesses";
             this.grpProcesses.ShowCaption = false;
-            this.grpProcesses.Size = new System.Drawing.Size(800, 513);
+            this.grpProcesses.Size = new System.Drawing.Size(1111, 551);
             this.grpProcesses.TabIndex = 6;
             this.grpProcesses.Text = "Process for Financial Planning";
             // 
@@ -206,13 +224,14 @@
             this.grpLinkSubStep.Location = new System.Drawing.Point(221, 5);
             this.grpLinkSubStep.LookAndFeel.UseDefaultLookAndFeel = false;
             this.grpLinkSubStep.Name = "grpLinkSubStep";
-            this.grpLinkSubStep.Size = new System.Drawing.Size(574, 503);
+            this.grpLinkSubStep.Size = new System.Drawing.Size(885, 541);
             this.grpLinkSubStep.TabIndex = 9;
             this.grpLinkSubStep.Text = "Link sub processes inforamtion";
             // 
             // grdLinkSubProcessStep
             // 
-            this.grdLinkSubProcessStep.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.grdLinkSubProcessStep.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grdLinkSubProcessStep.Location = new System.Drawing.Point(6, 23);
             this.grdLinkSubProcessStep.LookAndFeel.UseDefaultLookAndFeel = false;
@@ -220,7 +239,7 @@
             this.grdLinkSubProcessStep.Name = "grdLinkSubProcessStep";
             this.grdLinkSubProcessStep.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCheckEdit1});
-            this.grdLinkSubProcessStep.Size = new System.Drawing.Size(563, 202);
+            this.grdLinkSubProcessStep.Size = new System.Drawing.Size(874, 205);
             this.grdLinkSubProcessStep.TabIndex = 25;
             this.grdLinkSubProcessStep.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.layoutView1,
@@ -234,6 +253,9 @@
             this.layoutView1.Appearance.ViewBackground.BackColor = System.Drawing.Color.DarkGray;
             this.layoutView1.Appearance.ViewBackground.BackColor2 = System.Drawing.Color.Silver;
             this.layoutView1.Appearance.ViewBackground.Options.UseBackColor = true;
+            this.layoutView1.CardHorzInterval = 1;
+            this.layoutView1.CardMinSize = new System.Drawing.Size(142, 134);
+            this.layoutView1.CardVertInterval = 1;
             this.layoutView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.LayoutViewColumn[] {
             this.tileViewColumnId,
             this.tileViewColumnStepNo,
@@ -259,6 +281,7 @@
             this.layoutView1.OptionsView.AllowBorderColorBlending = true;
             this.layoutView1.OptionsView.AnimationType = DevExpress.XtraGrid.Views.Base.GridAnimationType.AnimateAllContent;
             this.layoutView1.OptionsView.CardArrangeRule = DevExpress.XtraGrid.Views.Layout.LayoutCardArrangeRule.AllowPartialCards;
+            this.layoutView1.OptionsView.ShowHeaderPanel = false;
             this.layoutView1.OptionsView.ViewMode = DevExpress.XtraGrid.Views.Layout.LayoutViewMode.MultiRow;
             this.layoutView1.TemplateCard = this.layoutViewCard1;
             this.layoutView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.layoutView1_FocusedRowChanged);
@@ -272,10 +295,10 @@
             // 
             // layoutViewField_tileViewColumnId
             // 
-            this.layoutViewField_tileViewColumnId.EditorPreferredWidth = 87;
+            this.layoutViewField_tileViewColumnId.EditorPreferredWidth = 20;
             this.layoutViewField_tileViewColumnId.Location = new System.Drawing.Point(0, 0);
             this.layoutViewField_tileViewColumnId.Name = "layoutViewField_tileViewColumnId";
-            this.layoutViewField_tileViewColumnId.Size = new System.Drawing.Size(203, 24);
+            this.layoutViewField_tileViewColumnId.Size = new System.Drawing.Size(187, 96);
             this.layoutViewField_tileViewColumnId.TextSize = new System.Drawing.Size(108, 20);
             // 
             // tileViewColumnStepNo
@@ -287,10 +310,10 @@
             // 
             // layoutViewField_tileViewColumnStepNo
             // 
-            this.layoutViewField_tileViewColumnStepNo.EditorPreferredWidth = 87;
+            this.layoutViewField_tileViewColumnStepNo.EditorPreferredWidth = 85;
             this.layoutViewField_tileViewColumnStepNo.Location = new System.Drawing.Point(0, 0);
             this.layoutViewField_tileViewColumnStepNo.Name = "layoutViewField_tileViewColumnStepNo";
-            this.layoutViewField_tileViewColumnStepNo.Size = new System.Drawing.Size(203, 48);
+            this.layoutViewField_tileViewColumnStepNo.Size = new System.Drawing.Size(187, 24);
             this.layoutViewField_tileViewColumnStepNo.TextSize = new System.Drawing.Size(93, 13);
             // 
             // tileViewColumnPrimaryStepId
@@ -302,10 +325,10 @@
             // 
             // layoutViewField_tileViewColumnPrimaryStepId
             // 
-            this.layoutViewField_tileViewColumnPrimaryStepId.EditorPreferredWidth = 87;
-            this.layoutViewField_tileViewColumnPrimaryStepId.Location = new System.Drawing.Point(0, 48);
+            this.layoutViewField_tileViewColumnPrimaryStepId.EditorPreferredWidth = 20;
+            this.layoutViewField_tileViewColumnPrimaryStepId.Location = new System.Drawing.Point(0, 0);
             this.layoutViewField_tileViewColumnPrimaryStepId.Name = "layoutViewField_tileViewColumnPrimaryStepId";
-            this.layoutViewField_tileViewColumnPrimaryStepId.Size = new System.Drawing.Size(203, 24);
+            this.layoutViewField_tileViewColumnPrimaryStepId.Size = new System.Drawing.Size(187, 96);
             this.layoutViewField_tileViewColumnPrimaryStepId.TextSize = new System.Drawing.Size(108, 20);
             // 
             // tileViewColumnTitle
@@ -317,10 +340,10 @@
             // 
             // layoutViewField_tileViewColumnTitle
             // 
-            this.layoutViewField_tileViewColumnTitle.EditorPreferredWidth = 87;
-            this.layoutViewField_tileViewColumnTitle.Location = new System.Drawing.Point(0, 48);
+            this.layoutViewField_tileViewColumnTitle.EditorPreferredWidth = 85;
+            this.layoutViewField_tileViewColumnTitle.Location = new System.Drawing.Point(0, 24);
             this.layoutViewField_tileViewColumnTitle.Name = "layoutViewField_tileViewColumnTitle";
-            this.layoutViewField_tileViewColumnTitle.Size = new System.Drawing.Size(203, 48);
+            this.layoutViewField_tileViewColumnTitle.Size = new System.Drawing.Size(187, 24);
             this.layoutViewField_tileViewColumnTitle.TextSize = new System.Drawing.Size(93, 13);
             // 
             // tileViewColumnDescription
@@ -332,10 +355,10 @@
             // 
             // layoutViewField_tileViewColumnDescription
             // 
-            this.layoutViewField_tileViewColumnDescription.EditorPreferredWidth = 87;
-            this.layoutViewField_tileViewColumnDescription.Location = new System.Drawing.Point(0, 96);
+            this.layoutViewField_tileViewColumnDescription.EditorPreferredWidth = 20;
+            this.layoutViewField_tileViewColumnDescription.Location = new System.Drawing.Point(0, 0);
             this.layoutViewField_tileViewColumnDescription.Name = "layoutViewField_tileViewColumnDescription";
-            this.layoutViewField_tileViewColumnDescription.Size = new System.Drawing.Size(203, 24);
+            this.layoutViewField_tileViewColumnDescription.Size = new System.Drawing.Size(187, 96);
             this.layoutViewField_tileViewColumnDescription.TextSize = new System.Drawing.Size(108, 20);
             // 
             // tileViewColumnRemarks
@@ -347,10 +370,10 @@
             // 
             // layoutViewField_tileViewColumnRemarks
             // 
-            this.layoutViewField_tileViewColumnRemarks.EditorPreferredWidth = 87;
-            this.layoutViewField_tileViewColumnRemarks.Location = new System.Drawing.Point(0, 96);
+            this.layoutViewField_tileViewColumnRemarks.EditorPreferredWidth = 20;
+            this.layoutViewField_tileViewColumnRemarks.Location = new System.Drawing.Point(0, 0);
             this.layoutViewField_tileViewColumnRemarks.Name = "layoutViewField_tileViewColumnRemarks";
-            this.layoutViewField_tileViewColumnRemarks.Size = new System.Drawing.Size(203, 48);
+            this.layoutViewField_tileViewColumnRemarks.Size = new System.Drawing.Size(187, 96);
             this.layoutViewField_tileViewColumnRemarks.TextSize = new System.Drawing.Size(108, 20);
             // 
             // tileViewColumnDuration
@@ -362,10 +385,10 @@
             // 
             // layoutViewField_tileViewColumnDuration
             // 
-            this.layoutViewField_tileViewColumnDuration.EditorPreferredWidth = 87;
-            this.layoutViewField_tileViewColumnDuration.Location = new System.Drawing.Point(0, 96);
+            this.layoutViewField_tileViewColumnDuration.EditorPreferredWidth = 85;
+            this.layoutViewField_tileViewColumnDuration.Location = new System.Drawing.Point(0, 48);
             this.layoutViewField_tileViewColumnDuration.Name = "layoutViewField_tileViewColumnDuration";
-            this.layoutViewField_tileViewColumnDuration.Size = new System.Drawing.Size(203, 72);
+            this.layoutViewField_tileViewColumnDuration.Size = new System.Drawing.Size(187, 24);
             this.layoutViewField_tileViewColumnDuration.TextSize = new System.Drawing.Size(93, 13);
             // 
             // tileViewColumnTimeline
@@ -377,10 +400,10 @@
             // 
             // layoutViewField_tileViewColumnTimeline
             // 
-            this.layoutViewField_tileViewColumnTimeline.EditorPreferredWidth = 87;
-            this.layoutViewField_tileViewColumnTimeline.Location = new System.Drawing.Point(0, 168);
+            this.layoutViewField_tileViewColumnTimeline.EditorPreferredWidth = 85;
+            this.layoutViewField_tileViewColumnTimeline.Location = new System.Drawing.Point(0, 72);
             this.layoutViewField_tileViewColumnTimeline.Name = "layoutViewField_tileViewColumnTimeline";
-            this.layoutViewField_tileViewColumnTimeline.Size = new System.Drawing.Size(203, 96);
+            this.layoutViewField_tileViewColumnTimeline.Size = new System.Drawing.Size(187, 24);
             this.layoutViewField_tileViewColumnTimeline.TextSize = new System.Drawing.Size(93, 13);
             // 
             // tileViewColumnPrimaryResponsibility
@@ -392,10 +415,10 @@
             // 
             // layoutViewField_tileViewColumnPrimaryResponsibility
             // 
-            this.layoutViewField_tileViewColumnPrimaryResponsibility.EditorPreferredWidth = 87;
-            this.layoutViewField_tileViewColumnPrimaryResponsibility.Location = new System.Drawing.Point(0, 192);
+            this.layoutViewField_tileViewColumnPrimaryResponsibility.EditorPreferredWidth = 20;
+            this.layoutViewField_tileViewColumnPrimaryResponsibility.Location = new System.Drawing.Point(0, 0);
             this.layoutViewField_tileViewColumnPrimaryResponsibility.Name = "layoutViewField_tileViewColumnPrimaryResponsibility";
-            this.layoutViewField_tileViewColumnPrimaryResponsibility.Size = new System.Drawing.Size(203, 24);
+            this.layoutViewField_tileViewColumnPrimaryResponsibility.Size = new System.Drawing.Size(187, 96);
             this.layoutViewField_tileViewColumnPrimaryResponsibility.TextSize = new System.Drawing.Size(108, 20);
             // 
             // tileViewColumnOwner
@@ -407,10 +430,10 @@
             // 
             // layoutViewField_tileViewColumnOwner
             // 
-            this.layoutViewField_tileViewColumnOwner.EditorPreferredWidth = 87;
-            this.layoutViewField_tileViewColumnOwner.Location = new System.Drawing.Point(0, 192);
+            this.layoutViewField_tileViewColumnOwner.EditorPreferredWidth = 20;
+            this.layoutViewField_tileViewColumnOwner.Location = new System.Drawing.Point(0, 0);
             this.layoutViewField_tileViewColumnOwner.Name = "layoutViewField_tileViewColumnOwner";
-            this.layoutViewField_tileViewColumnOwner.Size = new System.Drawing.Size(203, 48);
+            this.layoutViewField_tileViewColumnOwner.Size = new System.Drawing.Size(187, 96);
             this.layoutViewField_tileViewColumnOwner.TextSize = new System.Drawing.Size(108, 20);
             // 
             // tileViewColumnChecker
@@ -422,14 +445,15 @@
             // 
             // layoutViewField_tileViewColumnChecker
             // 
-            this.layoutViewField_tileViewColumnChecker.EditorPreferredWidth = 87;
-            this.layoutViewField_tileViewColumnChecker.Location = new System.Drawing.Point(0, 192);
+            this.layoutViewField_tileViewColumnChecker.EditorPreferredWidth = 20;
+            this.layoutViewField_tileViewColumnChecker.Location = new System.Drawing.Point(0, 0);
             this.layoutViewField_tileViewColumnChecker.Name = "layoutViewField_tileViewColumnChecker";
-            this.layoutViewField_tileViewColumnChecker.Size = new System.Drawing.Size(203, 72);
+            this.layoutViewField_tileViewColumnChecker.Size = new System.Drawing.Size(187, 96);
             this.layoutViewField_tileViewColumnChecker.TextSize = new System.Drawing.Size(108, 20);
             // 
             // layoutViewCard1
             // 
+            this.layoutViewCard1.CustomizationFormText = "TemplateCard";
             this.layoutViewCard1.HeaderButtonsLocation = DevExpress.Utils.GroupElementLocation.AfterText;
             this.layoutViewCard1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutViewField_tileViewColumnStepNo,
@@ -437,6 +461,8 @@
             this.layoutViewField_tileViewColumnDuration,
             this.layoutViewField_tileViewColumnTimeline});
             this.layoutViewCard1.Name = "layoutViewCard1";
+            this.layoutViewCard1.OptionsItemText.TextToControlDistance = 5;
+            this.layoutViewCard1.Text = "TemplateCard";
             // 
             // repositoryItemCheckEdit1
             // 
@@ -451,20 +477,21 @@
             // 
             // labelControl27
             // 
-            this.labelControl27.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.labelControl27.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl27.Appearance.BackColor = System.Drawing.Color.Gray;
             this.labelControl27.Appearance.Options.UseBackColor = true;
             this.labelControl27.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl27.Location = new System.Drawing.Point(6, 259);
+            this.labelControl27.Location = new System.Drawing.Point(6, 262);
             this.labelControl27.Name = "labelControl27";
-            this.labelControl27.Size = new System.Drawing.Size(563, 2);
+            this.labelControl27.Size = new System.Drawing.Size(874, 2);
             this.labelControl27.TabIndex = 24;
             // 
             // btnDelete
             // 
+            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
-            this.btnDelete.Location = new System.Drawing.Point(71, 231);
+            this.btnDelete.Location = new System.Drawing.Point(71, 234);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(25, 23);
             toolTipTitleItem1.Text = "Delete Process";
@@ -479,11 +506,12 @@
             // 
             // grpLinkSubStepInfo
             // 
-            this.grpLinkSubStepInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.grpLinkSubStepInfo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grpLinkSubStepInfo.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpLinkSubStepInfo.Appearance.Options.UseFont = true;
+            this.grpLinkSubStepInfo.Controls.Add(this.grpDesignation);
+            this.grpLinkSubStepInfo.Controls.Add(this.chkAllowByPassProcess);
             this.grpLinkSubStepInfo.Controls.Add(this.txtLinkSubStepId);
             this.grpLinkSubStepInfo.Controls.Add(this.btnClose);
             this.grpLinkSubStepInfo.Controls.Add(this.btnSaveLinkSubSteps);
@@ -509,15 +537,109 @@
             this.grpLinkSubStepInfo.Controls.Add(this.labelControl25);
             this.grpLinkSubStepInfo.Controls.Add(this.txtLinkSubStepNo);
             this.grpLinkSubStepInfo.Controls.Add(this.labelControl26);
-            this.grpLinkSubStepInfo.Location = new System.Drawing.Point(5, 264);
+            this.grpLinkSubStepInfo.Location = new System.Drawing.Point(5, 270);
             this.grpLinkSubStepInfo.Name = "grpLinkSubStepInfo";
-            this.grpLinkSubStepInfo.Size = new System.Drawing.Size(564, 234);
+            this.grpLinkSubStepInfo.Size = new System.Drawing.Size(875, 263);
             this.grpLinkSubStepInfo.TabIndex = 8;
             this.grpLinkSubStepInfo.Text = "Link Subprocess ";
             // 
+            // grpDesignation
+            // 
+            this.grpDesignation.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.grpDesignation.Controls.Add(this.btnDeletePoint);
+            this.grpDesignation.Controls.Add(this.btnAddPoint);
+            this.grpDesignation.Controls.Add(this.gridPoints);
+            this.grpDesignation.Location = new System.Drawing.Point(514, 23);
+            this.grpDesignation.Name = "grpDesignation";
+            this.grpDesignation.Size = new System.Drawing.Size(352, 134);
+            this.grpDesignation.TabIndex = 59;
+            this.grpDesignation.Text = "Mulitple Points";
+            // 
+            // btnDeletePoint
+            // 
+            this.btnDeletePoint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDeletePoint.Image = ((System.Drawing.Image)(resources.GetObject("btnDeletePoint.Image")));
+            this.btnDeletePoint.Location = new System.Drawing.Point(325, 3);
+            this.btnDeletePoint.Name = "btnDeletePoint";
+            this.btnDeletePoint.Size = new System.Drawing.Size(25, 17);
+            toolTipTitleItem2.Text = "Delete Process";
+            toolTipItem2.LeftIndent = 6;
+            toolTipItem2.Text = "To delete selected process record click here.";
+            superToolTip2.Items.Add(toolTipTitleItem2);
+            superToolTip2.Items.Add(toolTipItem2);
+            this.btnDeletePoint.SuperTip = superToolTip2;
+            this.btnDeletePoint.TabIndex = 43;
+            this.btnDeletePoint.ToolTip = "Delete Client";
+            this.btnDeletePoint.Click += new System.EventHandler(this.btnDeletePoint_Click);
+            // 
+            // btnAddPoint
+            // 
+            this.btnAddPoint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddPoint.Image = ((System.Drawing.Image)(resources.GetObject("btnAddPoint.Image")));
+            this.btnAddPoint.Location = new System.Drawing.Point(297, 3);
+            this.btnAddPoint.Name = "btnAddPoint";
+            this.btnAddPoint.Size = new System.Drawing.Size(25, 17);
+            toolTipTitleItem3.Text = "New Process";
+            toolTipItem3.LeftIndent = 6;
+            toolTipItem3.Text = "To add new process inforamtion click here.";
+            superToolTip3.Items.Add(toolTipTitleItem3);
+            superToolTip3.Items.Add(toolTipItem3);
+            this.btnAddPoint.SuperTip = superToolTip3;
+            this.btnAddPoint.TabIndex = 42;
+            this.btnAddPoint.ToolTip = "Add New Process";
+            this.btnAddPoint.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Application;
+            this.btnAddPoint.ToolTipTitle = "New Client";
+            this.btnAddPoint.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
+            // gridPoints
+            // 
+            this.gridPoints.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridPoints.Location = new System.Drawing.Point(7, 23);
+            this.gridPoints.MainView = this.gridViewPoints;
+            this.gridPoints.Name = "gridPoints";
+            this.gridPoints.Size = new System.Drawing.Size(340, 106);
+            this.gridPoints.TabIndex = 41;
+            this.gridPoints.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridViewPoints});
+            // 
+            // gridViewPoints
+            // 
+            this.gridViewPoints.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumnPoint});
+            this.gridViewPoints.GridControl = this.gridPoints;
+            this.gridViewPoints.Name = "gridViewPoints";
+            this.gridViewPoints.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.True;
+            this.gridViewPoints.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.True;
+            this.gridViewPoints.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.Click;
+            this.gridViewPoints.OptionsDetail.EnableDetailToolTip = true;
+            this.gridViewPoints.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumnPoint
+            // 
+            this.gridColumnPoint.Caption = "Points";
+            this.gridColumnPoint.FieldName = "Point";
+            this.gridColumnPoint.Name = "gridColumnPoint";
+            this.gridColumnPoint.Visible = true;
+            this.gridColumnPoint.VisibleIndex = 0;
+            this.gridColumnPoint.Width = 152;
+            // 
+            // chkAllowByPassProcess
+            // 
+            this.chkAllowByPassProcess.Location = new System.Drawing.Point(561, 207);
+            this.chkAllowByPassProcess.Name = "chkAllowByPassProcess";
+            this.chkAllowByPassProcess.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkAllowByPassProcess.Properties.Appearance.Options.UseFont = true;
+            this.chkAllowByPassProcess.Properties.Caption = "Allow to by pass this process with permission";
+            this.chkAllowByPassProcess.Size = new System.Drawing.Size(303, 19);
+            this.chkAllowByPassProcess.TabIndex = 58;
+            // 
             // txtLinkSubStepId
             // 
-            this.txtLinkSubStepId.Location = new System.Drawing.Point(214, 138);
+            this.txtLinkSubStepId.Location = new System.Drawing.Point(214, 170);
             this.txtLinkSubStepId.Name = "txtLinkSubStepId";
             this.txtLinkSubStepId.Size = new System.Drawing.Size(50, 20);
             this.txtLinkSubStepId.TabIndex = 39;
@@ -526,15 +648,15 @@
             // btnClose
             // 
             this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-            this.btnClose.Location = new System.Drawing.Point(424, 201);
+            this.btnClose.Location = new System.Drawing.Point(424, 233);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(62, 23);
-            toolTipTitleItem2.Text = "Cancel";
-            toolTipItem2.LeftIndent = 6;
-            toolTipItem2.Text = "To close process information without saving any data click here.";
-            superToolTip2.Items.Add(toolTipTitleItem2);
-            superToolTip2.Items.Add(toolTipItem2);
-            this.btnClose.SuperTip = superToolTip2;
+            toolTipTitleItem4.Text = "Cancel";
+            toolTipItem4.LeftIndent = 6;
+            toolTipItem4.Text = "To close process information without saving any data click here.";
+            superToolTip4.Items.Add(toolTipTitleItem4);
+            superToolTip4.Items.Add(toolTipItem4);
+            this.btnClose.SuperTip = superToolTip4;
             this.btnClose.TabIndex = 38;
             this.btnClose.Text = "&Close";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -542,31 +664,32 @@
             // btnSaveLinkSubSteps
             // 
             this.btnSaveLinkSubSteps.Image = ((System.Drawing.Image)(resources.GetObject("btnSaveLinkSubSteps.Image")));
-            this.btnSaveLinkSubSteps.Location = new System.Drawing.Point(361, 201);
+            this.btnSaveLinkSubSteps.Location = new System.Drawing.Point(361, 233);
             this.btnSaveLinkSubSteps.Name = "btnSaveLinkSubSteps";
             this.btnSaveLinkSubSteps.Size = new System.Drawing.Size(57, 23);
-            toolTipTitleItem3.Text = "Save";
-            toolTipItem3.LeftIndent = 6;
-            toolTipItem3.Text = "To save link sub step infroamtion click here.";
-            superToolTip3.Items.Add(toolTipTitleItem3);
-            superToolTip3.Items.Add(toolTipItem3);
-            this.btnSaveLinkSubSteps.SuperTip = superToolTip3;
+            toolTipTitleItem5.Text = "Save";
+            toolTipItem5.LeftIndent = 6;
+            toolTipItem5.Text = "To save link sub step infroamtion click here.";
+            superToolTip5.Items.Add(toolTipTitleItem5);
+            superToolTip5.Items.Add(toolTipItem5);
+            this.btnSaveLinkSubSteps.SuperTip = superToolTip5;
             this.btnSaveLinkSubSteps.TabIndex = 37;
             this.btnSaveLinkSubSteps.Text = "&Save";
             this.btnSaveLinkSubSteps.Click += new System.EventHandler(this.btnSaveLinkSubSteps_Click);
             // 
             // cmbLinkSubStepChecker
             // 
-            this.cmbLinkSubStepChecker.Location = new System.Drawing.Point(84, 201);
+            this.cmbLinkSubStepChecker.Location = new System.Drawing.Point(84, 233);
             this.cmbLinkSubStepChecker.Name = "cmbLinkSubStepChecker";
             this.cmbLinkSubStepChecker.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cmbLinkSubStepChecker.Size = new System.Drawing.Size(196, 20);
             this.cmbLinkSubStepChecker.TabIndex = 36;
+            this.cmbLinkSubStepChecker.SelectedIndexChanged += new System.EventHandler(this.cmbPrimaryStepResponsibility_SelectedIndexChanged);
             // 
             // labelControl14
             // 
-            this.labelControl14.Location = new System.Drawing.Point(9, 204);
+            this.labelControl14.Location = new System.Drawing.Point(9, 236);
             this.labelControl14.Name = "labelControl14";
             this.labelControl14.Size = new System.Drawing.Size(43, 13);
             this.labelControl14.TabIndex = 35;
@@ -574,16 +697,17 @@
             // 
             // cmbLinkSubStepOwner
             // 
-            this.cmbLinkSubStepOwner.Location = new System.Drawing.Point(359, 175);
+            this.cmbLinkSubStepOwner.Location = new System.Drawing.Point(359, 207);
             this.cmbLinkSubStepOwner.Name = "cmbLinkSubStepOwner";
             this.cmbLinkSubStepOwner.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cmbLinkSubStepOwner.Size = new System.Drawing.Size(196, 20);
             this.cmbLinkSubStepOwner.TabIndex = 34;
+            this.cmbLinkSubStepOwner.SelectedIndexChanged += new System.EventHandler(this.cmbPrimaryStepResponsibility_SelectedIndexChanged);
             // 
             // labelControl15
             // 
-            this.labelControl15.Location = new System.Drawing.Point(319, 178);
+            this.labelControl15.Location = new System.Drawing.Point(319, 210);
             this.labelControl15.Name = "labelControl15";
             this.labelControl15.Size = new System.Drawing.Size(36, 13);
             this.labelControl15.TabIndex = 33;
@@ -591,16 +715,17 @@
             // 
             // cmbLinkSubStepResponsibility
             // 
-            this.cmbLinkSubStepResponsibility.Location = new System.Drawing.Point(84, 175);
+            this.cmbLinkSubStepResponsibility.Location = new System.Drawing.Point(84, 207);
             this.cmbLinkSubStepResponsibility.Name = "cmbLinkSubStepResponsibility";
             this.cmbLinkSubStepResponsibility.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cmbLinkSubStepResponsibility.Size = new System.Drawing.Size(196, 20);
             this.cmbLinkSubStepResponsibility.TabIndex = 32;
+            this.cmbLinkSubStepResponsibility.SelectedIndexChanged += new System.EventHandler(this.cmbPrimaryStepResponsibility_SelectedIndexChanged);
             // 
             // labelControl16
             // 
-            this.labelControl16.Location = new System.Drawing.Point(9, 178);
+            this.labelControl16.Location = new System.Drawing.Point(9, 210);
             this.labelControl16.Name = "labelControl16";
             this.labelControl16.Size = new System.Drawing.Size(69, 13);
             this.labelControl16.TabIndex = 31;
@@ -613,14 +738,14 @@
             this.labelControl17.Appearance.BackColor = System.Drawing.Color.Gray;
             this.labelControl17.Appearance.Options.UseBackColor = true;
             this.labelControl17.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl17.Location = new System.Drawing.Point(5, 164);
+            this.labelControl17.Location = new System.Drawing.Point(5, 196);
             this.labelControl17.Name = "labelControl17";
-            this.labelControl17.Size = new System.Drawing.Size(550, 2);
+            this.labelControl17.Size = new System.Drawing.Size(861, 2);
             this.labelControl17.TabIndex = 30;
             // 
             // labelControl18
             // 
-            this.labelControl18.Location = new System.Drawing.Point(412, 141);
+            this.labelControl18.Location = new System.Drawing.Point(412, 173);
             this.labelControl18.Name = "labelControl18";
             this.labelControl18.Size = new System.Drawing.Size(32, 13);
             this.labelControl18.TabIndex = 29;
@@ -629,7 +754,7 @@
             // txtLinkSubStepTimeLine
             // 
             this.txtLinkSubStepTimeLine.EditValue = ((short)(0));
-            this.txtLinkSubStepTimeLine.Location = new System.Drawing.Point(356, 138);
+            this.txtLinkSubStepTimeLine.Location = new System.Drawing.Point(356, 170);
             this.txtLinkSubStepTimeLine.Name = "txtLinkSubStepTimeLine";
             this.txtLinkSubStepTimeLine.Properties.MaxLength = 3;
             this.txtLinkSubStepTimeLine.Size = new System.Drawing.Size(50, 20);
@@ -637,7 +762,7 @@
             // 
             // labelControl19
             // 
-            this.labelControl19.Location = new System.Drawing.Point(305, 141);
+            this.labelControl19.Location = new System.Drawing.Point(305, 173);
             this.labelControl19.Name = "labelControl19";
             this.labelControl19.Size = new System.Drawing.Size(42, 13);
             this.labelControl19.TabIndex = 27;
@@ -645,7 +770,7 @@
             // 
             // labelControl20
             // 
-            this.labelControl20.Location = new System.Drawing.Point(114, 141);
+            this.labelControl20.Location = new System.Drawing.Point(114, 173);
             this.labelControl20.Name = "labelControl20";
             this.labelControl20.Size = new System.Drawing.Size(45, 13);
             this.labelControl20.TabIndex = 26;
@@ -654,7 +779,7 @@
             // txtLinkSubStepDuration
             // 
             this.txtLinkSubStepDuration.EditValue = ((short)(0));
-            this.txtLinkSubStepDuration.Location = new System.Drawing.Point(58, 138);
+            this.txtLinkSubStepDuration.Location = new System.Drawing.Point(58, 170);
             this.txtLinkSubStepDuration.Name = "txtLinkSubStepDuration";
             this.txtLinkSubStepDuration.Properties.MaxLength = 3;
             this.txtLinkSubStepDuration.Size = new System.Drawing.Size(50, 20);
@@ -662,7 +787,7 @@
             // 
             // labelControl21
             // 
-            this.labelControl21.Location = new System.Drawing.Point(7, 141);
+            this.labelControl21.Location = new System.Drawing.Point(7, 173);
             this.labelControl21.Name = "labelControl21";
             this.labelControl21.Size = new System.Drawing.Size(45, 13);
             this.labelControl21.TabIndex = 24;
@@ -675,23 +800,23 @@
             this.labelControl22.Appearance.BackColor = System.Drawing.Color.Gray;
             this.labelControl22.Appearance.Options.UseBackColor = true;
             this.labelControl22.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl22.Location = new System.Drawing.Point(5, 130);
+            this.labelControl22.Location = new System.Drawing.Point(5, 162);
             this.labelControl22.Name = "labelControl22";
-            this.labelControl22.Size = new System.Drawing.Size(550, 2);
+            this.labelControl22.Size = new System.Drawing.Size(861, 2);
             this.labelControl22.TabIndex = 23;
             // 
             // txtLinkSubStepRemarks
             // 
             this.txtLinkSubStepRemarks.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtLinkSubStepRemarks.Location = new System.Drawing.Point(307, 71);
+            this.txtLinkSubStepRemarks.Location = new System.Drawing.Point(270, 71);
             this.txtLinkSubStepRemarks.Name = "txtLinkSubStepRemarks";
-            this.txtLinkSubStepRemarks.Size = new System.Drawing.Size(248, 53);
+            this.txtLinkSubStepRemarks.Size = new System.Drawing.Size(242, 85);
             this.txtLinkSubStepRemarks.TabIndex = 22;
             // 
             // labelControl23
             // 
-            this.labelControl23.Location = new System.Drawing.Point(310, 52);
+            this.labelControl23.Location = new System.Drawing.Point(273, 52);
             this.labelControl23.Name = "labelControl23";
             this.labelControl23.Size = new System.Drawing.Size(45, 13);
             this.labelControl23.TabIndex = 21;
@@ -701,7 +826,7 @@
             // 
             this.txtLinkSubStepDescription.Location = new System.Drawing.Point(7, 71);
             this.txtLinkSubStepDescription.Name = "txtLinkSubStepDescription";
-            this.txtLinkSubStepDescription.Size = new System.Drawing.Size(294, 53);
+            this.txtLinkSubStepDescription.Size = new System.Drawing.Size(257, 85);
             this.txtLinkSubStepDescription.TabIndex = 20;
             // 
             // labelControl24
@@ -718,7 +843,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtLinkSubStepTitle.Location = new System.Drawing.Point(142, 23);
             this.txtLinkSubStepTitle.Name = "txtLinkSubStepTitle";
-            this.txtLinkSubStepTitle.Size = new System.Drawing.Size(413, 20);
+            this.txtLinkSubStepTitle.Size = new System.Drawing.Size(366, 20);
             this.txtLinkSubStepTitle.TabIndex = 18;
             // 
             // labelControl25
@@ -746,31 +871,33 @@
             // 
             // btnEdit
             // 
+            this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Image")));
-            this.btnEdit.Location = new System.Drawing.Point(40, 231);
+            this.btnEdit.Location = new System.Drawing.Point(40, 234);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(25, 23);
-            toolTipTitleItem4.Text = "Edit Process\r\n";
-            toolTipItem4.LeftIndent = 6;
-            toolTipItem4.Text = "To modify selected process information click here.";
-            superToolTip4.Items.Add(toolTipTitleItem4);
-            superToolTip4.Items.Add(toolTipItem4);
-            this.btnEdit.SuperTip = superToolTip4;
+            toolTipTitleItem6.Text = "Edit Process\r\n";
+            toolTipItem6.LeftIndent = 6;
+            toolTipItem6.Text = "To modify selected process information click here.";
+            superToolTip6.Items.Add(toolTipTitleItem6);
+            superToolTip6.Items.Add(toolTipItem6);
+            this.btnEdit.SuperTip = superToolTip6;
             this.btnEdit.TabIndex = 8;
             this.btnEdit.ToolTip = "Edit Client";
             // 
             // btnAdd
             // 
+            this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
-            this.btnAdd.Location = new System.Drawing.Point(9, 231);
+            this.btnAdd.Location = new System.Drawing.Point(9, 234);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(25, 23);
-            toolTipTitleItem5.Text = "New Process";
-            toolTipItem5.LeftIndent = 6;
-            toolTipItem5.Text = "To add new process inforamtion click here.";
-            superToolTip5.Items.Add(toolTipTitleItem5);
-            superToolTip5.Items.Add(toolTipItem5);
-            this.btnAdd.SuperTip = superToolTip5;
+            toolTipTitleItem7.Text = "New Process";
+            toolTipItem7.LeftIndent = 6;
+            toolTipItem7.Text = "To add new process inforamtion click here.";
+            superToolTip7.Items.Add(toolTipTitleItem7);
+            superToolTip7.Items.Add(toolTipItem7);
+            this.btnAdd.SuperTip = superToolTip7;
             this.btnAdd.TabIndex = 7;
             this.btnAdd.ToolTip = "Add New Process";
             this.btnAdd.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Application;
@@ -814,7 +941,7 @@
             this.grpPrimaryStepsInfo.LookAndFeel.UseDefaultLookAndFeel = false;
             this.grpPrimaryStepsInfo.LookAndFeel.UseWindowsXPTheme = true;
             this.grpPrimaryStepsInfo.Name = "grpPrimaryStepsInfo";
-            this.grpPrimaryStepsInfo.Size = new System.Drawing.Size(210, 503);
+            this.grpPrimaryStepsInfo.Size = new System.Drawing.Size(210, 541);
             this.grpPrimaryStepsInfo.TabIndex = 7;
             this.grpPrimaryStepsInfo.Text = "Primary Process";
             // 
@@ -833,12 +960,12 @@
             this.btnSavePrimaryStep.Location = new System.Drawing.Point(76, 463);
             this.btnSavePrimaryStep.Name = "btnSavePrimaryStep";
             this.btnSavePrimaryStep.Size = new System.Drawing.Size(57, 23);
-            toolTipTitleItem6.Text = "Save";
-            toolTipItem6.LeftIndent = 6;
-            toolTipItem6.Text = "To save MOM infroamtion click here.";
-            superToolTip6.Items.Add(toolTipTitleItem6);
-            superToolTip6.Items.Add(toolTipItem6);
-            this.btnSavePrimaryStep.SuperTip = superToolTip6;
+            toolTipTitleItem8.Text = "Save";
+            toolTipItem8.LeftIndent = 6;
+            toolTipItem8.Text = "To save MOM infroamtion click here.";
+            superToolTip8.Items.Add(toolTipTitleItem8);
+            superToolTip8.Items.Add(toolTipItem8);
+            this.btnSavePrimaryStep.SuperTip = superToolTip8;
             this.btnSavePrimaryStep.TabIndex = 37;
             this.btnSavePrimaryStep.Text = "&Save";
             this.btnSavePrimaryStep.Click += new System.EventHandler(this.btnSavePrimaryStep_Click);
@@ -851,6 +978,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cmbPrimaryStepChecker.Size = new System.Drawing.Size(196, 20);
             this.cmbPrimaryStepChecker.TabIndex = 36;
+            this.cmbPrimaryStepChecker.SelectedIndexChanged += new System.EventHandler(this.cmbPrimaryStepResponsibility_SelectedIndexChanged);
             // 
             // labelControl13
             // 
@@ -868,6 +996,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cmbPrimaryStepOwner.Size = new System.Drawing.Size(196, 20);
             this.cmbPrimaryStepOwner.TabIndex = 34;
+            this.cmbPrimaryStepOwner.SelectedIndexChanged += new System.EventHandler(this.cmbPrimaryStepResponsibility_SelectedIndexChanged);
             // 
             // labelControl12
             // 
@@ -885,6 +1014,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cmbPrimaryStepResponsibility.Size = new System.Drawing.Size(196, 20);
             this.cmbPrimaryStepResponsibility.TabIndex = 32;
+            this.cmbPrimaryStepResponsibility.SelectedIndexChanged += new System.EventHandler(this.cmbPrimaryStepResponsibility_SelectedIndexChanged);
             // 
             // labelControl11
             // 
@@ -1038,7 +1168,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 513);
+            this.ClientSize = new System.Drawing.Size(1111, 551);
             this.Controls.Add(this.grpProcesses);
             this.Name = "ProcessInformation";
             this.Text = "Process Information";
@@ -1066,6 +1196,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.grpLinkSubStepInfo)).EndInit();
             this.grpLinkSubStepInfo.ResumeLayout(false);
             this.grpLinkSubStepInfo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grpDesignation)).EndInit();
+            this.grpDesignation.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridPoints)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewPoints)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkAllowByPassProcess.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLinkSubStepId.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbLinkSubStepChecker.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbLinkSubStepOwner.Properties)).EndInit();
@@ -1155,29 +1290,36 @@
         private DevExpress.XtraGrid.Views.Card.CardView cardView1;
         private DevExpress.XtraGrid.Views.Layout.LayoutView layoutView1;
         private DevExpress.XtraGrid.Columns.LayoutViewColumn tileViewColumnId;
-        private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_tileViewColumnId;
         private DevExpress.XtraGrid.Columns.LayoutViewColumn tileViewColumnStepNo;
-        private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_tileViewColumnStepNo;
         private DevExpress.XtraGrid.Columns.LayoutViewColumn tileViewColumnPrimaryStepId;
-        private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_tileViewColumnPrimaryStepId;
         private DevExpress.XtraGrid.Columns.LayoutViewColumn tileViewColumnTitle;
-        private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_tileViewColumnTitle;
         private DevExpress.XtraGrid.Columns.LayoutViewColumn tileViewColumnDescription;
-        private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_tileViewColumnDescription;
         private DevExpress.XtraGrid.Columns.LayoutViewColumn tileViewColumnRemarks;
-        private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_tileViewColumnRemarks;
         private DevExpress.XtraGrid.Columns.LayoutViewColumn tileViewColumnDuration;
-        private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_tileViewColumnDuration;
         private DevExpress.XtraGrid.Columns.LayoutViewColumn tileViewColumnTimeline;
-        private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_tileViewColumnTimeline;
         private DevExpress.XtraGrid.Columns.LayoutViewColumn tileViewColumnPrimaryResponsibility;
-        private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_tileViewColumnPrimaryResponsibility;
         private DevExpress.XtraGrid.Columns.LayoutViewColumn tileViewColumnOwner;
-        private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_tileViewColumnOwner;
         private DevExpress.XtraGrid.Columns.LayoutViewColumn tileViewColumnChecker;
-        private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_tileViewColumnChecker;
-        private DevExpress.XtraGrid.Views.Layout.LayoutViewCard layoutViewCard1;
         private DevExpress.XtraEditors.TextEdit txtPrimaryStepId;
         private DevExpress.XtraEditors.TextEdit txtLinkSubStepId;
+        private DevExpress.XtraEditors.CheckEdit chkAllowByPassProcess;
+        private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_tileViewColumnId;
+        private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_tileViewColumnStepNo;
+        private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_tileViewColumnPrimaryStepId;
+        private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_tileViewColumnTitle;
+        private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_tileViewColumnDescription;
+        private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_tileViewColumnRemarks;
+        private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_tileViewColumnDuration;
+        private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_tileViewColumnTimeline;
+        private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_tileViewColumnPrimaryResponsibility;
+        private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_tileViewColumnOwner;
+        private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_tileViewColumnChecker;
+        private DevExpress.XtraGrid.Views.Layout.LayoutViewCard layoutViewCard1;
+        private DevExpress.XtraEditors.GroupControl grpDesignation;
+        private DevExpress.XtraGrid.GridControl gridPoints;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridViewPoints;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumnPoint;
+        public DevExpress.XtraEditors.SimpleButton btnAddPoint;
+        public DevExpress.XtraEditors.SimpleButton btnDeletePoint;
     }
 }
